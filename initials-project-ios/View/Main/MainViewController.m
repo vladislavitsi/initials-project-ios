@@ -34,12 +34,12 @@
     viewController.title = @"Gallery";
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
 - (IBAction)examplesAction:(UIButton *)sender {
-    ExamplesPagesViewController *viewController = [[ExamplesPagesViewController alloc] initWithNibName:@"ExamplesPageViewController" bundle:nil];
+    ExamplesPagesViewController *viewController = [[ExamplesPagesViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     viewController.title = @"Examples";
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
 
 - (IBAction)startAction:(UIButton *)sender {
 }

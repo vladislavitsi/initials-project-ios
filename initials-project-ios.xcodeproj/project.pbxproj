@@ -21,7 +21,6 @@
 		32D21E532095D6450007166D /* GalleryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E512095D6450007166D /* GalleryDetailsViewController.m */; };
 		32D21E542095D6450007166D /* GalleryDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E522095D6450007166D /* GalleryDetailsViewController.xib */; };
 		32D21E592095D7DE0007166D /* ExamplesPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E572095D7DE0007166D /* ExamplesPagesViewController.m */; };
-		32D21E5A2095D7DE0007166D /* ExamplesPagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E582095D7DE0007166D /* ExamplesPagesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +46,6 @@
 		32D21E522095D6450007166D /* GalleryDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryDetailsViewController.xib; sourceTree = "<group>"; };
 		32D21E562095D7DE0007166D /* ExamplesPagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExamplesPagesViewController.h; sourceTree = "<group>"; };
 		32D21E572095D7DE0007166D /* ExamplesPagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExamplesPagesViewController.m; sourceTree = "<group>"; };
-		32D21E582095D7DE0007166D /* ExamplesPagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamplesPagesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +91,7 @@
 		32D21E3C2095CA020007166D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				598F79BC2096047E00718606 /* Start */,
 				32D21E4A2095CDF30007166D /* Main */,
 				32D21E3D2095CA190007166D /* Gallery */,
 				32D21E552095D77A0007166D /* Examples */,
@@ -149,9 +148,15 @@
 			children = (
 				32D21E562095D7DE0007166D /* ExamplesPagesViewController.h */,
 				32D21E572095D7DE0007166D /* ExamplesPagesViewController.m */,
-				32D21E582095D7DE0007166D /* ExamplesPagesViewController.xib */,
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		598F79BC2096047E00718606 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Start;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +185,7 @@
 		32D21E182095BEB30007166D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Uladzislau Kleshchanka";
 				TargetAttributes = {
 					32D21E1F2095BEB30007166D = {
@@ -218,7 +223,6 @@
 				32D21E422095CA5C0007166D /* GalleryTableViewController.xib in Resources */,
 				32D21E2D2095BEB40007166D /* Assets.xcassets in Resources */,
 				32D21E472095CAF30007166D /* GalleryTableViewCell.xib in Resources */,
-				32D21E5A2095D7DE0007166D /* ExamplesPagesViewController.xib in Resources */,
 				32D21E2B2095BEB30007166D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +280,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -283,6 +288,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -331,6 +337,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -338,6 +345,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

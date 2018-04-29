@@ -11,9 +11,12 @@
 
 @interface ExamplesPagesViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
+@property (nonatomic, copy) NSArray *pages;
+
 @end
 
 @implementation ExamplesPagesViewController
+
 
 - (NSArray *)getViewControllers {
     return @[
@@ -23,10 +26,15 @@
              ];
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setViewControllers:[self getViewControllers] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    self.pages = [self getViewControllers];
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.delegate = self;
+    self.dataSource = self;
+    [self setViewControllers:@[self.pages.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,32 +42,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - UIPageViewControllerDataSource
 
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    NSInteger index = [[self viewControllers] indexOfObject:pageViewController];
+    NSInteger index = [self.pages indexOfObject:viewController];
     if (index == 0) {
         return nil;
     }
-    return [self viewControllers][index - 1];
+    return self.pages[index - 1];
 }
 
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSInteger index = [[self viewControllers] indexOfObject:pageViewController];
-    if (index == self.viewControllers.count - 1) {
+    NSInteger index = [self.pages indexOfObject:viewController];
+    if (index == self.pages.count - 1) {
         return nil;
     }
-    return [self viewControllers][index + 1];
+    return self.pages[index + 1];
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+    return self.pages.count;
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+    return 0;
 }
 
 @end
