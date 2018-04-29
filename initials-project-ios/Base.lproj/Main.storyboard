@@ -29,7 +29,7 @@
         <!--Main-->
         <scene sceneID="VHu-mK-zDA">
             <objects>
-                <viewController id="uOf-ls-nqm" sceneMemberID="viewController">
+                <viewController id="uOf-ls-nqm" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Jf-xY-KVT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,16 +41,25 @@
                                         <rect key="frame" x="14.5" y="0.0" width="76" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Gallery"/>
+                                        <connections>
+                                            <action selector="galleryAction:" destination="uOf-ls-nqm" eventType="touchUpInside" id="GMf-fa-4nK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZl-le-Dqx">
                                         <rect key="frame" x="0.0" y="92" width="105" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Examples"/>
+                                        <connections>
+                                            <action selector="examplesAction:" destination="uOf-ls-nqm" eventType="touchUpInside" id="BrR-dX-TlJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1s-th-gLt">
                                         <rect key="frame" x="15.5" y="184" width="74" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="START"/>
+                                        <connections>
+                                            <action selector="startAction:" destination="uOf-ls-nqm" eventType="touchUpInside" id="eee-Vn-aGE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -67,6 +76,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axv-gD-Bl9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="118" y="47"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="f0g-Wk-kxn">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Z4x-1Y-NhP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TvC-Nl-nAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="-91"/>
         </scene>
     </scenes>
 </document>

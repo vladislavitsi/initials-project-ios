@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GalleryTableViewController.h
 //  initials-project-ios
 //
 //  Created by Uladzislau Kleshchanka on 4/29/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface GalleryTableViewController : UITableViewController
 
 @end
-

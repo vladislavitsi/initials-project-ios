@@ -8,24 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		32D21E252095BEB30007166D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E242095BEB30007166D /* AppDelegate.m */; };
-		32D21E282095BEB30007166D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E272095BEB30007166D /* ViewController.m */; };
 		32D21E2B2095BEB30007166D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E292095BEB30007166D /* Main.storyboard */; };
 		32D21E2D2095BEB40007166D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E2C2095BEB40007166D /* Assets.xcassets */; };
 		32D21E302095BEB40007166D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E2E2095BEB40007166D /* LaunchScreen.storyboard */; };
 		32D21E332095BEB40007166D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E322095BEB40007166D /* main.m */; };
+		32D21E3B2095C9A90007166D /* patterns in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E3A2095C9A90007166D /* patterns */; };
+		32D21E412095CA5C0007166D /* GalleryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E3F2095CA5C0007166D /* GalleryTableViewController.m */; };
+		32D21E422095CA5C0007166D /* GalleryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E402095CA5C0007166D /* GalleryTableViewController.xib */; };
+		32D21E462095CAF30007166D /* GalleryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E442095CAF30007166D /* GalleryTableViewCell.m */; };
+		32D21E472095CAF30007166D /* GalleryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E452095CAF30007166D /* GalleryTableViewCell.xib */; };
+		32D21E4D2095CE1E0007166D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E4C2095CE1E0007166D /* MainViewController.m */; };
+		32D21E532095D6450007166D /* GalleryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E512095D6450007166D /* GalleryDetailsViewController.m */; };
+		32D21E542095D6450007166D /* GalleryDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E522095D6450007166D /* GalleryDetailsViewController.xib */; };
+		32D21E592095D7DE0007166D /* ExamplesPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E572095D7DE0007166D /* ExamplesPagesViewController.m */; };
+		32D21E5A2095D7DE0007166D /* ExamplesPagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E582095D7DE0007166D /* ExamplesPagesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32D21E202095BEB30007166D /* initials-project-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "initials-project-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D21E232095BEB30007166D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		32D21E242095BEB30007166D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		32D21E262095BEB30007166D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		32D21E272095BEB30007166D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		32D21E2A2095BEB30007166D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32D21E2C2095BEB40007166D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32D21E2F2095BEB40007166D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32D21E312095BEB40007166D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32D21E322095BEB40007166D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32D21E3A2095C9A90007166D /* patterns */ = {isa = PBXFileReference; lastKnownFileType = folder; path = patterns; sourceTree = "<group>"; };
+		32D21E3E2095CA5C0007166D /* GalleryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryTableViewController.h; sourceTree = "<group>"; };
+		32D21E3F2095CA5C0007166D /* GalleryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryTableViewController.m; sourceTree = "<group>"; };
+		32D21E402095CA5C0007166D /* GalleryTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryTableViewController.xib; sourceTree = "<group>"; };
+		32D21E432095CAF30007166D /* GalleryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryTableViewCell.h; sourceTree = "<group>"; };
+		32D21E442095CAF30007166D /* GalleryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryTableViewCell.m; sourceTree = "<group>"; };
+		32D21E452095CAF30007166D /* GalleryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryTableViewCell.xib; sourceTree = "<group>"; };
+		32D21E4B2095CE1E0007166D /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		32D21E4C2095CE1E0007166D /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		32D21E502095D6450007166D /* GalleryDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryDetailsViewController.h; sourceTree = "<group>"; };
+		32D21E512095D6450007166D /* GalleryDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryDetailsViewController.m; sourceTree = "<group>"; };
+		32D21E522095D6450007166D /* GalleryDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryDetailsViewController.xib; sourceTree = "<group>"; };
+		32D21E562095D7DE0007166D /* ExamplesPagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExamplesPagesViewController.h; sourceTree = "<group>"; };
+		32D21E572095D7DE0007166D /* ExamplesPagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExamplesPagesViewController.m; sourceTree = "<group>"; };
+		32D21E582095D7DE0007166D /* ExamplesPagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamplesPagesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				32D21E222095BEB30007166D /* initials-project-ios */,
-				32D21E392095C22E0007166D /* Support */,
 				32D21E212095BEB30007166D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,16 +80,50 @@
 		32D21E222095BEB30007166D /* initials-project-ios */ = {
 			isa = PBXGroup;
 			children = (
-				32D21E262095BEB30007166D /* ViewController.h */,
-				32D21E272095BEB30007166D /* ViewController.m */,
+				32D21E3C2095CA020007166D /* View */,
+				32D21E3A2095C9A90007166D /* patterns */,
 				32D21E292095BEB30007166D /* Main.storyboard */,
 				32D21E2C2095BEB40007166D /* Assets.xcassets */,
 				32D21E2E2095BEB40007166D /* LaunchScreen.storyboard */,
+				32D21E4E2095CF130007166D /* Support */,
 			);
 			path = "initials-project-ios";
 			sourceTree = "<group>";
 		};
-		32D21E392095C22E0007166D /* Support */ = {
+		32D21E3C2095CA020007166D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32D21E4A2095CDF30007166D /* Main */,
+				32D21E3D2095CA190007166D /* Gallery */,
+				32D21E552095D77A0007166D /* Examples */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32D21E3D2095CA190007166D /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				32D21E4F2095D6020007166D /* Details */,
+				32D21E3E2095CA5C0007166D /* GalleryTableViewController.h */,
+				32D21E3F2095CA5C0007166D /* GalleryTableViewController.m */,
+				32D21E402095CA5C0007166D /* GalleryTableViewController.xib */,
+				32D21E432095CAF30007166D /* GalleryTableViewCell.h */,
+				32D21E442095CAF30007166D /* GalleryTableViewCell.m */,
+				32D21E452095CAF30007166D /* GalleryTableViewCell.xib */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		32D21E4A2095CDF30007166D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				32D21E4B2095CE1E0007166D /* MainViewController.h */,
+				32D21E4C2095CE1E0007166D /* MainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		32D21E4E2095CF130007166D /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				32D21E232095BEB30007166D /* AppDelegate.h */,
@@ -76,7 +131,27 @@
 				32D21E312095BEB40007166D /* Info.plist */,
 				32D21E322095BEB40007166D /* main.m */,
 			);
-			path = Support;
+			name = Support;
+			sourceTree = "<group>";
+		};
+		32D21E4F2095D6020007166D /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				32D21E502095D6450007166D /* GalleryDetailsViewController.h */,
+				32D21E512095D6450007166D /* GalleryDetailsViewController.m */,
+				32D21E522095D6450007166D /* GalleryDetailsViewController.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		32D21E552095D77A0007166D /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				32D21E562095D7DE0007166D /* ExamplesPagesViewController.h */,
+				32D21E572095D7DE0007166D /* ExamplesPagesViewController.m */,
+				32D21E582095D7DE0007166D /* ExamplesPagesViewController.xib */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +213,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D21E302095BEB40007166D /* LaunchScreen.storyboard in Resources */,
+				32D21E542095D6450007166D /* GalleryDetailsViewController.xib in Resources */,
+				32D21E3B2095C9A90007166D /* patterns in Resources */,
+				32D21E422095CA5C0007166D /* GalleryTableViewController.xib in Resources */,
 				32D21E2D2095BEB40007166D /* Assets.xcassets in Resources */,
+				32D21E472095CAF30007166D /* GalleryTableViewCell.xib in Resources */,
+				32D21E5A2095D7DE0007166D /* ExamplesPagesViewController.xib in Resources */,
 				32D21E2B2095BEB30007166D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,8 +230,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32D21E282095BEB30007166D /* ViewController.m in Sources */,
+				32D21E532095D6450007166D /* GalleryDetailsViewController.m in Sources */,
+				32D21E592095D7DE0007166D /* ExamplesPagesViewController.m in Sources */,
+				32D21E462095CAF30007166D /* GalleryTableViewCell.m in Sources */,
 				32D21E332095BEB40007166D /* main.m in Sources */,
+				32D21E412095CA5C0007166D /* GalleryTableViewController.m in Sources */,
+				32D21E4D2095CE1E0007166D /* MainViewController.m in Sources */,
 				32D21E252095BEB30007166D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
