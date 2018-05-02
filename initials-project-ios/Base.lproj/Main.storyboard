@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KMw-xZ-qki">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KMw-xZ-qki">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-710" y="48"/>
         </scene>
-        <!--Main-->
+        <!--Handkr-->
         <scene sceneID="VHu-mK-zDA">
             <objects>
                 <viewController id="uOf-ls-nqm" customClass="MainViewController" sceneMemberID="viewController">
@@ -34,29 +34,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="af5-I1-rlN">
-                                <rect key="frame" x="135" y="220.5" width="105" height="226"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="af5-I1-rlN">
+                                <rect key="frame" x="52.5" y="133.5" width="270" height="400"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlU-eQ-umr">
-                                        <rect key="frame" x="14.5" y="0.0" width="76" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Gallery"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlU-eQ-umr">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="100"/>
+                                        <state key="normal" image="ButtonGallery"/>
                                         <connections>
                                             <action selector="galleryAction:" destination="uOf-ls-nqm" eventType="touchUpInside" id="GMf-fa-4nK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZl-le-Dqx">
-                                        <rect key="frame" x="0.0" y="92" width="105" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Examples"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZl-le-Dqx">
+                                        <rect key="frame" x="0.0" y="150" width="270" height="100"/>
+                                        <state key="normal" image="ButtonExamples"/>
                                         <connections>
                                             <action selector="examplesAction:" destination="uOf-ls-nqm" eventType="touchUpInside" id="BrR-dX-TlJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1s-th-gLt">
-                                        <rect key="frame" x="15.5" y="184" width="74" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="START"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1s-th-gLt">
+                                        <rect key="frame" x="0.0" y="300" width="270" height="100"/>
+                                        <state key="normal" image="ButtonStart"/>
                                         <connections>
                                             <action selector="startAction:" destination="uOf-ls-nqm" eventType="touchUpInside" id="eee-Vn-aGE"/>
                                         </connections>
@@ -71,19 +68,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b47-VW-lhm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Main" id="Cbp-DZ-Otg"/>
+                    <navigationItem key="navigationItem" title="Handkr" id="Cbp-DZ-Otg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axv-gD-Bl9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="118" y="47"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="ebD-BJ-gEg">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="O7J-rX-4DL" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mCc-Gl-WSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="866" y="8"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="ButtonExamples" width="270" height="100"/>
+        <image name="ButtonGallery" width="270" height="100"/>
+        <image name="ButtonStart" width="270" height="100"/>
+    </resources>
 </document>

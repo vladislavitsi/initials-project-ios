@@ -42,5 +42,19 @@
 
 
 - (IBAction)startAction:(UIButton *)sender {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Create Handkerchief" message:@"Please, enter your full name.It must consist of 2 or 3 words." preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Start" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"start");
+    }];
+    
+    [alert addAction:cancelAction];
+    [alert addAction:defaultAction];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        NSLog(@"%@", textField.text);
+    }];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end

@@ -34,6 +34,7 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.delegate = self;
     self.dataSource = self;
+    self.navigationItem.backBarButtonItem.title = @"Home";
     [self setViewControllers:@[self.pages.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 
