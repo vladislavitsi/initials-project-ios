@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32889881209C93F500E1452A /* PatternDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32889880209C93F500E1452A /* PatternDAO.m */; };
+		32889886209C94B300E1452A /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 32889882209C94B200E1452A /* Pattern.m */; };
+		32889887209C94B300E1452A /* LetterPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 32889885209C94B300E1452A /* LetterPattern.m */; };
+		3288988B209C96D700E1452A /* IPFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288988A209C96D700E1452A /* IPFileManager.m */; };
 		32D21E252095BEB30007166D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E242095BEB30007166D /* AppDelegate.m */; };
 		32D21E2B2095BEB30007166D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E292095BEB30007166D /* Main.storyboard */; };
 		32D21E2D2095BEB40007166D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E2C2095BEB40007166D /* Assets.xcassets */; };
 		32D21E302095BEB40007166D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E2E2095BEB40007166D /* LaunchScreen.storyboard */; };
 		32D21E332095BEB40007166D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E322095BEB40007166D /* main.m */; };
-		32D21E3B2095C9A90007166D /* patterns in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E3A2095C9A90007166D /* patterns */; };
+		32D21E3B2095C9A90007166D /* Patterns in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E3A2095C9A90007166D /* Patterns */; };
 		32D21E412095CA5C0007166D /* GalleryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E3F2095CA5C0007166D /* GalleryTableViewController.m */; };
 		32D21E422095CA5C0007166D /* GalleryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E402095CA5C0007166D /* GalleryTableViewController.xib */; };
 		32D21E462095CAF30007166D /* GalleryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E442095CAF30007166D /* GalleryTableViewCell.m */; };
@@ -24,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3288987F209C93F500E1452A /* PatternDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatternDAO.h; sourceTree = "<group>"; };
+		32889880209C93F500E1452A /* PatternDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PatternDAO.m; sourceTree = "<group>"; };
+		32889882209C94B200E1452A /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
+		32889883209C94B200E1452A /* LetterPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterPattern.h; sourceTree = "<group>"; };
+		32889884209C94B200E1452A /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
+		32889885209C94B300E1452A /* LetterPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterPattern.m; sourceTree = "<group>"; };
+		32889889209C96D700E1452A /* IPFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPFileManager.h; sourceTree = "<group>"; };
+		3288988A209C96D700E1452A /* IPFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPFileManager.m; sourceTree = "<group>"; };
 		32D21E202095BEB30007166D /* initials-project-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "initials-project-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D21E232095BEB30007166D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		32D21E242095BEB30007166D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -32,7 +44,7 @@
 		32D21E2F2095BEB40007166D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32D21E312095BEB40007166D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32D21E322095BEB40007166D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32D21E3A2095C9A90007166D /* patterns */ = {isa = PBXFileReference; lastKnownFileType = folder; path = patterns; sourceTree = "<group>"; };
+		32D21E3A2095C9A90007166D /* Patterns */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Patterns; sourceTree = "<group>"; };
 		32D21E3E2095CA5C0007166D /* GalleryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryTableViewController.h; sourceTree = "<group>"; };
 		32D21E3F2095CA5C0007166D /* GalleryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryTableViewController.m; sourceTree = "<group>"; };
 		32D21E402095CA5C0007166D /* GalleryTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryTableViewController.xib; sourceTree = "<group>"; };
@@ -59,6 +71,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3288987A209C915800E1452A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3288987E209C93DE00E1452A /* Pattern */,
+				3288987F209C93F500E1452A /* PatternDAO.h */,
+				32889880209C93F500E1452A /* PatternDAO.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3288987E209C93DE00E1452A /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				32889883209C94B200E1452A /* LetterPattern.h */,
+				32889885209C94B300E1452A /* LetterPattern.m */,
+				32889884209C94B200E1452A /* Pattern.h */,
+				32889882209C94B200E1452A /* Pattern.m */,
+			);
+			path = Pattern;
+			sourceTree = "<group>";
+		};
+		32889888209C96A700E1452A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				32889889209C96D700E1452A /* IPFileManager.h */,
+				3288988A209C96D700E1452A /* IPFileManager.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		32D21E172095BEB30007166D = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +120,10 @@
 		32D21E222095BEB30007166D /* initials-project-ios */ = {
 			isa = PBXGroup;
 			children = (
+				32889888209C96A700E1452A /* Utility */,
+				3288987A209C915800E1452A /* Model */,
 				32D21E3C2095CA020007166D /* View */,
-				32D21E3A2095C9A90007166D /* patterns */,
+				32D21E3A2095C9A90007166D /* Patterns */,
 				32D21E292095BEB30007166D /* Main.storyboard */,
 				32D21E2C2095BEB40007166D /* Assets.xcassets */,
 				32D21E2E2095BEB40007166D /* LaunchScreen.storyboard */,
@@ -219,7 +263,7 @@
 			files = (
 				32D21E302095BEB40007166D /* LaunchScreen.storyboard in Resources */,
 				32D21E542095D6450007166D /* GalleryDetailsViewController.xib in Resources */,
-				32D21E3B2095C9A90007166D /* patterns in Resources */,
+				32D21E3B2095C9A90007166D /* Patterns in Resources */,
 				32D21E422095CA5C0007166D /* GalleryTableViewController.xib in Resources */,
 				32D21E2D2095BEB40007166D /* Assets.xcassets in Resources */,
 				32D21E472095CAF30007166D /* GalleryTableViewCell.xib in Resources */,
@@ -234,9 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32889887209C94B300E1452A /* LetterPattern.m in Sources */,
 				32D21E532095D6450007166D /* GalleryDetailsViewController.m in Sources */,
+				32889881209C93F500E1452A /* PatternDAO.m in Sources */,
 				32D21E592095D7DE0007166D /* ExamplesPagesViewController.m in Sources */,
+				32889886209C94B300E1452A /* Pattern.m in Sources */,
 				32D21E462095CAF30007166D /* GalleryTableViewCell.m in Sources */,
+				3288988B209C96D700E1452A /* IPFileManager.m in Sources */,
 				32D21E332095BEB40007166D /* main.m in Sources */,
 				32D21E412095CA5C0007166D /* GalleryTableViewController.m in Sources */,
 				32D21E4D2095CE1E0007166D /* MainViewController.m in Sources */,

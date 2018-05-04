@@ -10,6 +10,8 @@
 #import "GalleryTableViewController.h"
 #import "ExamplesPagesViewController.h"
 
+#import "PatternDAO.h"
+
 @interface MainViewController ()
 - (IBAction)galleryAction:(UIButton *)sender;
 - (IBAction)examplesAction:(UIButton *)sender;
@@ -46,7 +48,7 @@
     
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Start" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"start");
+        NSLog(@"%@", PatternDAO.shared.patterns);
     }];
     
     [alert addAction:cancelAction];
