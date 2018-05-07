@@ -25,12 +25,14 @@
 		32D21E532095D6450007166D /* GalleryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E512095D6450007166D /* GalleryDetailsViewController.m */; };
 		32D21E542095D6450007166D /* GalleryDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E522095D6450007166D /* GalleryDetailsViewController.xib */; };
 		32D21E592095D7DE0007166D /* ExamplesPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E572095D7DE0007166D /* ExamplesPagesViewController.m */; };
-		32D5BF4C20A08B4F00ECDB69 /* CreateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF4A20A08B4F00ECDB69 /* CreateTableViewController.m */; };
+		32D5BF4C20A08B4F00ECDB69 /* CreationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF4A20A08B4F00ECDB69 /* CreationTableViewController.m */; };
 		32D5BF4D20A08B4F00ECDB69 /* CreateTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D5BF4B20A08B4F00ECDB69 /* CreateTableViewController.xib */; };
 		32D5BF5120A08BD400ECDB69 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF4F20A08BD400ECDB69 /* TableViewCell.m */; };
 		32D5BF5220A08BD400ECDB69 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D5BF5020A08BD400ECDB69 /* TableViewCell.xib */; };
 		32D5BF5620A08EC700ECDB69 /* IPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF5520A08EC700ECDB69 /* IPColor.m */; };
 		32D5BF5B20A092A600ECDB69 /* CreationOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF5A20A092A600ECDB69 /* CreationOptions.m */; };
+		32D5BF5E20A0950D00ECDB69 /* IPColorDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF5D20A0950D00ECDB69 /* IPColorDAO.m */; };
+		32D5BF6120A098E100ECDB69 /* IPCreationConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF6020A098E100ECDB69 /* IPCreationConfiguration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,8 +66,8 @@
 		32D21E522095D6450007166D /* GalleryDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryDetailsViewController.xib; sourceTree = "<group>"; };
 		32D21E562095D7DE0007166D /* ExamplesPagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExamplesPagesViewController.h; sourceTree = "<group>"; };
 		32D21E572095D7DE0007166D /* ExamplesPagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExamplesPagesViewController.m; sourceTree = "<group>"; };
-		32D5BF4920A08B4F00ECDB69 /* CreateTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateTableViewController.h; sourceTree = "<group>"; };
-		32D5BF4A20A08B4F00ECDB69 /* CreateTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateTableViewController.m; sourceTree = "<group>"; };
+		32D5BF4920A08B4F00ECDB69 /* CreationTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreationTableViewController.h; sourceTree = "<group>"; };
+		32D5BF4A20A08B4F00ECDB69 /* CreationTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreationTableViewController.m; sourceTree = "<group>"; };
 		32D5BF4B20A08B4F00ECDB69 /* CreateTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTableViewController.xib; sourceTree = "<group>"; };
 		32D5BF4E20A08BD400ECDB69 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		32D5BF4F20A08BD400ECDB69 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
@@ -74,6 +76,10 @@
 		32D5BF5520A08EC700ECDB69 /* IPColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPColor.m; sourceTree = "<group>"; };
 		32D5BF5920A092A600ECDB69 /* CreationOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreationOptions.h; sourceTree = "<group>"; };
 		32D5BF5A20A092A600ECDB69 /* CreationOptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreationOptions.m; sourceTree = "<group>"; };
+		32D5BF5C20A0950D00ECDB69 /* IPColorDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPColorDAO.h; sourceTree = "<group>"; };
+		32D5BF5D20A0950D00ECDB69 /* IPColorDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPColorDAO.m; sourceTree = "<group>"; };
+		32D5BF5F20A098E100ECDB69 /* IPCreationConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPCreationConfiguration.h; sourceTree = "<group>"; };
+		32D5BF6020A098E100ECDB69 /* IPCreationConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPCreationConfiguration.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +99,10 @@
 				32D5BF5820A0923100ECDB69 /* FontFamily */,
 				32D5BF5320A08EA800ECDB69 /* Color */,
 				3288987E209C93DE00E1452A /* Pattern */,
-				3288987F209C93F500E1452A /* PatternDAO.h */,
-				32889880209C93F500E1452A /* PatternDAO.m */,
 				32D5BF5920A092A600ECDB69 /* CreationOptions.h */,
 				32D5BF5A20A092A600ECDB69 /* CreationOptions.m */,
+				32D5BF5F20A098E100ECDB69 /* IPCreationConfiguration.h */,
+				32D5BF6020A098E100ECDB69 /* IPCreationConfiguration.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,6 +110,8 @@
 		3288987E209C93DE00E1452A /* Pattern */ = {
 			isa = PBXGroup;
 			children = (
+				3288987F209C93F500E1452A /* PatternDAO.h */,
+				32889880209C93F500E1452A /* PatternDAO.m */,
 				32889883209C94B200E1452A /* LetterPattern.h */,
 				32889885209C94B300E1452A /* LetterPattern.m */,
 				32889884209C94B200E1452A /* Pattern.h */,
@@ -219,8 +227,8 @@
 		32D5BF4720A08B0700ECDB69 /* CreateTableView */ = {
 			isa = PBXGroup;
 			children = (
-				32D5BF4920A08B4F00ECDB69 /* CreateTableViewController.h */,
-				32D5BF4A20A08B4F00ECDB69 /* CreateTableViewController.m */,
+				32D5BF4920A08B4F00ECDB69 /* CreationTableViewController.h */,
+				32D5BF4A20A08B4F00ECDB69 /* CreationTableViewController.m */,
 				32D5BF4B20A08B4F00ECDB69 /* CreateTableViewController.xib */,
 				32D5BF4E20A08BD400ECDB69 /* TableViewCell.h */,
 				32D5BF4F20A08BD400ECDB69 /* TableViewCell.m */,
@@ -234,6 +242,8 @@
 			children = (
 				32D5BF5420A08EC700ECDB69 /* IPColor.h */,
 				32D5BF5520A08EC700ECDB69 /* IPColor.m */,
+				32D5BF5C20A0950D00ECDB69 /* IPColorDAO.h */,
+				32D5BF5D20A0950D00ECDB69 /* IPColorDAO.m */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -333,11 +343,13 @@
 				32889887209C94B300E1452A /* LetterPattern.m in Sources */,
 				32D5BF5620A08EC700ECDB69 /* IPColor.m in Sources */,
 				32D21E532095D6450007166D /* GalleryDetailsViewController.m in Sources */,
+				32D5BF5E20A0950D00ECDB69 /* IPColorDAO.m in Sources */,
+				32D5BF6120A098E100ECDB69 /* IPCreationConfiguration.m in Sources */,
 				32D5BF5B20A092A600ECDB69 /* CreationOptions.m in Sources */,
 				32889881209C93F500E1452A /* PatternDAO.m in Sources */,
 				32D21E592095D7DE0007166D /* ExamplesPagesViewController.m in Sources */,
 				32889886209C94B300E1452A /* Pattern.m in Sources */,
-				32D5BF4C20A08B4F00ECDB69 /* CreateTableViewController.m in Sources */,
+				32D5BF4C20A08B4F00ECDB69 /* CreationTableViewController.m in Sources */,
 				32D5BF5120A08BD400ECDB69 /* TableViewCell.m in Sources */,
 				32D21E462095CAF30007166D /* GalleryTableViewCell.m in Sources */,
 				3288988B209C96D700E1452A /* IPFileManager.m in Sources */,

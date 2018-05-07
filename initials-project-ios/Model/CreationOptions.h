@@ -10,12 +10,19 @@
 #import "Pattern.h"
 #import "IPColor.h"
 
+#define CreationOptionsFirst CreationOptionsPattern
+
+typedef NS_ENUM(NSInteger, CreationsOptionsType) {
+    CreationOptionsPattern,
+    CreationOptionsBacgroundColor,
+    CreationOptionsFontColor,
+    CreationOptionsMax
+};
+
 @interface CreationOptions : NSObject
 
-@property (nonatomic, readonly) NSArray<Pattern *> *patterns;
-@property (nonatomic, readonly) NSArray<IPColor *> *backgroundColors;
-@property (nonatomic, readonly) NSArray<Pattern *> *fontColors;
-
 + (instancetype)shared;
+
+- (NSArray *)getOptionsOfType:(CreationsOptionsType)creationOptionsType;
 
 @end

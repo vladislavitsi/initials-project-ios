@@ -1,18 +1,18 @@
 //
-//  CreateTableViewController.m
+//  CreationTableViewController.m
 //  initials-project-ios
 //
 //  Created by Uladzislau Kleshchanka on 5/7/18.
 //  Copyright © 2018 Uladzislau Kleshchanka. All rights reserved.
 //
 
-#import "CreateTableViewController.h"
+#import "CreationTableViewController.h"
 
-@interface CreateTableViewController ()
+@interface CreationTableViewController ()
 
 @end
 
-@implementation CreateTableViewController
+@implementation CreationTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,8 +34,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [CreationOptions.shared getOptionsOfType:self.currentOption].count;
 }
 
 /*
@@ -49,21 +48,26 @@
 */
 
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    CreationsOptionsType nextOption = self.currentOption++;
+    if (nextOption == CreationOptionsMax) {
+        NSLog(@"Finish");
+    }else {
+        [self.creationConfiguration applyConfigurationChangeForOption:self.currentOption withObject:[CreationOptions.shared getOptionsOfType:self.currentOption][indexPath.row]];
+        CreationTableViewController *nextTableview = [[CreationTableViewController alloc] init];
+        CreationTableViewController *tableView = [[CreationTableViewController alloc] init];
+        tableView.creationConfiguration = self.creationConfiguration;
+        tableView.currentOption = nextOption;
+        [self.navigationController pushViewController:nextTableview animated:YES];
+
+    }
+
 }
-*/
+
 
 
 @end

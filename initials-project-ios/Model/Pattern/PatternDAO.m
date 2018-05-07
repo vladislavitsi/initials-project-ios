@@ -12,8 +12,6 @@
 
 @implementation PatternDAO
 
-//static PatternDAO *shared;
-
 - (instancetype)init {
     if (self = [super init]){
         NSMutableArray<Pattern *> *patterns = [NSMutableArray array];
@@ -29,13 +27,5 @@
     }
     return self;
 }
-//
-//+ (instancetype)shared {
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        shared = [[PatternDAO alloc] init];
-//    });
-//    return shared;
-//}
 
 @end

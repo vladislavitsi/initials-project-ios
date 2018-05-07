@@ -9,8 +9,9 @@
 #import "MainViewController.h"
 #import "GalleryTableViewController.h"
 #import "ExamplesPagesViewController.h"
-
+#import "IPCreationConfiguration.h"
 #import "PatternDAO.h"
+#import "CreationTableViewController.h"
 
 @interface MainViewController ()
 - (IBAction)galleryAction:(UIButton *)sender;
@@ -63,7 +64,11 @@
                 for (NSTextCheckingResult *match in matches) {
                     [initials appendString:[[inputText substringWithRange:[match range]] substringToIndex:1]];
                 }
-                NSLog(@"%@", initials);
+                IPCreationConfiguration *creationConfiguration = [IPCreationConfiguration defaultConfigurationWithInitials:initials];
+                CreationTableViewController *tableView = [[CreationTableViewController alloc] init];
+                tableView.creationConfiguration = creationConfiguration;
+                tableView.currentOption = CreationOptionsFirst;
+                [self.navigationController pushViewController:tableView animated:YES];
             }
         }
         
