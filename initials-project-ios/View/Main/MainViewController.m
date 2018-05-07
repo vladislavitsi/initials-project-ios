@@ -46,16 +46,33 @@
 - (IBAction)startAction:(UIButton *)sender {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Create Handkerchief" message:@"Please, enter your full name.It must consist of 2 or 3 words." preferredStyle:UIAlertControllerStyleAlert];
     
+    [alert addTextFieldWithConfigurationHandler:nil];
+    
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Start" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"%@", PatternDAO.shared.patterns);
+//        NSLog(@"%@", PatternDAO.shared.patterns);
+
+        NSString *inputText = alert.textFields[0].text;
+        NSError *error;
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\w+" options:0 error:&error];
+        
+        if (!error) {
+            NSArray *matches = [regex matchesInString:inputText options:0 range:NSMakeRange(0, inputText.length)];
+            if (matches.count >= 2 && matches.count <= 3) {
+                NSMutableString *initials = [NSMutableString string];
+                for (NSTextCheckingResult *match in matches) {
+                    [initials appendString:[[inputText substringWithRange:[match range]] substringToIndex:1]];
+                }
+                NSLog(@"%@", initials);
+            }
+        }
+        
+
     }];
     
     [alert addAction:cancelAction];
     [alert addAction:defaultAction];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        NSLog(@"%@", textField.text);
-    }];
+
     
     [self presentViewController:alert animated:YES completion:nil];
 }

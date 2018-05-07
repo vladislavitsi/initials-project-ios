@@ -22,7 +22,6 @@
 }
 
 + (instancetype)fromJSONDictionary:(NSDictionary *)jsonDictionary {
-    
     NSMutableArray *letters = [NSMutableArray array];
     for (NSDictionary *letterDictionary in jsonDictionary[@"letters"]) {
         [letters addObject:[LetterPattern fromDictionary:letterDictionary]];

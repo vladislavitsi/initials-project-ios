@@ -14,6 +14,6 @@
 
 @property (nonatomic, readonly) NSArray<Pattern *> *patterns;
 
-+ (instancetype)shared;
+//+ (instancetype)shared;
 
 @end
