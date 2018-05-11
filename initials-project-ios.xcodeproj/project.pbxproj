@@ -129,6 +129,13 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		3293C38720A5E0540090EECA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		32D21E172095BEB30007166D = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +155,7 @@
 		32D21E222095BEB30007166D /* initials-project-ios */ = {
 			isa = PBXGroup;
 			children = (
+				3293C38720A5E0540090EECA /* Controller */,
 				32889888209C96A700E1452A /* Utility */,
 				3288987A209C915800E1452A /* Model */,
 				32D21E3C2095CA020007166D /* View */,

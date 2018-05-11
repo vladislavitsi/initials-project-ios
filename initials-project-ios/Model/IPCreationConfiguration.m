@@ -29,7 +29,6 @@
     defaultConfiguaration.pattern = [[CreationOptions.shared getOptionsOfType:CreationOptionsPattern] firstObject];
     defaultConfiguaration.fontColor = [[CreationOptions.shared getOptionsOfType:CreationOptionsFontColor] firstObject];
     defaultConfiguaration.backgroundColor = [[CreationOptions.shared getOptionsOfType:CreationOptionsBacgroundColor] firstObject];
-    defaultConfiguaration.initials = @[];
     return defaultConfiguaration;
 }
 
