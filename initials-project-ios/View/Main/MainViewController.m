@@ -60,9 +60,9 @@
         if (!error) {
             NSArray *matches = [regex matchesInString:inputText options:0 range:NSMakeRange(0, inputText.length)];
             if (matches.count >= 2 && matches.count <= 3) {
-                NSMutableString *initials = [NSMutableString string];
+                NSMutableArray *initials = [NSMutableArray array];
                 for (NSTextCheckingResult *match in matches) {
-                    [initials appendString:[[inputText substringWithRange:[match range]] substringToIndex:1]];
+                    [initials addObject:[[inputText substringWithRange:[match range]] substringToIndex:1]];
                 }
                 IPCreationConfiguration *creationConfiguration = [IPCreationConfiguration defaultConfigurationWithInitials:initials];
                 CreationTableViewController *tableView = [[CreationTableViewController alloc] init];

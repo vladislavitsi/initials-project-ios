@@ -7,6 +7,7 @@
 //
 
 #import "CreationTableViewController.h"
+#import "TableViewCell.h"
 
 @interface CreationTableViewController ()
 
@@ -19,7 +20,7 @@
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-
+    [self.tableView registerNib:[UINib nibWithNibName:@"PreviewCell" bundle:nil] forCellReuseIdentifier:@"PreviewCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,15 +38,16 @@
     return [CreationOptions.shared getOptionsOfType:self.currentOption].count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PreviewCell" forIndexPath:indexPath];
+    IPCreationConfiguration *cellConfig = [self.creationConfiguration copyWithZone:nil];
+    [cellConfig applyConfigurationChangeForOption:self.currentOption withObject:[CreationOptions.shared getOptionsOfType:self.currentOption][indexPath.row]];
     // Configure the cell...
-    
+    [cell initializeCellWithDescr:cellConfig.pattern.name pattern:cellConfig.pattern letters:cellConfig.initials];
     return cell;
 }
-*/
+
 
 
 

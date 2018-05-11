@@ -28,7 +28,7 @@
 		32D5BF4C20A08B4F00ECDB69 /* CreationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF4A20A08B4F00ECDB69 /* CreationTableViewController.m */; };
 		32D5BF4D20A08B4F00ECDB69 /* CreateTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D5BF4B20A08B4F00ECDB69 /* CreateTableViewController.xib */; };
 		32D5BF5120A08BD400ECDB69 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF4F20A08BD400ECDB69 /* TableViewCell.m */; };
-		32D5BF5220A08BD400ECDB69 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D5BF5020A08BD400ECDB69 /* TableViewCell.xib */; };
+		32D5BF5220A08BD400ECDB69 /* PreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D5BF5020A08BD400ECDB69 /* PreviewCell.xib */; };
 		32D5BF5620A08EC700ECDB69 /* IPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF5520A08EC700ECDB69 /* IPColor.m */; };
 		32D5BF5B20A092A600ECDB69 /* CreationOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF5A20A092A600ECDB69 /* CreationOptions.m */; };
 		32D5BF5E20A0950D00ECDB69 /* IPColorDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF5D20A0950D00ECDB69 /* IPColorDAO.m */; };
@@ -71,7 +71,7 @@
 		32D5BF4B20A08B4F00ECDB69 /* CreateTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTableViewController.xib; sourceTree = "<group>"; };
 		32D5BF4E20A08BD400ECDB69 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		32D5BF4F20A08BD400ECDB69 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		32D5BF5020A08BD400ECDB69 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		32D5BF5020A08BD400ECDB69 /* PreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewCell.xib; sourceTree = "<group>"; };
 		32D5BF5420A08EC700ECDB69 /* IPColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPColor.h; sourceTree = "<group>"; };
 		32D5BF5520A08EC700ECDB69 /* IPColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPColor.m; sourceTree = "<group>"; };
 		32D5BF5920A092A600ECDB69 /* CreationOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreationOptions.h; sourceTree = "<group>"; };
@@ -100,7 +100,6 @@
 				32D5BF5320A08EA800ECDB69 /* Color */,
 				3288987E209C93DE00E1452A /* Pattern */,
 				32D5BF5920A092A600ECDB69 /* CreationOptions.h */,
-				32D5BF5A20A092A600ECDB69 /* CreationOptions.m */,
 				32D5BF5F20A098E100ECDB69 /* IPCreationConfiguration.h */,
 				32D5BF6020A098E100ECDB69 /* IPCreationConfiguration.m */,
 			);
@@ -111,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				3288987F209C93F500E1452A /* PatternDAO.h */,
+				32D5BF5A20A092A600ECDB69 /* CreationOptions.m */,
 				32889880209C93F500E1452A /* PatternDAO.m */,
 				32889883209C94B200E1452A /* LetterPattern.h */,
 				32889885209C94B300E1452A /* LetterPattern.m */,
@@ -232,7 +232,7 @@
 				32D5BF4B20A08B4F00ECDB69 /* CreateTableViewController.xib */,
 				32D5BF4E20A08BD400ECDB69 /* TableViewCell.h */,
 				32D5BF4F20A08BD400ECDB69 /* TableViewCell.m */,
-				32D5BF5020A08BD400ECDB69 /* TableViewCell.xib */,
+				32D5BF5020A08BD400ECDB69 /* PreviewCell.xib */,
 			);
 			path = CreateTableView;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 				32D5BF4D20A08B4F00ECDB69 /* CreateTableViewController.xib in Resources */,
 				32D21E542095D6450007166D /* GalleryDetailsViewController.xib in Resources */,
 				32D21E3B2095C9A90007166D /* Patterns in Resources */,
-				32D5BF5220A08BD400ECDB69 /* TableViewCell.xib in Resources */,
+				32D5BF5220A08BD400ECDB69 /* PreviewCell.xib in Resources */,
 				32D21E422095CA5C0007166D /* GalleryTableViewController.xib in Resources */,
 				32D21E2D2095BEB40007166D /* Assets.xcassets in Resources */,
 				32D21E472095CAF30007166D /* GalleryTableViewCell.xib in Resources */,

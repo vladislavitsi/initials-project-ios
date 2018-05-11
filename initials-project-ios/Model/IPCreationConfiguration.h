@@ -11,14 +11,14 @@
 #import "IPColor.h"
 #import "CreationOptions.h"
 
-@interface IPCreationConfiguration : NSObject
+@interface IPCreationConfiguration : NSObject <NSCopying>
 
-@property (nonatomic, readonly) NSString *initials;
+@property (nonatomic, readonly) NSArray<NSString *> *initials;
 @property (nonatomic, strong) Pattern *pattern;
 @property (nonatomic, strong) IPColor *fontColor;
 @property (nonatomic, strong) IPColor *backgroundColor;
 
-+ (instancetype)defaultConfigurationWithInitials:(NSString *)initials;
++ (instancetype)defaultConfigurationWithInitials:(NSArray<NSString *> *)initials;
 
 - (void)applyConfigurationChangeForOption:(CreationsOptionsType)optionType withObject:(id)object;
 @end

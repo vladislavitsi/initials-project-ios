@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pattern.h"
 
 @interface TableViewCell : UITableViewCell
+
+- (void)initializeCellWithDescr:(NSString *)descr pattern:(Pattern *)pattern letters:(NSArray<NSString *> *)letters;
 
 @end
