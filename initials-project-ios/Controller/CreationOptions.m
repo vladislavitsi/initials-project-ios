@@ -20,8 +20,6 @@
 
 @implementation CreationOptions
 
-static CreationOptions *shared;
-
 - (instancetype)init {
     if (self = [super init]) {
         self.backgroundColorDAO = [[IPColorDAO alloc] initWithPath:@"BackgroundColors"];
@@ -31,24 +29,14 @@ static CreationOptions *shared;
     return self;
 }
 
-+ (instancetype)shared {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        shared = [[CreationOptions alloc] init];
-    });
-    return shared;
-}
-
 - (NSArray *)getOptionsOfType:(CreationsOptionsType)creationOptionsType {
     switch (creationOptionsType) {
         case CreationOptionsPattern:
             return self.patternDAO.patterns;
         case CreationOptionsFontColor:
             return self.fontColorDAO.colors;
-        case CreationOptionsBacgroundColor:
+        case CreationOptionsBackgroundColor:
             return self.backgroundColorDAO.colors;
-        case CreationOptionsMax:
-            return nil;
     }
 }
 

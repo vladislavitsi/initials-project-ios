@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "MainController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) MainController *mainController;
 
 @end
 
@@ -17,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.mainController = [[MainController alloc] init];
     return YES;
 }
 

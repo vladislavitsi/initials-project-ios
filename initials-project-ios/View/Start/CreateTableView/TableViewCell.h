@@ -11,6 +11,10 @@
 
 @interface TableViewCell : UITableViewCell
 
-- (void)initializeCellWithDescr:(NSString *)descr pattern:(Pattern *)pattern letters:(NSArray<NSString *> *)letters;
+@property (weak, nonatomic) IBOutlet UIView *preview;
+@property (weak, nonatomic) IBOutlet UILabel *descr;
+
+//sdlfjlskdfjlsdflsdfjlsdkfjdssdssdflskdfjlsdflsdfjlsdkfjdssdssdflskdfjlsdflsdfjlsdkfjdssdssdflskdfjlsdflsdfjlsdkfjdssdssdflskdfjlsdflsdfjlsdkfjdssdssdf
+@property (nonatomic, copy) NSMutableArray *constraints;
 
 @end
