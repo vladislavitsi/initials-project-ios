@@ -12,7 +12,7 @@
 
 - (instancetype)initWithName:(NSString *)name color:(UIColor *)color {
     if (self = [self init]) {
-        _name = [name copy];
+        self.name = [name copy];
         _color = color;
     }
     return self;

@@ -22,7 +22,7 @@
                 [colors addObject:color];
             }
         }
-        _colors = [NSArray arrayWithArray:colors];
+        self.options = [NSArray arrayWithArray:colors];
     }
     return self;
 }

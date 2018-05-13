@@ -11,18 +11,22 @@
 
 @interface IPCreationConfiguration ()
 
-@property (nonatomic, readwrite, copy) NSArray<NSString *> *initials;
-
 @end
 
 @implementation IPCreationConfiguration
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _options = [NSMutableArray array];
+    }
+    return self;
+}
+
 - (id)copyWithZone:(NSZone *)zone {
     IPCreationConfiguration *copy = [[IPCreationConfiguration alloc] init];
-    copy.initials = self.initials;
-    copy.fontColor = self.fontColor;
-    copy.backgroundColor = self.backgroundColor;
-    copy.pattern = self.pattern;
+    for (int i = 0; i < self.options.count; i++) {
+        copy.options[i] = self.options[i];
+    }
     return copy;
 }
 

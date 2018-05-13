@@ -13,7 +13,7 @@
 
 - (instancetype)initWithName:(NSString *)name size:(NSInteger)size lettersCount:(NSInteger)lettersCount letterPatterns:(NSArray<LetterPattern *> *)letterPatterns {
     if (self = [super init]) {
-        _name = [name copy];
+        self.name = [name copy];
         _size = size;
         _lettersCount = lettersCount;
         _letterPatterns = [letterPatterns copy];

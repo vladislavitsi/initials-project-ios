@@ -14,7 +14,7 @@
 
 @property (nonatomic, copy) NSArray<NSString *> *initials;
 
-- (instancetype)initWithWords:(NSArray<NSString *> *)words;
+- (instancetype)initWithName:(NSString *)name;
 
 - (NSInteger)countOfOptions;
 

@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "IPColor.h"
+#import "AbstractOptionDAO.h"
 
-@interface IPColorDAO : NSObject
-
-@property (nonatomic, readonly) NSArray<IPColor *> *colors;
+@interface IPColorDAO : AbstractOptionDAO
 
 - (instancetype)initWithPath:(NSString *)path;
 

@@ -10,4 +10,6 @@
 
 @interface NavigationController : UINavigationController
 
+@property (nonatomic, copy) NSString *name;
+
 @end

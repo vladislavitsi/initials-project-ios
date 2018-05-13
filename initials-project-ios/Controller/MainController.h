@@ -11,6 +11,4 @@
 
 @interface MainController : NSObject
 
-@property (nonatomic, weak) NavigationController *navigationController;
-
 @end

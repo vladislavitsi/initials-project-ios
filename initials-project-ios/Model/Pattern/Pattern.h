@@ -9,11 +9,11 @@
 
 
 #import <Foundation/Foundation.h>
+#import "AbstractOption.h"
 #import "LetterPattern.h"
 
-@interface Pattern : NSObject
+@interface Pattern : AbstractOption
 
-@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSInteger size;
 @property (nonatomic, readonly) NSInteger lettersCount;
 @property (nonatomic, readonly) NSArray<LetterPattern *> *letterPatterns;

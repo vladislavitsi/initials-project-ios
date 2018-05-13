@@ -13,9 +13,10 @@
 
 @interface IPCreationConfiguration : NSObject
 
-@property (nonatomic, strong) Pattern *pattern;
-@property (nonatomic, strong) IPColor *fontColor;
-@property (nonatomic, strong) IPColor *backgroundColor;
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, copy) NSMutableArray<AbstractOption *> *options;
+
 
 - (instancetype)copy;
 @end

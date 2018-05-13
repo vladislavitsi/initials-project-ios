@@ -23,7 +23,7 @@
                 [patterns addObject:pattern];
             }
         }
-        _patterns = [NSArray arrayWithArray:patterns];
+        self.options = [NSArray arrayWithArray:patterns];
     }
     return self;
 }

@@ -1,5 +1,5 @@
 //
-//  CellConfigurator.h
+//  InitialsViewConfigurator.h
 //  initials-project-ios
 //
 //  Created by Vladislav Kleschenko on 5/12/18.
@@ -10,8 +10,8 @@
 #import "TableViewCell.h"
 #import "IPCreationConfiguration.h"
 
-@interface CellConfigurator : NSObject
+@interface InitialsViewConfigurator : NSObject
 
-+ (void)configurateCell:(TableViewCell *)cell withConfiguration:(IPCreationConfiguration *)configuration initials:(NSArray<NSString *> *)initials;
++ (void)configurateView:(UIView *)view withConfiguration:(IPCreationConfiguration *)configuration initials:(NSArray<NSString *> *)initials;
 
 @end

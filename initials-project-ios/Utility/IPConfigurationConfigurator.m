@@ -13,25 +13,18 @@
 
 + (IPCreationConfiguration *)defaultConfigurationForCreationOptionsManager:(CreationOptions *)creationOptionsManager {
     IPCreationConfiguration *defaultConfiguaration = [[IPCreationConfiguration alloc] init];
-    defaultConfiguaration.pattern = [[creationOptionsManager getOptionsOfType:CreationOptionsPattern] firstObject];
-    defaultConfiguaration.fontColor = [[creationOptionsManager getOptionsOfType:CreationOptionsFontColor] firstObject];
-    defaultConfiguaration.backgroundColor = [[creationOptionsManager getOptionsOfType:CreationOptionsBackgroundColor] firstObject];
+    defaultConfiguaration.options = [@[
+                                      [[creationOptionsManager getOptionsOfType:CreationOptionsPattern] firstObject],
+                                      [[IPColor alloc] initWithName:@"White" color:[UIColor whiteColor]],
+                                      [[IPColor alloc] initWithName:@"Black" color:[UIColor blackColor]]
+                                      ] mutableCopy];
     return defaultConfiguaration;
 }
 
-+ (IPCreationConfiguration *)applyChangesFor:(IPCreationConfiguration *)configuration OfType:(CreationsOptionsType)type withObject:(id)object {
++ (IPCreationConfiguration *)newConfigurationWith:(IPCreationConfiguration *)configuration changedWithType:(CreationsOptionsType)type option:(AbstractOption *)object {
     IPCreationConfiguration *newConfiguration = [configuration copy];
-    switch (type) {
-        case CreationOptionsPattern:
-            newConfiguration.pattern = object;
-            break;
-        case CreationOptionsBackgroundColor:
-            newConfiguration.backgroundColor = object;
-            break;
-        case CreationOptionsFontColor:
-            newConfiguration.fontColor = object;
-            break;
-    }
+    newConfiguration.options[type] = object;
+    newConfiguration.name = object.name;
     return newConfiguration;
 }
 
