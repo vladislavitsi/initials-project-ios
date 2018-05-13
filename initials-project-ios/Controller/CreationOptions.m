@@ -12,9 +12,7 @@
 
 @interface CreationOptions ()
 
-@property (nonatomic, strong) IPColorDAO *backgroundColorDAO;
-@property (nonatomic, strong) IPColorDAO *fontColorDAO;
-@property (nonatomic, strong) PatternDAO *patternDAO;
+@property (nonatomic, copy) NSArray<AbstractOptionDAO *> *optionDAOs;
 
 @end
 
@@ -22,22 +20,17 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.backgroundColorDAO = [[IPColorDAO alloc] initWithPath:@"BackgroundColors"];
-        self.fontColorDAO = [[IPColorDAO alloc] initWithPath:@"FontColors"];
-        self.patternDAO = [[PatternDAO alloc] init];
+        self.optionDAOs = @[
+                            [[PatternDAO alloc] init],
+                            [[IPColorDAO alloc] initWithPath:@"BackgroundColors"],
+                            [[IPColorDAO alloc] initWithPath:@"FontColors"]
+                            ];
     }
     return self;
 }
 
 - (NSArray *)getOptionsOfType:(CreationsOptionsType)creationOptionsType {
-    switch (creationOptionsType) {
-        case CreationOptionsPattern:
-            return self.patternDAO.patterns;
-        case CreationOptionsFontColor:
-            return self.fontColorDAO.colors;
-        case CreationOptionsBackgroundColor:
-            return self.backgroundColorDAO.colors;
-    }
+    return self.optionDAOs[creationOptionsType].options;
 }
 
 @end

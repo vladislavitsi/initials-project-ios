@@ -17,6 +17,15 @@
     return self;
 }
 
+- (NSArray<NSString *> *)initials {
+    NSMutableArray *initials = [NSMutableArray array];
+    if (self.words != nil) {
+        for (NSString *word in self.words) {
+            [initials addObject:[[word substringToIndex:1] capitalizedString]];
+        }
+    }
+    return initials;
+}
 
 - (void)processInput:(NSString *)text {
     NSCharacterSet *separators = [NSCharacterSet characterSetWithCharactersInString:self.pattern];

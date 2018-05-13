@@ -13,36 +13,46 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="KGk-i7-Jjw" userLabel="PreviewCell" customClass="TableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="444" id="KGk-i7-Jjw" userLabel="PreviewCell" customClass="TableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="564" height="444"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="299.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="564" height="443.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oYg-o8-iUx">
-                        <rect key="frame" x="20" y="10" width="280" height="279.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oYg-o8-iUx">
+                        <rect key="frame" x="20" y="10" width="524" height="330.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Znl-Ff-fS8" userLabel="Preview">
-                                <rect key="frame" x="21" y="0.0" width="238" height="238"/>
+                                <rect key="frame" x="112.5" y="0.0" width="299" height="299"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Znl-Ff-fS8" secondAttribute="height" multiplier="1:1" id="SFu-UI-BRk"/>
+                                    <constraint firstAttribute="height" constant="250" id="HvO-ak-45F"/>
+                                    <constraint firstAttribute="width" secondItem="Znl-Ff-fS8" secondAttribute="height" multiplier="1:1" id="VaI-BU-3tN"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HvO-ak-45F"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBF-8F-gLe" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="248" width="280" height="2"/>
+                                <rect key="frame" x="0.0" y="304" width="524" height="1"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="CkI-RM-5UD"/>
+                                    <constraint firstAttribute="height" constant="1" id="CkI-RM-5UD"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHARCOAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2G-5z-OK6" userLabel="Description">
-                                <rect key="frame" x="95" y="260" width="90.5" height="19.5"/>
+                                <rect key="frame" x="217" y="310" width="90.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="MBF-8F-gLe" firstAttribute="width" secondItem="oYg-o8-iUx" secondAttribute="width" id="1fP-gY-kbI"/>
+                            <constraint firstItem="Znl-Ff-fS8" firstAttribute="width" secondItem="oYg-o8-iUx" secondAttribute="width" id="flT-nB-AO8"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -57,7 +67,7 @@
                 <outlet property="descr" destination="A2G-5z-OK6" id="JUZ-uq-yhQ"/>
                 <outlet property="preview" destination="Znl-Ff-fS8" id="Uda-jn-b8j"/>
             </connections>
-            <point key="canvasLocation" x="-7" y="110"/>
+            <point key="canvasLocation" x="115" y="182"/>
         </tableViewCell>
     </objects>
 </document>

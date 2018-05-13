@@ -14,19 +14,10 @@
 
 @implementation CreationTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+
     // check if the back button was pressed
     if (self.isMovingFromParentViewController) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"creation.back" object:nil];

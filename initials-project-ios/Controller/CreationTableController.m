@@ -10,7 +10,7 @@
 #import "TableViewCell.h"
 #import "IPCreationConfiguration.h"
 #import "CreationController.h"
-#import "CellConfigurator.h"
+#import "InitialsViewConfigurator.h"
 
 @implementation CreationTableController
 
@@ -27,9 +27,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PreviewCell" forIndexPath:indexPath];
     IPCreationConfiguration *cellConfig = [self.creationController configurationForIndex:indexPath.row];
-    [CellConfigurator configurateCell:cell withConfiguration:cellConfig initials:self.creationController.initials];
+    cell.descr.text = cellConfig.name;
+    [InitialsViewConfigurator configurateView:cell.preview withConfiguration:cellConfig initials:self.creationController.initials];
     return cell;
 }
+
+
+#pragma mark - Table View delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -39,10 +43,6 @@
                                                                     @"selectedIndex":@(indexPath.row),
                                                                     @"previewView":((TableViewCell *)[tableView cellForRowAtIndexPath:indexPath]).preview
                                                                 }];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 300;
 }
 
 @end

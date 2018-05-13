@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AbstractOptionDAO.h"
 
 @class Pattern;
 
-@interface PatternDAO : NSObject
-
-@property (nonatomic, readonly) NSArray<Pattern *> *patterns;
+@interface PatternDAO : AbstractOptionDAO
 
 @end

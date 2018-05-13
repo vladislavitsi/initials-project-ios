@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "IPCreationConfiguration.h"
 #import "CreationOptions.h"
+#import "AbstractOption.h"
 
 @interface IPConfigurationConfigurator : NSObject
 
 + (IPCreationConfiguration *)defaultConfigurationForCreationOptionsManager:(CreationOptions *)creationOptionsManager;
 
-+ (IPCreationConfiguration *)applyChangesFor:(IPCreationConfiguration *)configuration OfType:(CreationsOptionsType)type withObject:(id)object;
++ (IPCreationConfiguration *)newConfigurationWith:(IPCreationConfiguration *)configuration changedWithType:(CreationsOptionsType)type option:(AbstractOption *)object;
 @end

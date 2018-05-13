@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "AbstractOption.h"
 
-@interface IPColor : NSObject
+@interface IPColor : AbstractOption
 
-@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) UIColor *color;
 
 - (instancetype)initWithName:(NSString *)name color:(UIColor *)color;

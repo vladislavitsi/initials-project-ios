@@ -10,6 +10,7 @@
 
 @interface InputProcessor : NSObject
 
+@property (nonatomic, readonly) NSArray<NSString *> *initials;
 @property (nonatomic, readonly) NSArray<NSString *> *words;
 @property (nonatomic, assign) NSInteger count;
 @property (nonatomic, readonly) NSString* pattern;

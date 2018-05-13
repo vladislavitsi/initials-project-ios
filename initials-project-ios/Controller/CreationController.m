@@ -10,9 +10,12 @@
 #import "CreationOptions.h"
 #import "IPConfigurationConfigurator.h"
 #import "CreationTableViewController.h"
-#import "GalleryDetailsViewController.h"
+#import "ResultViewController.h"
+#import "InputProcessor.h"
 
 @interface CreationController ()
+
+@property (nonatomic, copy) NSString *name;
 
 @property (nonatomic, assign) CreationsOptionsType currentOption;
 @property (nonatomic, strong) NSMutableArray<IPCreationConfiguration *> *configurationHistory;
@@ -23,27 +26,87 @@
 
 @implementation CreationController
 
-- (instancetype)initWithWords:(NSArray<NSString *> *)words {
+
+-(instancetype)initWithName:(NSString *)name{
     if (self = [super init]) {
-        NSMutableArray *initials = [NSMutableArray array];
-        for (NSString *word in words) {
-            [initials addObject:[word substringToIndex:1]];
-        }
-        self.initials = initials;
+        self.name = name;
+    }
+    return self;
+}
+
+- (void)start {
+    InputProcessor *inputProcessor = [[InputProcessor alloc] initWithPattern:@" -"];
+    [inputProcessor processInput:self.name];
+    if (inputProcessor.count >= 2 && inputProcessor.count <= 3) {
+        self.initials = inputProcessor.initials;
         self.creationOptionsManager = [[CreationOptions alloc] init];
         self.configurationHistory = [NSMutableArray array];
         [self.configurationHistory addObject:[IPConfigurationConfigurator defaultConfigurationForCreationOptionsManager:self.creationOptionsManager]];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectOption:) name:@"creation.selectedOption" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stepBack) name:@"creation.back" object:nil];
+        [self run];
     }
-    return self;
 }
+
+- (void)run {
+    CreationTableController *tableController = [[CreationTableController alloc] init];
+    self.creationTableDataSource = tableController;
+    tableController.creationController = self;
+    [self nextTableView];
+}
+
 
 - (void)stepBack {
     if (self.configurationHistory.count > 0) {
         [self.configurationHistory removeLastObject];
     }
     self.currentOption--;
+}
+
+
+- (void)didSelectOption:(NSNotification *)notification {
+    NSInteger selectedIndex = [notification.userInfo[@"selectedIndex"] integerValue];
+    
+    [self.configurationHistory addObject: [IPConfigurationConfigurator newConfigurationWith:[self.configurationHistory lastObject]
+                                                                            changedWithType:self.currentOption
+                                                                                     option:[self.creationOptionsManager getOptionsOfType:self.currentOption][selectedIndex]]];
+    self.currentOption++;
+    
+    if (self.currentOption >= optionsArray.count) {
+        [self goToResult];
+    } else {
+         [self nextTableView];
+    }
+}
+
+- (void)goToResult {
+    ResultViewController *vc = [[ResultViewController alloc] initWithNibName:@"Preview" bundle:nil];
+    vc.initials = self.initials;
+    vc.configuration = [self.configurationHistory lastObject];
+    vc.name = self.name;
+    vc.title = @"Preview";
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":vc}];
+}
+
+- (void)nextTableView {
+    CreationTableViewController *tableViewController = [[CreationTableViewController alloc] init];
+    tableViewController.tableView.dataSource = self.creationTableDataSource;
+    tableViewController.tableView.delegate = self.creationTableDataSource;
+    tableViewController.title = optionsArray[self.currentOption];
+    [tableViewController.tableView registerNib:[UINib nibWithNibName:@"PreviewCell" bundle:nil] forCellReuseIdentifier:@"PreviewCell"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":tableViewController}];
+}
+
+
+#pragma mark - Public interface
+
+- (NSInteger)countOfOptions {
+    return [self.creationOptionsManager getOptionsOfType:self.currentOption].count;
+}
+
+- (IPCreationConfiguration *)configurationForIndex:(NSInteger)index {
+    id obj = [self.creationOptionsManager getOptionsOfType:self.currentOption][index];
+    return [IPConfigurationConfigurator newConfigurationWith:[self.configurationHistory lastObject] changedWithType:self.currentOption option:obj];
 }
 
 
@@ -58,51 +121,5 @@
     return img;
 }
 
-- (void)didSelectOption:(NSNotification *)notification {
-    NSInteger selectedIndex = [notification.userInfo[@"selectedIndex"] integerValue];
-    
-    [self.configurationHistory addObject: [IPConfigurationConfigurator
-                                  applyChangesFor:[self.configurationHistory lastObject]
-                                  OfType:self.currentOption
-                                  withObject:[self.creationOptionsManager getOptionsOfType:self.currentOption][selectedIndex]]];
-    self.currentOption++;
-    
-    if (self.currentOption > CreationOptionsLast) {
-        GalleryDetailsViewController *vc = [[GalleryDetailsViewController alloc] initWithNibName:@"GalleryDetailsViewController" bundle:nil];
-        vc.image = [CreationController imageWithView:notification.userInfo[@"previewView"]];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":vc}];
-        return;
-    }
-    
-    CreationTableViewController *tableViewController = [[CreationTableViewController alloc] init];
-    tableViewController.tableView.dataSource = self.creationTableDataSource;
-    tableViewController.tableView.delegate = self.creationTableDataSource;
-    [tableViewController.tableView registerNib:[UINib nibWithNibName:@"PreviewCell" bundle:nil] forCellReuseIdentifier:@"PreviewCell"];
-        
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":tableViewController}];
-}
-
-- (void)start {
-    CreationTableController *tableController = [[CreationTableController alloc] init];
-    self.creationTableDataSource = tableController;
-    
-    CreationTableViewController *tableViewController = [[CreationTableViewController alloc] init];
-    tableViewController.tableView.dataSource = tableController;
-    tableViewController.tableView.delegate = tableController;
-    [tableViewController.tableView registerNib:[UINib nibWithNibName:@"PreviewCell" bundle:nil] forCellReuseIdentifier:@"PreviewCell"];
-    
-    tableController.creationController = self;
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":tableViewController}];
-}
-
-- (NSInteger)countOfOptions {
-    return [self.creationOptionsManager getOptionsOfType:self.currentOption].count;
-}
-
-- (IPCreationConfiguration *)configurationForIndex:(NSInteger)index {
-    id obj = [self.creationOptionsManager getOptionsOfType:self.currentOption][index];
-    return [IPConfigurationConfigurator applyChangesFor:[self.configurationHistory lastObject] OfType:self.currentOption withObject:obj];
-}
 
 @end

@@ -11,11 +11,11 @@
 #import "NameDialogAlertController.h"
 #import "GalleryTableViewController.h"
 #import "ExamplesPagesViewController.h"
-#import "InputProcessor.h"
-#import "CreationTableController.h"
 #import "CreationController.h"
 
 @interface MainController ()
+
+@property (nonatomic, weak) NavigationController *navigationController;
 
 @property (nonatomic, strong) CreationController *creationController;
 
@@ -37,6 +37,9 @@
     return self;
 }
 
+
+#pragma mark - Notification actions
+
 - (void)navigateTo:(NSNotification *)notification {
     [self.navigationController pushViewController:notification.userInfo[@"destination"] animated:YES];
 }
@@ -57,22 +60,11 @@
     UIAlertController* alert = [NameDialogAlertController actionWithHandler:^(UIAlertController *controller) {
         NSString *inputText = controller.textFields[0].text;
 
-        InputProcessor *inputProcessor = [[InputProcessor alloc] initWithPattern:@" -"];
-        [inputProcessor processInput:inputText];
-        
-        if (inputProcessor.count >= 2 && inputProcessor.count <= 3) {
-            self.creationController = [[CreationController alloc] initWithWords:inputProcessor.words];
-            [self.creationController start];
-        }
+        self.creationController = [[CreationController alloc] initWithName:inputText];
+        [self.creationController start];
     }];
     
     [self.navigationController presentViewController:alert animated:YES completion:nil];
-}
-
-- (void)initiateCreation:(NSArray<NSString *> *)words {
-
-    
-
 }
 
 @end

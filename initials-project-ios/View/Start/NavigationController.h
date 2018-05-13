@@ -1,14 +1,15 @@
 //
-//  MainController.h
+//  NavigationController.h
 //  initials-project-ios
 //
 //  Created by Vladislav Kleschenko on 5/11/18.
 //  Copyright © 2018 Uladzislau Kleshchanka. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "NavigationController.h"
+#import <UIKit/UIKit.h>
 
-@interface MainController : NSObject
+@interface NavigationController : UINavigationController
+
+@property (nonatomic, copy) NSString *name;
 
 @end
