@@ -8,6 +8,10 @@
 
 #import "IPFileManager.h"
 
+#define DEFAULT_IMAGE_DIRECTORY @"usersImages"
+#define IMAGE_NAME_FIRST_PART @"user-image-"
+#define IMAGE_FORMAT @".png"
+
 @implementation IPFileManager
 
 + (NSData *)getFileDataForPath:(NSString *)filePath {
@@ -30,6 +34,15 @@
     }
     
     return [NSArray arrayWithArray:array];
+}
+
++ (NSString *)saveImage:(UIImage *)image {
+    NSURL *documentsURL = [[NSFileManager defaultManager]  URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd.MM.yyyy.HH.mm"];
+    NSString *filename = [[IMAGE_NAME_FIRST_PART stringByAppendingString:[formatter stringFromDate:[NSDate date]]] stringByAppendingString:IMAGE_FORMAT];
+    [UIImagePNGRepresentation(image) writeToFile:[documentsURL URLByAppendingPathComponent:filename].absoluteString atomically:YES];
+    return filename;
 }
 
 @end

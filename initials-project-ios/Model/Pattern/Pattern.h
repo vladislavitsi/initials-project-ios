@@ -20,6 +20,4 @@
 
 - (instancetype)initWithName:(NSString *)name size:(NSInteger)size lettersCount:(NSInteger)lettersCount letterPatterns:(NSArray<LetterPattern *>*)letterPatterns;
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)jsonDictionary;
-
 @end

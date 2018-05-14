@@ -7,7 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 #import "InitialsViewConfigurator.h"
-
+#import "IPFont.h"
 
 @implementation InitialsViewConfigurator
 
@@ -23,9 +23,10 @@
         Pattern *pattern = (Pattern *) configuration.options[CreationOptionsPattern];
         IPColor *backgroundColor = (IPColor *) configuration.options[CreationOptionsBackgroundColor];
         IPColor *fontColor = (IPColor *) configuration.options[CreationOptionsFontColor];
+        IPFont *fontFamily = (IPFont *) configuration.options[CreationOptionsFontFamily];
         
         letterLabel.text = initials[i];
-        letterLabel.font = [UIFont systemFontOfSize:pattern.size];
+        letterLabel.font = [UIFont fontWithName:fontFamily.fontName size:pattern.size];
         letterLabel.textColor = fontColor.color;
         letterLabel.translatesAutoresizingMaskIntoConstraints = NO;
         

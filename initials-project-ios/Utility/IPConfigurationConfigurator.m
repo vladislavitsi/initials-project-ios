@@ -16,7 +16,8 @@
     defaultConfiguaration.options = [@[
                                       [[creationOptionsManager getOptionsOfType:CreationOptionsPattern] firstObject],
                                       [[IPColor alloc] initWithName:@"White" color:[UIColor whiteColor]],
-                                      [[IPColor alloc] initWithName:@"Black" color:[UIColor blackColor]]
+                                      [[IPColor alloc] initWithName:@"Black" color:[UIColor blackColor]],
+                                      [[creationOptionsManager getOptionsOfType:CreationOptionsFontFamily] firstObject]
                                       ] mutableCopy];
     return defaultConfiguaration;
 }

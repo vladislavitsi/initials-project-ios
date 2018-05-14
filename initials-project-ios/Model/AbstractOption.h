@@ -12,4 +12,6 @@
 
 @property (nonatomic, copy) NSString *name;
 
++ (instancetype)fromJSONDictionary:(NSDictionary *)jsonDictionary;
+
 @end

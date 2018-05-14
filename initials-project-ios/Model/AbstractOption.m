@@ -10,4 +10,8 @@
 
 @implementation AbstractOption
 
++ (instancetype)fromJSONDictionary:(NSDictionary *)jsonDictionary {
+    return nil;
+}
+
 @end

@@ -10,12 +10,13 @@
 #import "Pattern.h"
 #import "IPColor.h"
 
-#define optionsArray @[@"Pattern", @"BackgroundColor", @"FontColor"]
+#define optionsArray @[@"Pattern", @"Background Color", @"Font Color", @"Font Family"]
 
 typedef NS_ENUM(NSInteger, CreationsOptionsType) {
     CreationOptionsPattern,
     CreationOptionsBackgroundColor,
-    CreationOptionsFontColor
+    CreationOptionsFontColor,
+    CreationOptionsFontFamily
 };
 
 @interface CreationOptions : NSObject

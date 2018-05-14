@@ -12,12 +12,14 @@
 #import "GalleryTableViewController.h"
 #import "ExamplesPagesViewController.h"
 #import "CreationController.h"
+#import "UserDefaultsUserData.h"
+#import "IPFileManager.h"
 
 @interface MainController ()
 
 @property (nonatomic, weak) NavigationController *navigationController;
-
 @property (nonatomic, strong) CreationController *creationController;
+@property (nonatomic, strong) id<UserDataProtocol> userDataDAO;
 
 @end
 
@@ -28,11 +30,13 @@
         [[NSNotificationCenter defaultCenter] addObserverForName:@"initNavigationController" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
             self.navigationController = note.userInfo[@"controller"];
         }];
+        self.userDataDAO = [[UserDefaultsUserData alloc] init];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startButton) name:@"action.startButton" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(galleryButton) name:@"action.galleryButton" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(examplesButton) name:@"action.examplesButton" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateTo:) name:@"navigate.push" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCreation:) name:@"creation.saveAndExit" object:nil];
     }
     return self;
 }
@@ -65,6 +69,14 @@
     }];
     
     [self.navigationController presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)saveCreation:(NSNotification *)notification {
+    NSString *name = notification.userInfo[@"name"];
+    UIImage *image = notification.userInfo[@"image"];
+    NSString *imagePath = [IPFileManager saveImage:image];
+    UserData *userData = [[UserData alloc] initWithName:name imagePath:imagePath];
+    [self.userDataDAO addUserData:userData];
 }
 
 @end

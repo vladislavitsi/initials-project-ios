@@ -9,6 +9,7 @@
 #import "CreationOptions.h"
 #import "PatternDAO.h"
 #import "IPColorDAO.h"
+#import "IPFontDAO.h"
 
 @interface CreationOptions ()
 
@@ -23,7 +24,8 @@
         self.optionDAOs = @[
                             [[PatternDAO alloc] init],
                             [[IPColorDAO alloc] initWithPath:@"BackgroundColors"],
-                            [[IPColorDAO alloc] initWithPath:@"FontColors"]
+                            [[IPColorDAO alloc] initWithPath:@"FontColors"],
+                            [[IPFontDAO alloc] initWithPath:@"Fonts"]
                             ];
     }
     return self;

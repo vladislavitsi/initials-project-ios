@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface IPFileManager : NSObject
 
 + (NSData *)getFileDataForPath:(NSString *)filePath;
 
 + (NSArray<NSData *> *)getAllFilesDataForPath:(NSString *)filePath;
+
++ (NSString *)saveImage:(UIImage *)image;
 @end

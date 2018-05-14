@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320C20AF20A9BAF3006CD84D /* IPFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 320C20AE20A9BAF3006CD84D /* IPFont.m */; };
+		320C20B520A9BB89006CD84D /* IPFontDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 320C20B420A9BB89006CD84D /* IPFontDAO.m */; };
+		320C20B720A9BFEC006CD84D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 320C20B620A9BFEB006CD84D /* Fonts */; };
+		320C20BA20A9C2AB006CD84D /* Screenshotter.m in Sources */ = {isa = PBXBuildFile; fileRef = 320C20B920A9C2AB006CD84D /* Screenshotter.m */; };
+		320C20BF20A9C746006CD84D /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 320C20BE20A9C746006CD84D /* UserData.m */; };
+		320C20C320A9C90C006CD84D /* UserDefaultsUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 320C20C220A9C90C006CD84D /* UserDefaultsUserData.m */; };
 		32889881209C93F500E1452A /* PatternDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32889880209C93F500E1452A /* PatternDAO.m */; };
 		32889886209C94B300E1452A /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 32889882209C94B200E1452A /* Pattern.m */; };
 		32889887209C94B300E1452A /* LetterPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 32889885209C94B300E1452A /* LetterPattern.m */; };
@@ -50,6 +56,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		320C20AD20A9BAF3006CD84D /* IPFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPFont.h; sourceTree = "<group>"; };
+		320C20AE20A9BAF3006CD84D /* IPFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPFont.m; sourceTree = "<group>"; };
+		320C20B320A9BB89006CD84D /* IPFontDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPFontDAO.h; sourceTree = "<group>"; };
+		320C20B420A9BB89006CD84D /* IPFontDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPFontDAO.m; sourceTree = "<group>"; };
+		320C20B620A9BFEB006CD84D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		320C20B820A9C2AB006CD84D /* Screenshotter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Screenshotter.h; sourceTree = "<group>"; };
+		320C20B920A9C2AB006CD84D /* Screenshotter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Screenshotter.m; sourceTree = "<group>"; };
+		320C20BD20A9C746006CD84D /* UserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		320C20BE20A9C746006CD84D /* UserData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		320C20C020A9C879006CD84D /* UserDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDataProtocol.h; sourceTree = "<group>"; };
+		320C20C120A9C90C006CD84D /* UserDefaultsUserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefaultsUserData.h; sourceTree = "<group>"; };
+		320C20C220A9C90C006CD84D /* UserDefaultsUserData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsUserData.m; sourceTree = "<group>"; };
 		3288987F209C93F500E1452A /* PatternDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatternDAO.h; sourceTree = "<group>"; };
 		32889880209C93F500E1452A /* PatternDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PatternDAO.m; sourceTree = "<group>"; };
 		32889882209C94B200E1452A /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
@@ -133,9 +151,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320C20BC20A9C72C006CD84D /* User Data */ = {
+			isa = PBXGroup;
+			children = (
+				320C20BD20A9C746006CD84D /* UserData.h */,
+				320C20BE20A9C746006CD84D /* UserData.m */,
+				320C20C020A9C879006CD84D /* UserDataProtocol.h */,
+				320C20C120A9C90C006CD84D /* UserDefaultsUserData.h */,
+				320C20C220A9C90C006CD84D /* UserDefaultsUserData.m */,
+			);
+			path = "User Data";
+			sourceTree = "<group>";
+		};
 		3288987A209C915800E1452A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				320C20BC20A9C72C006CD84D /* User Data */,
 				32D5BF5820A0923100ECDB69 /* FontFamily */,
 				32D5BF5320A08EA800ECDB69 /* Color */,
 				3288987E209C93DE00E1452A /* Pattern */,
@@ -173,6 +204,8 @@
 				59C88C3C20A6FFE90060C856 /* InitialsViewConfigurator.m */,
 				59C88C3E20A706040060C856 /* IPConfigurationConfigurator.h */,
 				59C88C3F20A706040060C856 /* IPConfigurationConfigurator.m */,
+				320C20B820A9C2AB006CD84D /* Screenshotter.h */,
+				320C20B920A9C2AB006CD84D /* Screenshotter.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -216,6 +249,7 @@
 				3288987A209C915800E1452A /* Model */,
 				32D21E3C2095CA020007166D /* View */,
 				32D21E3A2095C9A90007166D /* Patterns */,
+				320C20B620A9BFEB006CD84D /* Fonts */,
 				599C04DB20A7373E00455FDD /* BackgroundColors */,
 				599C04DD20A7374600455FDD /* FontColors */,
 				32D21E4E2095CF130007166D /* Support */,
@@ -319,6 +353,10 @@
 		32D5BF5820A0923100ECDB69 /* FontFamily */ = {
 			isa = PBXGroup;
 			children = (
+				320C20AD20A9BAF3006CD84D /* IPFont.h */,
+				320C20AE20A9BAF3006CD84D /* IPFont.m */,
+				320C20B320A9BB89006CD84D /* IPFontDAO.h */,
+				320C20B420A9BB89006CD84D /* IPFontDAO.m */,
 			);
 			path = FontFamily;
 			sourceTree = "<group>";
@@ -385,6 +423,11 @@
 					32D21E1F2095BEB30007166D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -414,6 +457,7 @@
 				32D21E302095BEB40007166D /* LaunchScreen.storyboard in Resources */,
 				599C04DC20A7373E00455FDD /* BackgroundColors in Resources */,
 				32D21E542095D6450007166D /* GalleryDetailsViewController.xib in Resources */,
+				320C20B720A9BFEC006CD84D /* Fonts in Resources */,
 				32D21E3B2095C9A90007166D /* Patterns in Resources */,
 				595B364020A82CC4000A1172 /* Preview.xib in Resources */,
 				32D5BF5220A08BD400ECDB69 /* PreviewCell.xib in Resources */,
@@ -442,6 +486,7 @@
 				59C567B220A60CA40017EB70 /* NameDialogAlertController.m in Sources */,
 				32D5BF6120A098E100ECDB69 /* IPCreationConfiguration.m in Sources */,
 				595B364720A8AB22000A1172 /* AbstractOption.m in Sources */,
+				320C20BF20A9C746006CD84D /* UserData.m in Sources */,
 				595B363A20A741B5000A1172 /* CreationTableViewController.m in Sources */,
 				32D5BF5B20A092A600ECDB69 /* CreationOptions.m in Sources */,
 				32889881209C93F500E1452A /* PatternDAO.m in Sources */,
@@ -451,16 +496,20 @@
 				595B364420A83C57000A1172 /* AbstractPreviewViewController.m in Sources */,
 				32889886209C94B300E1452A /* Pattern.m in Sources */,
 				32D5BF5120A08BD400ECDB69 /* TableViewCell.m in Sources */,
+				320C20BA20A9C2AB006CD84D /* Screenshotter.m in Sources */,
 				32D21E462095CAF30007166D /* GalleryTableViewCell.m in Sources */,
 				3288988B209C96D700E1452A /* IPFileManager.m in Sources */,
+				320C20C320A9C90C006CD84D /* UserDefaultsUserData.m in Sources */,
 				32D21E332095BEB40007166D /* main.m in Sources */,
 				59C88C3A20A6FCBF0060C856 /* CreationTableController.m in Sources */,
 				32D21E412095CA5C0007166D /* GalleryTableViewController.m in Sources */,
 				32D21E4D2095CE1E0007166D /* MainMenuViewController.m in Sources */,
+				320C20B520A9BB89006CD84D /* IPFontDAO.m in Sources */,
 				597CDBF420A6024B00616CDE /* MainController.m in Sources */,
 				59C88C3D20A6FFE90060C856 /* InitialsViewConfigurator.m in Sources */,
 				32D21E252095BEB30007166D /* AppDelegate.m in Sources */,
 				595B363F20A82CC4000A1172 /* ResultViewController.m in Sources */,
+				320C20AF20A9BAF3006CD84D /* IPFont.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

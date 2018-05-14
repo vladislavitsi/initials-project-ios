@@ -12,6 +12,7 @@
 #import "CreationTableViewController.h"
 #import "ResultViewController.h"
 #import "InputProcessor.h"
+#import "Screenshotter.h"
 
 @interface CreationController ()
 
@@ -44,8 +45,17 @@
         [self.configurationHistory addObject:[IPConfigurationConfigurator defaultConfigurationForCreationOptionsManager:self.creationOptionsManager]];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectOption:) name:@"creation.selectedOption" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stepBack) name:@"creation.back" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveImage:) name:@"creation.save" object:nil];
         [self run];
     }
+}
+
+- (void)saveImage:(NSNotification *)notification {
+    UIImage *image = [Screenshotter imageWithView:notification.userInfo[@"preview"]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"creation.saveAndExit" object:nil userInfo:@{
+                                                                                                             @"name":self.name,
+                                                                                                             @"image":image
+                                                                                                             }];
 }
 
 - (void)run {
@@ -110,16 +120,6 @@
 }
 
 
-+ (UIImage *)imageWithView:(UIView *)view{
-    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
-    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
-    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return img;
-}
 
 
 @end

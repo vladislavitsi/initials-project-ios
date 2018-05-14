@@ -28,7 +28,9 @@
 }
 
 - (IBAction)save {
-    NSLog(@"save");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"creation.save" object:nil userInfo:@{
+                                                                                                      @"preview":self.preview
+                                                                                                      }];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
