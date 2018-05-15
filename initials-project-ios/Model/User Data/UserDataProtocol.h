@@ -11,7 +11,8 @@
 
 @protocol UserDataProtocol <NSObject>
 
-- (NSArray<UserData *> *)getAllUserData;
+- (UserData *)getDataForIndex:(NSInteger)index;
+- (NSInteger)count;
 - (void)addUserData:(UserData *)userData;
 - (void)removeUserData:(UserData *)userData;
 

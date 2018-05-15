@@ -12,13 +12,11 @@
 
 @interface UserDefaultsUserData ()
 
-@property (nonatomic, strong) NSMutableArray<UserData *> *userDataArray;
+@property (nonatomic, strong) NSMutableArray<NSData *> *array;
 @property (nonatomic, strong) NSUserDefaults *defaults;
-@property (nonatomic, strong) dispatch_queue_t serialQueue;
 
-- (NSMutableArray<UserData *> *)loadUserData;
+- (NSMutableArray<NSData *> *)loadUserData;
 - (void)unsureLoading;
-- (void)saveChanges;
 @end
 
 @implementation UserDefaultsUserData
@@ -27,17 +25,22 @@
 
 - (void)addUserData:(UserData *)userData {
     [self unsureLoading];
-    [self.userDataArray addObject:userData];
-}
-
-- (NSArray<UserData *> *)getAllUserData {
-    [self unsureLoading];
-    return [NSArray arrayWithArray:self.userDataArray];
+    [self.array addObject:[userData toJSON]];
 }
 
 - (void)removeUserData:(UserData *)userData {
     [self unsureLoading];
-    [self.userDataArray removeObject:userData];
+    [self.array removeObject:[userData toJSON]];
+}
+
+- (NSInteger)count {
+    [self unsureLoading];
+    return self.array.count;
+}
+
+- (UserData *)getDataForIndex:(NSInteger)index {
+    [self unsureLoading];
+    return [UserData fromJSON:self.array[index]];
 }
 
 #pragma mark - Private inteface
@@ -45,32 +48,25 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.defaults = [NSUserDefaults standardUserDefaults];
-        self.serialQueue = dispatch_queue_create("com.vladi.initials-project-ios.dataAccessSerial", DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
 
-- (NSMutableArray<UserData *> *)loadUserData {
-    NSMutableArray *dataArray = [NSMutableArray array];
-    NSMutableArray *savedArray = [[self.defaults arrayForKey:ARRAY_KEY] mutableCopy];
-    if (savedArray != nil) {
-        [dataArray addObjectsFromArray:savedArray];
-
+- (NSMutableArray<NSData *> *)loadUserData {
+    NSMutableArray<NSData *> *array = [self.defaults mutableArrayValueForKey:ARRAY_KEY];
+    if (array == nil) {
+        array = [NSMutableArray array];
+        [self.defaults setObject:array forKey:ARRAY_KEY];
     }
-    return dataArray;
+    return array;
 }
 
-- (void)saveChanges {
-    dispatch_async(self.serialQueue, ^{
-        [self.defaults setObject:self.userDataArray forKey:ARRAY_KEY];
-    });
-}
 
 - (void)unsureLoading {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (self.userDataArray == nil) {
-            self.userDataArray = [self loadUserData];
+        if (self.array == nil) {
+            self.array = [self loadUserData];
         }
     });
 }

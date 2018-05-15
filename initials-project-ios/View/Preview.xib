@@ -29,8 +29,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbn-6u-5J8">
-                    <rect key="frame" x="35" y="109.5" width="305" height="523"/>
+                <view contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="nbn-6u-5J8">
+                    <rect key="frame" x="35" y="109" width="305" height="523"/>
                     <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nbn-6u-5J8" secondAttribute="height" multiplier="9:14" id="5Fs-SS-ahB"/>
@@ -53,6 +53,7 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="nbn-6u-5J8" secondAttribute="trailing" constant="35" id="tUu-aV-7WW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
 </document>

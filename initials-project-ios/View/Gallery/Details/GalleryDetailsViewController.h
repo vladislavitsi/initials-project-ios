@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AbstractPreviewViewController.h"
 
-@interface GalleryDetailsViewController : UIViewController
-
-
+@interface GalleryDetailsViewController : AbstractPreviewViewController
 
 @property (nonatomic, strong) UIImage *image;
+
 @end

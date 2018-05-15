@@ -15,5 +15,8 @@
 
 + (NSArray<NSData *> *)getAllFilesDataForPath:(NSString *)filePath;
 
++ (UIImage *)getImageForPath:(NSString *)imagePath;
+
+
 + (NSString *)saveImage:(UIImage *)image;
 @end

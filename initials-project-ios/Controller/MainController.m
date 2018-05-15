@@ -14,12 +14,15 @@
 #import "CreationController.h"
 #import "UserDefaultsUserData.h"
 #import "IPFileManager.h"
+#import "GalleryTableController.h"
 
 @interface MainController ()
 
 @property (nonatomic, weak) NavigationController *navigationController;
 @property (nonatomic, strong) CreationController *creationController;
 @property (nonatomic, strong) id<UserDataProtocol> userDataDAO;
+
+@property (nonatomic, strong) GalleryTableController *gtc;
 
 @end
 
@@ -49,8 +52,13 @@
 }
 
 - (void)galleryButton {
-    GalleryTableViewController *viewController = [[GalleryTableViewController alloc] initWithNibName:@"GalleryTableViewController" bundle:nil];
+    UITableViewController *viewController = [[UITableViewController alloc] init];
+    self.gtc = [[GalleryTableController alloc] init];
+    self.gtc.dataSource = self.userDataDAO;
+    [viewController.tableView registerNib:[UINib nibWithNibName:@"GalleryTableViewCell" bundle:nil] forCellReuseIdentifier:@"GalleryTableViewCell"];
     viewController.title = @"Gallery";
+    viewController.tableView.delegate = self.gtc;
+    viewController.tableView.dataSource = self.gtc;
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
@@ -76,7 +84,10 @@
     UIImage *image = notification.userInfo[@"image"];
     NSString *imagePath = [IPFileManager saveImage:image];
     UserData *userData = [[UserData alloc] initWithName:name imagePath:imagePath];
-    [self.userDataDAO addUserData:userData];
+    [self.navigationController popToViewController:self.navigationController.viewControllers.firstObject animated:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self.userDataDAO addUserData:userData];
+    });
 }
 
 @end

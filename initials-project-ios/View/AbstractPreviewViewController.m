@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.nameLabel.text = self.name;
-    [self makeRoundCorners];
+//    [self makeRoundCorners];
     [self makeShadow];
 }
 

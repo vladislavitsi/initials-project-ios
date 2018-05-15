@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface UserData : NSObject
 
@@ -15,4 +16,9 @@
 
 - (instancetype)initWithName:(NSString *)name imagePath:(NSString *)path;
 
+- (UIImage *)getImage;
+
+- (NSData *)toJSON;
+
++ (instancetype)fromJSON:(NSData *)jsonData;
 @end

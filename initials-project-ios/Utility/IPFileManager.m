@@ -41,8 +41,14 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd.MM.yyyy.HH.mm"];
     NSString *filename = [[IMAGE_NAME_FIRST_PART stringByAppendingString:[formatter stringFromDate:[NSDate date]]] stringByAppendingString:IMAGE_FORMAT];
-    [UIImagePNGRepresentation(image) writeToFile:[documentsURL URLByAppendingPathComponent:filename].absoluteString atomically:YES];
+    [UIImagePNGRepresentation(image) writeToURL:[documentsURL URLByAppendingPathComponent:filename] atomically:YES];
     return filename;
+}
+
++ (UIImage *)getImageForPath:(NSString *)imagePath {
+    NSURL *documentsURL = [[NSFileManager defaultManager]  URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+    NSString *filename = imagePath;
+    return [UIImage imageWithData:[NSData dataWithContentsOfURL:[documentsURL URLByAppendingPathComponent:filename]]];
 }
 
 @end
