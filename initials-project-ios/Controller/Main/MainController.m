@@ -15,14 +15,14 @@
 #import "UserDefaultsUserData.h"
 #import "IPFileManager.h"
 #import "GalleryTableController.h"
+#import "MainControllerGalleryDelegate.h"
 
 @interface MainController ()
 
 @property (nonatomic, weak) NavigationController *navigationController;
-@property (nonatomic, strong) CreationController *creationController;
+@property (nonatomic, strong) id<MainControllerDelegate> creationControllerDelegate;
+@property (nonatomic, strong) id<MainControllerDelegate> galleryControllerDelegate;
 @property (nonatomic, strong) id<UserDataProtocol> userDataDAO;
-
-@property (nonatomic, strong) GalleryTableController *gtc;
 
 @end
 
@@ -33,13 +33,15 @@
         [[NSNotificationCenter defaultCenter] addObserverForName:@"initNavigationController" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
             self.navigationController = note.userInfo[@"controller"];
         }];
-        self.userDataDAO = [[UserDefaultsUserData alloc] init];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startButton) name:@"action.startButton" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(galleryButton) name:@"action.galleryButton" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(examplesButton) name:@"action.examplesButton" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateTo:) name:@"navigate.push" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCreation:) name:@"creation.saveAndExit" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(giveUpStartDelegate) name:@"creation.exit" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(giveUpGalleryDelegate) name:@"gallery.exit" object:nil];
+
     }
     return self;
 }
@@ -52,14 +54,8 @@
 }
 
 - (void)galleryButton {
-    UITableViewController *viewController = [[UITableViewController alloc] init];
-    self.gtc = [[GalleryTableController alloc] init];
-    self.gtc.dataSource = self.userDataDAO;
-    [viewController.tableView registerNib:[UINib nibWithNibName:@"GalleryTableViewCell" bundle:nil] forCellReuseIdentifier:@"GalleryTableViewCell"];
-    viewController.title = @"Gallery";
-    viewController.tableView.delegate = self.gtc;
-    viewController.tableView.dataSource = self.gtc;
-    [self.navigationController pushViewController:viewController animated:YES];
+    self.galleryControllerDelegate = [[MainControllerGalleryDelegate alloc] initWithDataSource:self.userDataDAO];
+    [self.galleryControllerDelegate start];
 }
 
 - (void)examplesButton {
@@ -72,8 +68,8 @@
     UIAlertController* alert = [NameDialogAlertController actionWithHandler:^(UIAlertController *controller) {
         NSString *inputText = controller.textFields[0].text;
 
-        self.creationController = [[CreationController alloc] initWithName:inputText];
-        [self.creationController start];
+        self.creationControllerDelegate = [[CreationController alloc] initWithName:inputText];
+        [self.creationControllerDelegate start];
     }];
     
     [self.navigationController presentViewController:alert animated:YES completion:nil];
@@ -88,6 +84,25 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self.userDataDAO addUserData:userData];
     });
+}
+
+- (void)giveUpGalleryDelegate {
+    self.galleryControllerDelegate = nil;
+}
+
+- (void)giveUpStartDelegate {
+    self.creationControllerDelegate = nil;
+}
+
+#pragma mark - Accessors
+
+- (id<UserDataProtocol>)userDataDAO {
+    MainController *weakSelf = self;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        weakSelf.userDataDAO = [[UserDefaultsUserData alloc] init];
+    });
+    return _userDataDAO;
 }
 
 @end

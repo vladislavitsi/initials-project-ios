@@ -36,6 +36,7 @@
 		32D5BF5E20A0950D00ECDB69 /* IPColorDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF5D20A0950D00ECDB69 /* IPColorDAO.m */; };
 		32D5BF6120A098E100ECDB69 /* IPCreationConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF6020A098E100ECDB69 /* IPCreationConfiguration.m */; };
 		593EF1AD20AB3B9F00C77113 /* GalleryTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593EF1AC20AB3B9F00C77113 /* GalleryTableController.m */; };
+		593EF1B520AC29BC00C77113 /* MainControllerGalleryDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 593EF1B420AC29BC00C77113 /* MainControllerGalleryDelegate.m */; };
 		595B363A20A741B5000A1172 /* CreationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 595B363920A741B5000A1172 /* CreationTableViewController.m */; };
 		595B363F20A82CC4000A1172 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 595B363D20A82CC4000A1172 /* ResultViewController.m */; };
 		595B364020A82CC4000A1172 /* Preview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 595B363E20A82CC4000A1172 /* Preview.xib */; };
@@ -108,6 +109,9 @@
 		32D5BF6020A098E100ECDB69 /* IPCreationConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPCreationConfiguration.m; sourceTree = "<group>"; };
 		593EF1AB20AB3B9F00C77113 /* GalleryTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryTableController.h; sourceTree = "<group>"; };
 		593EF1AC20AB3B9F00C77113 /* GalleryTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryTableController.m; sourceTree = "<group>"; };
+		593EF1B220AC27C100C77113 /* MainControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainControllerDelegate.h; sourceTree = "<group>"; };
+		593EF1B320AC29BC00C77113 /* MainControllerGalleryDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainControllerGalleryDelegate.h; sourceTree = "<group>"; };
+		593EF1B420AC29BC00C77113 /* MainControllerGalleryDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainControllerGalleryDelegate.m; sourceTree = "<group>"; };
 		595B363820A741B5000A1172 /* CreationTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreationTableViewController.h; sourceTree = "<group>"; };
 		595B363920A741B5000A1172 /* CreationTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreationTableViewController.m; sourceTree = "<group>"; };
 		595B363C20A82CC4000A1172 /* ResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
@@ -212,16 +216,10 @@
 		3293C38720A5E0540090EECA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				597CDBF220A6024A00616CDE /* MainController.h */,
-				597CDBF320A6024A00616CDE /* MainController.m */,
-				59C567B920A6F5830017EB70 /* CreationController.h */,
-				59C567BA20A6F5830017EB70 /* CreationController.m */,
-				59C88C3820A6FCBF0060C856 /* CreationTableController.h */,
-				59C88C3920A6FCBF0060C856 /* CreationTableController.m */,
-				32D5BF5920A092A600ECDB69 /* CreationOptions.h */,
-				32D5BF5A20A092A600ECDB69 /* CreationOptions.m */,
-				593EF1AB20AB3B9F00C77113 /* GalleryTableController.h */,
-				593EF1AC20AB3B9F00C77113 /* GalleryTableController.m */,
+				593EF1B120AC270400C77113 /* Main */,
+				593EF1B020AC26FB00C77113 /* Gallery */,
+				593EF1AF20AC26EE00C77113 /* Examples */,
+				593EF1AE20AC26E300C77113 /* Start */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -250,7 +248,6 @@
 				3288987A209C915800E1452A /* Model */,
 				32D21E3C2095CA020007166D /* View */,
 				32D21E3A2095C9A90007166D /* Patterns */,
-				320C20B620A9BFEB006CD84D /* Fonts */,
 				599C04DB20A7373E00455FDD /* BackgroundColors */,
 				599C04DD20A7374600455FDD /* FontColors */,
 				32D21E4E2095CF130007166D /* Support */,
@@ -264,10 +261,10 @@
 				598F79BC2096047E00718606 /* Start */,
 				32D21E4A2095CDF30007166D /* Main */,
 				32D21E3D2095CA190007166D /* Gallery */,
-				32D21E552095D77A0007166D /* Examples */,
 				595B364220A83C57000A1172 /* AbstractPreviewViewController.h */,
 				595B364320A83C57000A1172 /* AbstractPreviewViewController.m */,
 				595B363E20A82CC4000A1172 /* Preview.xib */,
+				320C20B620A9BFEB006CD84D /* Fonts */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +278,7 @@
 				32D21E432095CAF30007166D /* GalleryTableViewCell.h */,
 				32D21E442095CAF30007166D /* GalleryTableViewCell.m */,
 				32D21E452095CAF30007166D /* GalleryTableViewCell.xib */,
+				32D21E552095D77A0007166D /* Examples */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -358,6 +356,47 @@
 				320C20B420A9BB89006CD84D /* IPFontDAO.m */,
 			);
 			path = FontFamily;
+			sourceTree = "<group>";
+		};
+		593EF1AE20AC26E300C77113 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				59C567B920A6F5830017EB70 /* CreationController.h */,
+				59C567BA20A6F5830017EB70 /* CreationController.m */,
+				59C88C3820A6FCBF0060C856 /* CreationTableController.h */,
+				59C88C3920A6FCBF0060C856 /* CreationTableController.m */,
+				32D5BF5920A092A600ECDB69 /* CreationOptions.h */,
+				32D5BF5A20A092A600ECDB69 /* CreationOptions.m */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		593EF1AF20AC26EE00C77113 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		593EF1B020AC26FB00C77113 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				593EF1AB20AB3B9F00C77113 /* GalleryTableController.h */,
+				593EF1AC20AB3B9F00C77113 /* GalleryTableController.m */,
+				593EF1B320AC29BC00C77113 /* MainControllerGalleryDelegate.h */,
+				593EF1B420AC29BC00C77113 /* MainControllerGalleryDelegate.m */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		593EF1B120AC270400C77113 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				597CDBF220A6024A00616CDE /* MainController.h */,
+				597CDBF320A6024A00616CDE /* MainController.m */,
+				593EF1B220AC27C100C77113 /* MainControllerDelegate.h */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		595B363B20A82CA2000A1172 /* Result */ = {
@@ -491,6 +530,7 @@
 				59C567BB20A6F5830017EB70 /* CreationController.m in Sources */,
 				59C88C4020A706040060C856 /* IPConfigurationConfigurator.m in Sources */,
 				595B364420A83C57000A1172 /* AbstractPreviewViewController.m in Sources */,
+				593EF1B520AC29BC00C77113 /* MainControllerGalleryDelegate.m in Sources */,
 				32889886209C94B300E1452A /* Pattern.m in Sources */,
 				32D5BF5120A08BD400ECDB69 /* TableViewCell.m in Sources */,
 				320C20BA20A9C2AB006CD84D /* Screenshotter.m in Sources */,

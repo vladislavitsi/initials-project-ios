@@ -14,6 +14,6 @@
 - (UserData *)getDataForIndex:(NSInteger)index;
 - (NSInteger)count;
 - (void)addUserData:(UserData *)userData;
-- (void)removeUserData:(UserData *)userData;
+- (void)removeUserDataForIndex:(NSInteger)index;
 
 @end

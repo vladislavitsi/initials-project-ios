@@ -20,7 +20,7 @@
 }
 
 - (UIImage *)getImage {
-    return [UIImage imageWithData:[IPFileManager getFileDataForPath:self.imagePath]];
+    return [IPFileManager getImageForPath:self.imagePath];
 }
 
 - (NSData *)toJSON {

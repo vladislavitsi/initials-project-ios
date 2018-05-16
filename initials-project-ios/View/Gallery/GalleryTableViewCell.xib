@@ -21,7 +21,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="528" height="122.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ebu-Ye-IWD">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ebu-Ye-IWD">
                         <rect key="frame" x="25" y="16" width="91" height="91"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Ebu-Ye-IWD" secondAttribute="height" multiplier="1:1" id="T7z-EG-MNL"/>
@@ -56,6 +56,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="dataLabel" destination="JFd-EI-Fk2" id="cnw-7x-ZlI"/>
+                <outlet property="imagePreview" destination="Ebu-Ye-IWD" id="pf5-B7-gDF"/>
+                <outlet property="nameLabel" destination="MRH-jg-JkO" id="LAh-uC-Gnj"/>
+            </connections>
             <point key="canvasLocation" x="-14" y="-47"/>
         </tableViewCell>
     </objects>

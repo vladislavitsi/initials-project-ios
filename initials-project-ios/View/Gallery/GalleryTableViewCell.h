@@ -10,4 +10,9 @@
 
 @interface GalleryTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dataLabel;
+
+
 @end

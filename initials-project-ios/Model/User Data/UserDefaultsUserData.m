@@ -28,9 +28,9 @@
     [self.array addObject:[userData toJSON]];
 }
 
-- (void)removeUserData:(UserData *)userData {
+- (void)removeUserDataForIndex:(NSInteger)index {
     [self unsureLoading];
-    [self.array removeObject:[userData toJSON]];
+    [self.array removeObjectAtIndex:index];
 }
 
 - (NSInteger)count {

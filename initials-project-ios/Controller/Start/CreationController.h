@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "IPCreationConfiguration.h"
 #import "CreationTableController.h"
+#import "MainControllerDelegate.h"
 
-@interface CreationController : NSObject
+@interface CreationController : NSObject <MainControllerDelegate>
 
 @property (nonatomic, copy) NSArray<NSString *> *initials;
 
