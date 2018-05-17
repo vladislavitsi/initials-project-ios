@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "OptionsDAO.h"
 
-@class CreationController;
+@class MainControllerStartDelegate;
 
 @interface CreationTableController : NSObject <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) CreationController *creationController;
+@property (nonatomic, weak) MainControllerStartDelegate *mainControllerStartDelegate;
+@property(nonatomic, copy) NSArray<AbstractOption *> * currentOptions;
 
 @end

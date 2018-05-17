@@ -12,11 +12,14 @@
 @interface UserData : NSObject
 
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) NSDate *creationDate;
 @property (nonatomic, copy) NSString *imagePath;
 
-- (instancetype)initWithName:(NSString *)name imagePath:(NSString *)path;
+- (instancetype)initWithName:(NSString *)name creationDate:(NSDate *)creationDate imagePath:(NSString *)path;
 
 - (UIImage *)getImage;
+
+- (void)removeImage;
 
 - (NSData *)toJSON;
 

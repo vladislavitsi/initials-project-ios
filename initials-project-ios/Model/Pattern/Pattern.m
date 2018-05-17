@@ -11,11 +11,9 @@
 
 @implementation Pattern
 
-- (instancetype)initWithName:(NSString *)name size:(NSInteger)size lettersCount:(NSInteger)lettersCount letterPatterns:(NSArray<LetterPattern *> *)letterPatterns {
+- (instancetype)initWithName:(NSString *)name letterPatterns:(NSArray<LetterPattern *> *)letterPatterns {
     if (self = [super init]) {
         self.name = [name copy];
-        _size = size;
-        _lettersCount = lettersCount;
         _letterPatterns = [letterPatterns copy];
     }
     return self;
@@ -27,8 +25,6 @@
         [letters addObject:[LetterPattern fromDictionary:letterDictionary]];
     }
     return [[Pattern alloc] initWithName:jsonDictionary[@"name"]
-                size:[jsonDictionary[@"size"] integerValue]
-                lettersCount:[jsonDictionary[@"lettersCount"] integerValue]
                 letterPatterns:letters];
 }
 

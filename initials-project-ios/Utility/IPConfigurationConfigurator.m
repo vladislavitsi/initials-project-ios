@@ -11,15 +11,15 @@
 
 @implementation IPConfigurationConfigurator
 
-+ (IPCreationConfiguration *)defaultConfigurationForCreationOptionsManager:(CreationOptions *)creationOptionsManager {
-    IPCreationConfiguration *defaultConfiguaration = [[IPCreationConfiguration alloc] init];
-    defaultConfiguaration.options = [@[
++ (IPCreationConfiguration *)defaultConfigurationForCreationOptionsManager:(OptionsDAO *)creationOptionsManager {
+    IPCreationConfiguration *creationConfiguration = [[IPCreationConfiguration alloc] init];
+    creationConfiguration.options = [@[
                                       [[creationOptionsManager getOptionsOfType:CreationOptionsPattern] firstObject],
                                       [[IPColor alloc] initWithName:@"White" color:[UIColor whiteColor]],
                                       [[IPColor alloc] initWithName:@"Black" color:[UIColor blackColor]],
                                       [[creationOptionsManager getOptionsOfType:CreationOptionsFontFamily] firstObject]
                                       ] mutableCopy];
-    return defaultConfiguaration;
+    return creationConfiguration;
 }
 
 + (IPCreationConfiguration *)newConfigurationWith:(IPCreationConfiguration *)configuration changedWithType:(CreationsOptionsType)type option:(AbstractOption *)object {

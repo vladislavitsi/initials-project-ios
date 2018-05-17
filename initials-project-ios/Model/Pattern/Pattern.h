@@ -14,10 +14,8 @@
 
 @interface Pattern : AbstractOption
 
-@property (nonatomic, readonly) NSInteger size;
-@property (nonatomic, readonly) NSInteger lettersCount;
 @property (nonatomic, readonly) NSArray<LetterPattern *> *letterPatterns;
 
-- (instancetype)initWithName:(NSString *)name size:(NSInteger)size lettersCount:(NSInteger)lettersCount letterPatterns:(NSArray<LetterPattern *>*)letterPatterns;
+- (instancetype)initWithName:(NSString *)name letterPatterns:(NSArray<LetterPattern *>*)letterPatterns;
 
 @end

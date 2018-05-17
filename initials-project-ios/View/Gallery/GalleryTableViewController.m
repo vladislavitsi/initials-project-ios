@@ -15,8 +15,4 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"gallery.exit" object:nil];
-}
-
 @end

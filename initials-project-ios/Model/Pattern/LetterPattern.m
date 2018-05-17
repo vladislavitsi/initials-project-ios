@@ -10,8 +10,9 @@
 
 @implementation LetterPattern
 
-- (instancetype)initWithX:(NSInteger)x y:(NSInteger)y {
+- (instancetype)initWithX:(NSInteger)x y:(NSInteger)y size:(NSInteger)size{
     if (self = [super init]) {
+        _size = size;
         _x = x;
         _y = y;
     }
@@ -20,7 +21,8 @@
 
 + (instancetype)fromDictionary:(NSDictionary *)dictionary {
     return [[LetterPattern alloc] initWithX:[dictionary[@"x"] integerValue]
-                                          y:[dictionary[@"y"] integerValue]];
+                                          y:[dictionary[@"y"] integerValue]
+                                          size:[dictionary[@"size"] integerValue]];
 }
 
 @end

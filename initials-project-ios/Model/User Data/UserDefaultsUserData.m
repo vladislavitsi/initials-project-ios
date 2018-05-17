@@ -16,7 +16,6 @@
 @property (nonatomic, strong) NSUserDefaults *defaults;
 
 - (NSMutableArray<NSData *> *)loadUserData;
-- (void)unsureLoading;
 @end
 
 @implementation UserDefaultsUserData
@@ -24,22 +23,19 @@
 #pragma mark - Public interface
 
 - (void)addUserData:(UserData *)userData {
-    [self unsureLoading];
     [self.array addObject:[userData toJSON]];
 }
 
 - (void)removeUserDataForIndex:(NSInteger)index {
-    [self unsureLoading];
+    [[self getDataForIndex:index] removeImage];
     [self.array removeObjectAtIndex:index];
 }
 
 - (NSInteger)count {
-    [self unsureLoading];
     return self.array.count;
 }
 
 - (UserData *)getDataForIndex:(NSInteger)index {
-    [self unsureLoading];
     return [UserData fromJSON:self.array[index]];
 }
 
@@ -52,6 +48,15 @@
     return self;
 }
 
+- (NSMutableArray<NSData *> *)array {
+    UserDefaultsUserData *weakSelf = self;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        weakSelf.array = [self loadUserData];
+    });
+    return _array;
+}
+
 - (NSMutableArray<NSData *> *)loadUserData {
     NSMutableArray<NSData *> *array = [self.defaults mutableArrayValueForKey:ARRAY_KEY];
     if (array == nil) {
@@ -61,14 +66,5 @@
     return array;
 }
 
-
-- (void)unsureLoading {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        if (self.array == nil) {
-            self.array = [self loadUserData];
-        }
-    });
-}
 
 @end

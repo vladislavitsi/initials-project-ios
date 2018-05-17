@@ -22,11 +22,6 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)galleryAction:(UIButton *)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"action.galleryButton" object:nil];
 }
@@ -36,5 +31,9 @@
 
 - (IBAction)startAction:(UIButton *)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"action.startButton" object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"action.mainControllerAppeared" object:nil];
 }
 @end

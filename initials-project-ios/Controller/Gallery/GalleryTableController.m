@@ -10,6 +10,7 @@
 #import "GalleryTableViewCell.h"
 #import "GalleryDetailsViewController.h"
 #import "IPFileManager.h"
+#import "NSDate+IPDateFormatters.h"
 
 @implementation GalleryTableController
 
@@ -21,6 +22,7 @@
     GalleryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GalleryTableViewCell" forIndexPath:indexPath];
     UserData* userData = [self.dataSource getDataForIndex:indexPath.row];
     cell.imagePreview.image = userData.getImage;
+    cell.dataLabel.text = [userData.creationDate getFormattedDate];
     cell.nameLabel.text = userData.name;
     return cell;
 }

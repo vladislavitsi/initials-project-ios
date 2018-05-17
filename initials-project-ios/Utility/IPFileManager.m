@@ -51,4 +51,12 @@
     return [UIImage imageWithData:[NSData dataWithContentsOfURL:[documentsURL URLByAppendingPathComponent:filename]]];
 }
 
++ (void)removeImageAtPath:(NSString *)path {
+    NSURL *documentsURL = [[NSFileManager defaultManager]  URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+    NSError *error;
+    [[NSFileManager defaultManager] removeItemAtURL:[documentsURL URLByAppendingPathComponent:path] error:&error];
+    if (error) {
+        NSLog(@"%@", error);
+    }
+}
 @end

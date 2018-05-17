@@ -10,10 +10,11 @@
 
 @interface LetterPattern : NSObject
 
+@property (nonatomic, readonly) NSInteger size;
 @property (nonatomic, readonly) NSInteger x;
 @property (nonatomic, readonly) NSInteger y;
 
-- (instancetype)initWithX:(NSInteger)x y:(NSInteger)y;
+- (instancetype)initWithX:(NSInteger)x y:(NSInteger)y size:(NSInteger)size;
 
 + (instancetype)fromDictionary:(NSDictionary *)dictionary;
 @end

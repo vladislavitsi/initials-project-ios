@@ -1,5 +1,5 @@
 //
-//  CreationOptions.h
+//  OptionsDAO.h
 //  initials-project-ios
 //
 //  Created by Uladzislau Kleshchanka on 5/7/18.
@@ -10,7 +10,7 @@
 #import "Pattern.h"
 #import "IPColor.h"
 
-#define optionsArray @[@"Pattern", @"Background Color", @"Font Color", @"Font Family"]
+#define OPTIONS_TITLES @[@"Pattern", @"Background Color", @"Font Color", @"Font Family"]
 
 typedef NS_ENUM(NSInteger, CreationsOptionsType) {
     CreationOptionsPattern,
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, CreationsOptionsType) {
     CreationOptionsFontFamily
 };
 
-@interface CreationOptions : NSObject
+@interface OptionsDAO : NSObject
 
 - (NSArray *)getOptionsOfType:(CreationsOptionsType)creationOptionsType;
 

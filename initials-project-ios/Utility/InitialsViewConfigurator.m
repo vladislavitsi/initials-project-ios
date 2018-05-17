@@ -17,16 +17,17 @@
     CGFloat width = view.frame.size.width;
     CGFloat segment = width/20.0;
     
-    for (int i = 0; i < initials.count; i++) {
+    for (NSUInteger i = 0; i < initials.count; i++) {
         UILabel *letterLabel = [[UILabel alloc] init];
         
         Pattern *pattern = (Pattern *) configuration.options[CreationOptionsPattern];
         IPColor *backgroundColor = (IPColor *) configuration.options[CreationOptionsBackgroundColor];
         IPColor *fontColor = (IPColor *) configuration.options[CreationOptionsFontColor];
         IPFont *fontFamily = (IPFont *) configuration.options[CreationOptionsFontFamily];
-        
+        CGFloat letterSize = pattern.letterPatterns[i].size;
+
         letterLabel.text = initials[i];
-        letterLabel.font = [UIFont fontWithName:fontFamily.fontName size:pattern.size];
+        letterLabel.font = [UIFont fontWithName:fontFamily.fontName size:letterSize];
         letterLabel.textColor = fontColor.color;
         letterLabel.translatesAutoresizingMaskIntoConstraints = NO;
         

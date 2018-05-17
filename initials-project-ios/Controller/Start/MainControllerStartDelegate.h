@@ -1,5 +1,5 @@
 //
-//  CreationController.h
+//  MainControllerStartDelegate.h
 //  initials-project-ios
 //
 //  Created by Vladislav Kleschenko on 5/12/18.
@@ -11,16 +11,15 @@
 #import "CreationTableController.h"
 #import "MainControllerDelegate.h"
 
-@interface CreationController : NSObject <MainControllerDelegate>
+@interface MainControllerStartDelegate : NSObject <MainControllerDelegate>
 
 @property (nonatomic, copy) NSArray<NSString *> *initials;
 
 - (instancetype)initWithName:(NSString *)name;
 
-- (NSInteger)countOfOptions;
-
-- (IPCreationConfiguration *)configurationForIndex:(NSInteger)index;
+- (IPCreationConfiguration *)configurationForOption:(AbstractOption *)option;
 
 - (void)start;
+- (void)didSelectOption:(AbstractOption *)option;
 
 @end

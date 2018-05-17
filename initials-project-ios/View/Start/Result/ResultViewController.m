@@ -22,15 +22,11 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)save {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"creation.save" object:nil userInfo:@{
-                                                                                                      @"preview":self.preview
-                                                                                                      }];
+    NSDictionary *userInfo = @{
+        @"preview":self.preview
+    };
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"creation.save" object:nil userInfo:userInfo];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

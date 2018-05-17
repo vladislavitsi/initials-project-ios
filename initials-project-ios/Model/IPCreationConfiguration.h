@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Pattern.h"
 #import "IPColor.h"
-#import "CreationOptions.h"
+#import "OptionsDAO.h"
 
 @interface IPCreationConfiguration : NSObject
 

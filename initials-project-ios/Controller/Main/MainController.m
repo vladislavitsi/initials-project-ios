@@ -9,19 +9,16 @@
 
 #import "MainController.h"
 #import "NameDialogAlertController.h"
-#import "GalleryTableViewController.h"
 #import "ExamplesPagesViewController.h"
-#import "CreationController.h"
+#import "MainControllerStartDelegate.h"
 #import "UserDefaultsUserData.h"
 #import "IPFileManager.h"
-#import "GalleryTableController.h"
 #import "MainControllerGalleryDelegate.h"
 
 @interface MainController ()
 
 @property (nonatomic, weak) NavigationController *navigationController;
-@property (nonatomic, strong) id<MainControllerDelegate> creationControllerDelegate;
-@property (nonatomic, strong) id<MainControllerDelegate> galleryControllerDelegate;
+@property (nonatomic, strong) id<MainControllerDelegate> delegate;
 @property (nonatomic, strong) id<UserDataProtocol> userDataDAO;
 
 @end
@@ -37,10 +34,11 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startButton) name:@"action.startButton" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(galleryButton) name:@"action.galleryButton" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(examplesButton) name:@"action.examplesButton" object:nil];
+
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateTo:) name:@"navigate.push" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCreation:) name:@"creation.saveAndExit" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(giveUpStartDelegate) name:@"creation.exit" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(giveUpGalleryDelegate) name:@"gallery.exit" object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(giveUpDelegate) name:@"action.mainControllerAppeared" object:nil];
 
     }
     return self;
@@ -54,8 +52,8 @@
 }
 
 - (void)galleryButton {
-    self.galleryControllerDelegate = [[MainControllerGalleryDelegate alloc] initWithDataSource:self.userDataDAO];
-    [self.galleryControllerDelegate start];
+    self.delegate = [[MainControllerGalleryDelegate alloc] initWithDataSource:self.userDataDAO];
+    [self.delegate start];
 }
 
 - (void)examplesButton {
@@ -65,11 +63,11 @@
 }
 
 - (void)startButton {
+    __weak MainController *weakSelf = self;
     UIAlertController* alert = [NameDialogAlertController actionWithHandler:^(UIAlertController *controller) {
         NSString *inputText = controller.textFields[0].text;
-
-        self.creationControllerDelegate = [[CreationController alloc] initWithName:inputText];
-        [self.creationControllerDelegate start];
+        weakSelf.delegate = [[MainControllerStartDelegate alloc] initWithName:inputText];
+        [weakSelf.delegate start];
     }];
     
     [self.navigationController presentViewController:alert animated:YES completion:nil];
@@ -79,25 +77,21 @@
     NSString *name = notification.userInfo[@"name"];
     UIImage *image = notification.userInfo[@"image"];
     NSString *imagePath = [IPFileManager saveImage:image];
-    UserData *userData = [[UserData alloc] initWithName:name imagePath:imagePath];
+    UserData *userData = [[UserData alloc] initWithName:name creationDate:[NSDate date] imagePath:imagePath];
     [self.navigationController popToViewController:self.navigationController.viewControllers.firstObject animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self.userDataDAO addUserData:userData];
     });
 }
 
-- (void)giveUpGalleryDelegate {
-    self.galleryControllerDelegate = nil;
-}
-
-- (void)giveUpStartDelegate {
-    self.creationControllerDelegate = nil;
+- (void)giveUpDelegate {
+    self.delegate = nil;
 }
 
 #pragma mark - Accessors
 
 - (id<UserDataProtocol>)userDataDAO {
-    MainController *weakSelf = self;
+    __weak MainController *weakSelf = self;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         weakSelf.userDataDAO = [[UserDefaultsUserData alloc] init];

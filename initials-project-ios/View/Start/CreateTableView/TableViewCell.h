@@ -14,7 +14,4 @@
 @property (weak, nonatomic) IBOutlet UIView *preview;
 @property (weak, nonatomic) IBOutlet UILabel *descr;
 
-//sdlfjlskdfjlsdflsdfjlsdkfjdssdssdflskdfjlsdflsdfjlsdkfjdssdssdflskdfjlsdflsdfjlsdkfjdssdssdflskdfjlsdflsdfjlsdkfjdssdssdflskdfjlsdflsdfjlsdkfjdssdssdf
-@property (nonatomic, copy) NSMutableArray *constraints;
-
 @end

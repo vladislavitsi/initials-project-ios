@@ -15,6 +15,10 @@
 @implementation CreationTableViewController
 
 
+- (void)viewDidLoad {
+    [self.tableView registerNib:[UINib nibWithNibName:@"PreviewCell" bundle:nil] forCellReuseIdentifier:@"PreviewCell"];
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 

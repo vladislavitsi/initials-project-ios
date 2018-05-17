@@ -9,7 +9,7 @@
 #import "CreationTableController.h"
 #import "TableViewCell.h"
 #import "IPCreationConfiguration.h"
-#import "CreationController.h"
+#import "MainControllerStartDelegate.h"
 #import "InitialsViewConfigurator.h"
 
 @implementation CreationTableController
@@ -21,14 +21,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.creationController countOfOptions];
+    return self.currentOptions.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PreviewCell" forIndexPath:indexPath];
-    IPCreationConfiguration *cellConfig = [self.creationController configurationForIndex:indexPath.row];
+
+    IPCreationConfiguration *cellConfig = [self.mainControllerStartDelegate configurationForOption:self.currentOptions[indexPath.row]];
     cell.descr.text = cellConfig.name;
-    [InitialsViewConfigurator configurateView:cell.preview withConfiguration:cellConfig initials:self.creationController.initials];
+    [InitialsViewConfigurator configurateView:cell.preview withConfiguration:cellConfig initials:self.mainControllerStartDelegate.initials];
+
     return cell;
 }
 
@@ -37,12 +39,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"creation.selectedOption"
-                                                      object:nil
-                                                      userInfo:@{
-                                                                    @"selectedIndex":@(indexPath.row),
-                                                                    @"previewView":((TableViewCell *)[tableView cellForRowAtIndexPath:indexPath]).preview
-                                                                }];
+    [self.mainControllerStartDelegate didSelectOption:self.currentOptions[indexPath.row]];
 }
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		218EB9ED4D6E45A9962766E9 /* NSDate+IPDateFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB2795FF3C472A1ACBEDD /* NSDate+IPDateFormatters.m */; };
+		218EBFBFCBE119E6AE503E82 /* OptionsDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB044E4A0F18EDD2B6CF5 /* OptionsDAO.m */; };
 		320C20AF20A9BAF3006CD84D /* IPFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 320C20AE20A9BAF3006CD84D /* IPFont.m */; };
 		320C20B520A9BB89006CD84D /* IPFontDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 320C20B420A9BB89006CD84D /* IPFontDAO.m */; };
 		320C20B720A9BFEC006CD84D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 320C20B620A9BFEB006CD84D /* Fonts */; };
@@ -32,7 +34,6 @@
 		32D5BF5120A08BD400ECDB69 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF4F20A08BD400ECDB69 /* TableViewCell.m */; };
 		32D5BF5220A08BD400ECDB69 /* PreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D5BF5020A08BD400ECDB69 /* PreviewCell.xib */; };
 		32D5BF5620A08EC700ECDB69 /* IPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF5520A08EC700ECDB69 /* IPColor.m */; };
-		32D5BF5B20A092A600ECDB69 /* CreationOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF5A20A092A600ECDB69 /* CreationOptions.m */; };
 		32D5BF5E20A0950D00ECDB69 /* IPColorDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF5D20A0950D00ECDB69 /* IPColorDAO.m */; };
 		32D5BF6120A098E100ECDB69 /* IPCreationConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D5BF6020A098E100ECDB69 /* IPCreationConfiguration.m */; };
 		593EF1AD20AB3B9F00C77113 /* GalleryTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593EF1AC20AB3B9F00C77113 /* GalleryTableController.m */; };
@@ -49,13 +50,17 @@
 		599C04DE20A7374600455FDD /* FontColors in Resources */ = {isa = PBXBuildFile; fileRef = 599C04DD20A7374600455FDD /* FontColors */; };
 		59C567B220A60CA40017EB70 /* NameDialogAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C567B120A60CA40017EB70 /* NameDialogAlertController.m */; };
 		59C567B520A619390017EB70 /* InputProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C567B420A619390017EB70 /* InputProcessor.m */; };
-		59C567BB20A6F5830017EB70 /* CreationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C567BA20A6F5830017EB70 /* CreationController.m */; };
+		59C567BB20A6F5830017EB70 /* MainControllerStartDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C567BA20A6F5830017EB70 /* MainControllerStartDelegate.m */; };
 		59C88C3A20A6FCBF0060C856 /* CreationTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C88C3920A6FCBF0060C856 /* CreationTableController.m */; };
 		59C88C3D20A6FFE90060C856 /* InitialsViewConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C88C3C20A6FFE90060C856 /* InitialsViewConfigurator.m */; };
 		59C88C4020A706040060C856 /* IPConfigurationConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C88C3F20A706040060C856 /* IPConfigurationConfigurator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		218EB044E4A0F18EDD2B6CF5 /* OptionsDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsDAO.m; sourceTree = "<group>"; };
+		218EB2795FF3C472A1ACBEDD /* NSDate+IPDateFormatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+IPDateFormatters.m"; sourceTree = "<group>"; };
+		218EB4A1C894480F9F5E0F23 /* OptionsDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsDAO.h; sourceTree = "<group>"; };
+		218EBD03BCD0239F1227276D /* NSDate+IPDateFormatters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+IPDateFormatters.h"; sourceTree = "<group>"; };
 		320C20AD20A9BAF3006CD84D /* IPFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPFont.h; sourceTree = "<group>"; };
 		320C20AE20A9BAF3006CD84D /* IPFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPFont.m; sourceTree = "<group>"; };
 		320C20B320A9BB89006CD84D /* IPFontDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPFontDAO.h; sourceTree = "<group>"; };
@@ -101,8 +106,6 @@
 		32D5BF5020A08BD400ECDB69 /* PreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewCell.xib; sourceTree = "<group>"; };
 		32D5BF5420A08EC700ECDB69 /* IPColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPColor.h; sourceTree = "<group>"; };
 		32D5BF5520A08EC700ECDB69 /* IPColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPColor.m; sourceTree = "<group>"; };
-		32D5BF5920A092A600ECDB69 /* CreationOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreationOptions.h; sourceTree = "<group>"; };
-		32D5BF5A20A092A600ECDB69 /* CreationOptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreationOptions.m; sourceTree = "<group>"; };
 		32D5BF5C20A0950D00ECDB69 /* IPColorDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPColorDAO.h; sourceTree = "<group>"; };
 		32D5BF5D20A0950D00ECDB69 /* IPColorDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPColorDAO.m; sourceTree = "<group>"; };
 		32D5BF5F20A098E100ECDB69 /* IPCreationConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPCreationConfiguration.h; sourceTree = "<group>"; };
@@ -133,8 +136,8 @@
 		59C567B120A60CA40017EB70 /* NameDialogAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NameDialogAlertController.m; sourceTree = "<group>"; };
 		59C567B320A619390017EB70 /* InputProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputProcessor.h; sourceTree = "<group>"; };
 		59C567B420A619390017EB70 /* InputProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputProcessor.m; sourceTree = "<group>"; };
-		59C567B920A6F5830017EB70 /* CreationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreationController.h; sourceTree = "<group>"; };
-		59C567BA20A6F5830017EB70 /* CreationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreationController.m; sourceTree = "<group>"; };
+		59C567B920A6F5830017EB70 /* MainControllerStartDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainControllerStartDelegate.h; sourceTree = "<group>"; };
+		59C567BA20A6F5830017EB70 /* MainControllerStartDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainControllerStartDelegate.m; sourceTree = "<group>"; };
 		59C88C3820A6FCBF0060C856 /* CreationTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreationTableController.h; sourceTree = "<group>"; };
 		59C88C3920A6FCBF0060C856 /* CreationTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreationTableController.m; sourceTree = "<group>"; };
 		59C88C3B20A6FFE90060C856 /* InitialsViewConfigurator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitialsViewConfigurator.h; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				595B364620A8AB22000A1172 /* AbstractOption.m */,
 				595B364820A8AF37000A1172 /* AbstractOptionDAO.h */,
 				595B364920A8AF37000A1172 /* AbstractOptionDAO.m */,
+				218EB044E4A0F18EDD2B6CF5 /* OptionsDAO.m */,
+				218EB4A1C894480F9F5E0F23 /* OptionsDAO.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +214,8 @@
 				59C88C3F20A706040060C856 /* IPConfigurationConfigurator.m */,
 				320C20B820A9C2AB006CD84D /* Screenshotter.h */,
 				320C20B920A9C2AB006CD84D /* Screenshotter.m */,
+				218EBD03BCD0239F1227276D /* NSDate+IPDateFormatters.h */,
+				218EB2795FF3C472A1ACBEDD /* NSDate+IPDateFormatters.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -361,12 +368,10 @@
 		593EF1AE20AC26E300C77113 /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				59C567B920A6F5830017EB70 /* CreationController.h */,
-				59C567BA20A6F5830017EB70 /* CreationController.m */,
+				59C567B920A6F5830017EB70 /* MainControllerStartDelegate.h */,
+				59C567BA20A6F5830017EB70 /* MainControllerStartDelegate.m */,
 				59C88C3820A6FCBF0060C856 /* CreationTableController.h */,
 				59C88C3920A6FCBF0060C856 /* CreationTableController.m */,
-				32D5BF5920A092A600ECDB69 /* CreationOptions.h */,
-				32D5BF5A20A092A600ECDB69 /* CreationOptions.m */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -524,10 +529,9 @@
 				595B364720A8AB22000A1172 /* AbstractOption.m in Sources */,
 				320C20BF20A9C746006CD84D /* UserData.m in Sources */,
 				595B363A20A741B5000A1172 /* CreationTableViewController.m in Sources */,
-				32D5BF5B20A092A600ECDB69 /* CreationOptions.m in Sources */,
 				32889881209C93F500E1452A /* PatternDAO.m in Sources */,
 				32D21E592095D7DE0007166D /* ExamplesPagesViewController.m in Sources */,
-				59C567BB20A6F5830017EB70 /* CreationController.m in Sources */,
+				59C567BB20A6F5830017EB70 /* MainControllerStartDelegate.m in Sources */,
 				59C88C4020A706040060C856 /* IPConfigurationConfigurator.m in Sources */,
 				595B364420A83C57000A1172 /* AbstractPreviewViewController.m in Sources */,
 				593EF1B520AC29BC00C77113 /* MainControllerGalleryDelegate.m in Sources */,
@@ -548,6 +552,8 @@
 				32D21E252095BEB30007166D /* AppDelegate.m in Sources */,
 				595B363F20A82CC4000A1172 /* ResultViewController.m in Sources */,
 				320C20AF20A9BAF3006CD84D /* IPFont.m in Sources */,
+				218EBFBFCBE119E6AE503E82 /* OptionsDAO.m in Sources */,
+				218EB9ED4D6E45A9962766E9 /* NSDate+IPDateFormatters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

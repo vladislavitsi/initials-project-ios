@@ -1,19 +1,20 @@
 {
 	"name":"New one",
-    "size":70,
-	"lettersCount": 3,
 	"letters":[
 		{
+			"size":70,
 			"x":-3,
-			"y":-3,
+			"y":-3
 		},
 		{
+			"size":70,
 			"x":0,
             "y":0
 		},
 		{
+			"size":70,
             "x":3,
-            "y":3,
+            "y":3
 		}
 	]
 }

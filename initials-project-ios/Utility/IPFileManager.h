@@ -19,4 +19,6 @@
 
 
 + (NSString *)saveImage:(UIImage *)image;
+
++ (void)removeImageAtPath:(NSString *)path;
 @end

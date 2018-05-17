@@ -1,23 +1,23 @@
 //
-//  CreationOptions.m
+//  OptionsDAO.m
 //  initials-project-ios
 //
 //  Created by Uladzislau Kleshchanka on 5/7/18.
 //  Copyright © 2018 Uladzislau Kleshchanka. All rights reserved.
 //
 
-#import "CreationOptions.h"
+#import "OptionsDAO.h"
 #import "PatternDAO.h"
 #import "IPColorDAO.h"
 #import "IPFontDAO.h"
 
-@interface CreationOptions ()
+@interface OptionsDAO ()
 
 @property (nonatomic, copy) NSArray<AbstractOptionDAO *> *optionDAOs;
 
 @end
 
-@implementation CreationOptions
+@implementation OptionsDAO
 
 - (instancetype)init {
     if (self = [super init]) {
