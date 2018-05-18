@@ -1,5 +1,5 @@
 //
-//  OptionsDAO.h
+//  OptionCollectionDAO.h
 //  initials-project-ios
 //
 //  Created by Uladzislau Kleshchanka on 5/7/18.
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, CreationsOptionsType) {
     CreationOptionsFontFamily
 };
 
-@interface OptionsDAO : NSObject
+@interface OptionCollectionDAO : NSObject
 
 - (NSArray *)getOptionsOfType:(CreationsOptionsType)creationOptionsType;
 

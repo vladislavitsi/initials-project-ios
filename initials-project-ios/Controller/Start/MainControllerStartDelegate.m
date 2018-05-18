@@ -19,7 +19,7 @@
 
 @property (nonatomic, assign) CreationsOptionsType currentOptionType;
 @property (nonatomic, strong) NSMutableArray<IPCreationConfiguration *> *configurationHistory;
-@property (nonatomic, strong) OptionsDAO *optionsDAO;
+@property (nonatomic, strong) OptionCollectionDAO *optionsDAO;
 @property (nonatomic, strong) CreationTableController *creationTableController;
 
 - (void)stepBack;
@@ -47,7 +47,7 @@
     [inputProcessor processInput:self.name];
     if (inputProcessor.count >= 2 && inputProcessor.count <= 3) {
         self.initials = inputProcessor.initials;
-        self.optionsDAO = [[OptionsDAO alloc] init];
+        self.optionsDAO = [[OptionCollectionDAO alloc] init];
 
         self.configurationHistory = [NSMutableArray array];
         [self.configurationHistory addObject:[IPConfigurationConfigurator defaultConfigurationForCreationOptionsManager:self.optionsDAO]];
@@ -74,6 +74,7 @@
         [self.configurationHistory removeLastObject];
     }
     self.currentOptionType--;
+    self.creationTableController.currentOptions = [self getCurrentOptions];
 }
 
 
@@ -87,14 +88,7 @@
 }
 
 - (void)nextTableView {
-    NSArray<AbstractOption *> *currentOptions = [self.optionsDAO getOptionsOfType:self.currentOptionType];
-    if (self.currentOptionType == CreationOptionsPattern) {
-        NSInteger initialsCount = self.initials.count;
-        currentOptions = [currentOptions filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Pattern *option, NSDictionary<NSString *, id> *bindings) {
-            return option.letterPatterns.count == initialsCount;
-        }]];
-    }
-    self.creationTableController.currentOptions = currentOptions;
+    self.creationTableController.currentOptions = [self getCurrentOptions];
 
     CreationTableViewController *newTableViewController = [[CreationTableViewController alloc] init];
     newTableViewController.tableView.dataSource = self.creationTableController;
@@ -102,6 +96,17 @@
     newTableViewController.title = OPTIONS_TITLES[self.currentOptionType];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":newTableViewController}];
+}
+
+- (NSArray<AbstractOption *> *)getCurrentOptions {
+    NSArray<AbstractOption *> *currentOptions = [self.optionsDAO getOptionsOfType:self.currentOptionType];
+    if (self.currentOptionType == CreationOptionsPattern) {
+        NSInteger initialsCount = self.initials.count;
+        currentOptions = [currentOptions filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Pattern *option, NSDictionary<NSString *, id> *bindings) {
+            return option.letterPatterns.count == initialsCount;
+        }]];
+    }
+    return currentOptions;
 }
 
 #pragma mark - Public interface

@@ -11,7 +11,7 @@
 
 @implementation IPConfigurationConfigurator
 
-+ (IPCreationConfiguration *)defaultConfigurationForCreationOptionsManager:(OptionsDAO *)creationOptionsManager {
++ (IPCreationConfiguration *)defaultConfigurationForCreationOptionsManager:(OptionCollectionDAO *)creationOptionsManager {
     IPCreationConfiguration *creationConfiguration = [[IPCreationConfiguration alloc] init];
     creationConfiguration.options = [@[
                                       [[creationOptionsManager getOptionsOfType:CreationOptionsPattern] firstObject],

@@ -7,7 +7,7 @@
 //
 
 #import "IPCreationConfiguration.h"
-#import "OptionsDAO.h"
+#import "OptionCollectionDAO.h"
 
 @interface IPCreationConfiguration ()
 

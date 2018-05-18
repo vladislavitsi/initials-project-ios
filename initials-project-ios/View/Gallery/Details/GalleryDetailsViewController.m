@@ -29,6 +29,6 @@
                        [imageView.bottomAnchor constraintEqualToAnchor:self.preview.bottomAnchor constant:0]
                        ];
     [NSLayoutConstraint activateConstraints:array];
-    
 }
+
 @end

@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "IPCreationConfiguration.h"
-#import "OptionsDAO.h"
+#import "OptionCollectionDAO.h"
 #import "AbstractOption.h"
 
 @interface IPConfigurationConfigurator : NSObject
 
-+ (IPCreationConfiguration *)defaultConfigurationForCreationOptionsManager:(OptionsDAO *)creationOptionsManager;
++ (IPCreationConfiguration *)defaultConfigurationForCreationOptionsManager:(OptionCollectionDAO *)creationOptionsManager;
 
 + (IPCreationConfiguration *)newConfigurationWith:(IPCreationConfiguration *)configuration changedWithType:(CreationsOptionsType)type option:(AbstractOption *)object;
 @end

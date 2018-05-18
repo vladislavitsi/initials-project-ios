@@ -9,11 +9,11 @@
 
 #import "MainController.h"
 #import "NameDialogAlertController.h"
-#import "ExamplesPagesViewController.h"
 #import "MainControllerStartDelegate.h"
 #import "UserDefaultsUserData.h"
 #import "IPFileManager.h"
 #import "MainControllerGalleryDelegate.h"
+#import "MainControllerExamplesDelegate.h"
 
 @interface MainController ()
 
@@ -57,9 +57,8 @@
 }
 
 - (void)examplesButton {
-    ExamplesPagesViewController *viewController = [[ExamplesPagesViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    viewController.title = @"Examples";
-    [self.navigationController pushViewController:viewController animated:YES];
+    self.delegate = [[MainControllerExamplesDelegate alloc] init];
+    [self.delegate start];
 }
 
 - (void)startButton {

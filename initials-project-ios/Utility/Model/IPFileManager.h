@@ -11,14 +11,9 @@
 
 @interface IPFileManager : NSObject
 
-+ (NSData *)getFileDataForPath:(NSString *)filePath;
-
 + (NSArray<NSData *> *)getAllFilesDataForPath:(NSString *)filePath;
-
 + (UIImage *)getImageForPath:(NSString *)imagePath;
-
-
 + (NSString *)saveImage:(UIImage *)image;
-
 + (void)removeImageAtPath:(NSString *)path;
+
 @end
