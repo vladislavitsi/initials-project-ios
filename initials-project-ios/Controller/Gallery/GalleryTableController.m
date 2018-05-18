@@ -53,9 +53,10 @@
     detailViewController.image = [IPFileManager getImageForPath:userData.imagePath];
     
     // Push the view controller;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{
-                                                                                         @"destination":detailViewController
-                                                                                         }];
+    NSDictionary *userInfo = @{
+                               @"destination":detailViewController
+                               };
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:userInfo];
 }
 
 @end

@@ -9,13 +9,14 @@
 #import "InitialsViewConfigurator.h"
 #import "IPFont.h"
 
+#define SEGMENT_COUNT 20.0
+
 @implementation InitialsViewConfigurator
 
-+ (void)configurateView:(UIView *)view withConfiguration:(IPCreationConfiguration *)configuration initials:(NSArray<NSString *> *)initials{
++ (void)configurateView:(UIView *)view width:(CGFloat)width withConfiguration:(IPCreationConfiguration *)configuration initials:(NSArray<NSString *> *)initials{
     NSMutableArray *constraints = [NSMutableArray array];
-    
-    CGFloat width = view.frame.size.width;
-    CGFloat segment = width/20.0;
+
+    CGFloat segment = width/SEGMENT_COUNT;
     
     for (NSUInteger i = 0; i < initials.count; i++) {
         UILabel *letterLabel = [[UILabel alloc] init];

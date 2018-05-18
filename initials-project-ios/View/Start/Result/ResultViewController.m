@@ -9,16 +9,14 @@
 #import "ResultViewController.h"
 #import "InitialsViewConfigurator.h"
 
-@interface ResultViewController ()
-
-@end
+#define MARGINS 2 * 35
 
 @implementation ResultViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [InitialsViewConfigurator configurateView:self.preview withConfiguration:self.configuration initials:self.initials];
+    [InitialsViewConfigurator configurateView:self.preview width:[UIScreen mainScreen].bounds.size.width - MARGINS withConfiguration:self.configuration initials:self.initials];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
 }
 
