@@ -12,6 +12,6 @@
 
 @interface InitialsViewConfigurator : NSObject
 
-+ (void)configurateView:(UIView *)view withConfiguration:(IPCreationConfiguration *)configuration initials:(NSArray<NSString *> *)initials;
++ (void)configurateView:(UIView *)view width:(CGFloat)width withConfiguration:(IPCreationConfiguration *)configuration initials:(NSArray<NSString *> *)initials;
 
 @end
