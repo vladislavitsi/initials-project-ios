@@ -18,6 +18,7 @@
 		218EB5A8EBEFB907B601A274 /* IPCreationConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBEEF228D6F2590E6CD55 /* IPCreationConfiguration.m */; };
 		218EB6308B2981E15D120FF2 /* Screenshotter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB9D62F97E2A9F966FE5B /* Screenshotter.m */; };
 		218EB70D76D89B17101C96E5 /* CreationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBA7164C7BE9D2AF7DA31 /* CreationTableViewController.m */; };
+		218EB71DECB42179AC2B65B3 /* MailHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB8DDA97EBDCFFC2CDD98 /* MailHandler.m */; };
 		218EB86AEB0A80F2B5BFCF9A /* OptionDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB62D7D99F024D9361096 /* OptionDAO.m */; };
 		218EB945B725289A5683AD62 /* InitialsViewConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBFD3577CBFD8F079084E /* InitialsViewConfigurator.m */; };
 		218EB9B6000051C541CF7113 /* GalleryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218EB5D0C60F18E3176EEB31 /* GalleryTableViewCell.xib */; };
@@ -83,6 +84,7 @@
 		218EB8790810107495744090 /* Screenshotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screenshotter.h; sourceTree = "<group>"; };
 		218EB87BBB4A5E4FDED10AF6 /* ExamplePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamplePreviewViewController.h; sourceTree = "<group>"; };
 		218EB8C5DBD1D9C94FEB5F17 /* OptionCollectionDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionCollectionDAO.m; sourceTree = "<group>"; };
+		218EB8DDA97EBDCFFC2CDD98 /* MailHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailHandler.m; sourceTree = "<group>"; };
 		218EB92D63B8CB61CA952326 /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
 		218EB99F317E8B36CCC82EAD /* GalleryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryTableViewCell.m; sourceTree = "<group>"; };
 		218EB9D62F97E2A9F966FE5B /* Screenshotter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screenshotter.m; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		218EBFD89C1E2C40B81F6AC5 /* GalleryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryDetailsViewController.m; sourceTree = "<group>"; };
 		218EBFEB640B060FB660DB7A /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		218EBFF0B4848030EAB571C5 /* NameDialogAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameDialogAlertController.m; sourceTree = "<group>"; };
+		218EBFFB8222DF7524827E70 /* MailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailHandler.h; sourceTree = "<group>"; };
 		320C20B620A9BFEB006CD84D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = View/Fonts; sourceTree = "<group>"; };
 		32D21E202095BEB30007166D /* initials-project-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "initials-project-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D21E232095BEB30007166D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 		218EB3A80A9CDB144D1797C1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				32D21E292095BEB30007166D /* Main.storyboard */,
 				218EBFEB640B060FB660DB7A /* NavigationController.h */,
 				218EB5FA8B63B6E41104A8F8 /* NavigationController.m */,
 				218EB85E1DECCBC6BBD118C9 /* MainMenuViewController.h */,
@@ -378,6 +382,8 @@
 				218EB2795FF3C472A1ACBEDD /* NSDate+IPDateFormatters.m */,
 				218EB7A8D799C1C1E467F3D4 /* View */,
 				218EB50485C82D165D9750C7 /* Model */,
+				218EB8DDA97EBDCFFC2CDD98 /* MailHandler.m */,
+				218EBFFB8222DF7524827E70 /* MailHandler.h */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -428,7 +434,6 @@
 		32D21E4E2095CF130007166D /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				32D21E292095BEB30007166D /* Main.storyboard */,
 				32D21E2C2095BEB40007166D /* Assets.xcassets */,
 				32D21E2E2095BEB40007166D /* LaunchScreen.storyboard */,
 				32D21E232095BEB30007166D /* AppDelegate.h */,
@@ -598,6 +603,7 @@
 				218EB076D3F6666A72454DB2 /* GalleryTableViewCell.m in Sources */,
 				218EBFD0551B237C0407557E /* GalleryDetailsViewController.m in Sources */,
 				218EBD7655495BB483B79E4D /* AbstractPreviewViewController.m in Sources */,
+				218EB71DECB42179AC2B65B3 /* MailHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +741,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "initials-project-ios/initials-project-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7VR5AMBYN;
@@ -751,6 +758,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "initials-project-ios/initials-project-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7VR5AMBYN;

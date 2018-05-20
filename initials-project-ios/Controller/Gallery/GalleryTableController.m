@@ -11,6 +11,7 @@
 #import "GalleryDetailsViewController.h"
 #import "IPFileManager.h"
 #import "NSDate+IPDateFormatters.h"
+#import "MailHandler.h"
 
 @implementation GalleryTableController
 
@@ -47,10 +48,31 @@
     GalleryDetailsViewController *detailViewController = [[GalleryDetailsViewController alloc] initWithNibName:@"Preview" bundle:nil];
     
     UserData *userData = [self.dataSource getDataForIndex:indexPath.row];
-    
+    UIImage *image = [IPFileManager getImageForPath:userData.imagePath];
     // Pass the selected object to the new view controller.
     detailViewController.name = userData.name;
-    detailViewController.image = [IPFileManager getImageForPath:userData.imagePath];
+    detailViewController.image = image;
+    detailViewController.index = indexPath.row;
+    
+    detailViewController.deleteElement = ^(NSInteger i) {
+        [self tableView:tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
+    };
+
+    detailViewController.saveToPhotos = ^(NSInteger i) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            UIImageWriteToSavedPhotosAlbum(image, self, @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), nil);
+        });
+    };
+
+    detailViewController.sendViaEmail = ^(NSInteger i) {
+        if([MFMailComposeViewController canSendMail]) {
+            MailHandler *mailHandler = [MailHandler mailComposeViewControllerForImage:image name:userData.name];
+            NSDictionary *userInfo = @{
+                @"destination":mailHandler
+            };
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.present" object:nil userInfo:userInfo];
+        }
+    };
     
     // Push the view controller;
     NSDictionary *userInfo = @{
@@ -58,5 +80,21 @@
                                };
     [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:userInfo];
 }
+
+- (void)thisImage:(UIImage *)image hasBeenSavedInPhotoAlbumWithError:(NSError *)error usingContextInfo:(void *)ctxInfo {
+    NSString *message;
+    if (error) {
+        message = @"Unfortunately, save failed :(";
+    } else {
+        message = @"Saved successfully :)";
+    }
+    UIAlertController *infoAlert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    [infoAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    NSDictionary *userInfo = @{
+        @"destination":infoAlert
+    };
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.present" object:nil userInfo:userInfo];
+}
+
 
 @end

@@ -12,5 +12,8 @@
 @interface GalleryDetailsViewController : AbstractPreviewViewController
 
 @property (nonatomic, strong) UIImage *image;
-
+@property (nonatomic, assign) NSInteger index;
+@property (nonatomic, copy) void (^deleteElement)(NSInteger i);
+@property (nonatomic, copy) void (^saveToPhotos)(NSInteger i);
+@property (nonatomic, copy) void (^sendViaEmail)(NSInteger i);
 @end
