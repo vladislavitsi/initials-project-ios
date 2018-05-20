@@ -8,6 +8,7 @@
 
 #import "ResultViewController.h"
 #import "InitialsViewConfigurator.h"
+#import "Constants.h"
 
 #define MARGINS 2 * 35
 
@@ -22,9 +23,9 @@
 
 - (IBAction)save {
     NSDictionary *userInfo = @{
-        @"preview":self.preview
+        NOTIFICATION_USER_INFO_PREVIEW:self.preview
     };
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"creation.save" object:nil userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CREATION_SAVE object:nil userInfo:userInfo];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -32,7 +33,7 @@
     
     // check if the back button was pressed
     if (self.isMovingFromParentViewController) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"creation.back" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CREATION_BACK object:nil];
     }
 }
 

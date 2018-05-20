@@ -7,11 +7,9 @@
 //
 
 #import "MainControllerGalleryDelegate.h"
-#import <UIKit/UIKit.h>
-#import "UserDataProtocol.h"
 #import "GalleryTableController.h"
-#import "UserDefaultsUserData.h"
 #import "GalleryTableViewController.h"
+#import "Constants.h"
 
 @interface MainControllerGalleryDelegate ()
 
@@ -38,7 +36,7 @@
     viewController.title = @"Gallery";
     viewController.tableView.delegate = self.gtc;
     viewController.tableView.dataSource = self.gtc;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":viewController}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAVIGATION_PUSH object:nil userInfo:@{NOTIFICATION_USER_INFO_DESTINATION:viewController}];
 }
 
 @end

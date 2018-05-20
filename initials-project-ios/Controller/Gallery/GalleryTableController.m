@@ -12,6 +12,7 @@
 #import "IPFileManager.h"
 #import "NSDate+IPDateFormatters.h"
 #import "MailHandler.h"
+#import "Constants.h"
 
 @implementation GalleryTableController
 
@@ -69,17 +70,17 @@
         if([MFMailComposeViewController canSendMail]) {
             MailHandler *mailHandler = [MailHandler mailComposeViewControllerForImage:image name:userData.name];
             NSDictionary *userInfo = @{
-                @"destination":mailHandler
+                NOTIFICATION_USER_INFO_DESTINATION:mailHandler
             };
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.present" object:nil userInfo:userInfo];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAVIGATION_PRESENT object:nil userInfo:userInfo];
         }
     };
     
     // Push the view controller;
     NSDictionary *userInfo = @{
-                               @"destination":detailViewController
+        NOTIFICATION_USER_INFO_DESTINATION:detailViewController
                                };
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAVIGATION_PUSH object:nil userInfo:userInfo];
 }
 
 - (void)thisImage:(UIImage *)image hasBeenSavedInPhotoAlbumWithError:(NSError *)error usingContextInfo:(void *)ctxInfo {
@@ -92,9 +93,9 @@
     UIAlertController *infoAlert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
     [infoAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
     NSDictionary *userInfo = @{
-        @"destination":infoAlert
+        NOTIFICATION_USER_INFO_DESTINATION:infoAlert
     };
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.present" object:nil userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAVIGATION_PRESENT object:nil userInfo:userInfo];
 }
 
 

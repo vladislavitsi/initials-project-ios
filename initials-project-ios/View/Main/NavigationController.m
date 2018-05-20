@@ -7,6 +7,7 @@
 //
 
 #import "NavigationController.h"
+#import "Constants.h"
 
 @interface NavigationController ()
 
@@ -17,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"initNavigationController" object:nil userInfo:@{@"controller":self}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_INIT_NAVIGATION_CONTROLLER object:nil userInfo:@{NOTIFICATION_USER_INFO_CONTROLLER:self}];
 }
 
 @end

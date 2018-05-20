@@ -115,6 +115,7 @@
 		320C20B620A9BFEB006CD84D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = View/Fonts; sourceTree = "<group>"; };
 		32C6843520B183110065622B /* MailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailHandler.h; sourceTree = "<group>"; };
 		32C6843620B183120065622B /* MailHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailHandler.m; sourceTree = "<group>"; };
+		32C6843820B187AA0065622B /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		32D21E202095BEB30007166D /* initials-project-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "initials-project-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D21E232095BEB30007166D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		32D21E242095BEB30007166D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -481,6 +482,7 @@
 				597CDBF220A6024A00616CDE /* MainController.h */,
 				597CDBF320A6024A00616CDE /* MainController.m */,
 				593EF1B220AC27C100C77113 /* MainControllerDelegate.h */,
+				32C6843820B187AA0065622B /* Constants.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";

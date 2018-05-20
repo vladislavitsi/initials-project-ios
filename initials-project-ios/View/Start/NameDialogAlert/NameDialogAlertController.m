@@ -8,15 +8,20 @@
 
 #import "NameDialogAlertController.h"
 
+#define ALERT_TITLE @"Create Handkerchief"
+#define MESSAGE @"Please, enter your full name.It must consist of 2 or 3 words."
+#define CANCEL_TITLE @"Cancel"
+#define START_TITLE @"Start"
+
 @implementation NameDialogAlertController
 
 + (UIAlertController *)actionWithHandler:(void (^)(UIAlertController *))handler {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Create Handkerchief" message:@"Please, enter your full name.It must consist of 2 or 3 words." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:ALERT_TITLE message:MESSAGE preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addTextFieldWithConfigurationHandler:nil];
     
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Start" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:CANCEL_TITLE style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:START_TITLE style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         handler(alert);
     }];
     

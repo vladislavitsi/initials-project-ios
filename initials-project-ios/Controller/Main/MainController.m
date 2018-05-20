@@ -14,6 +14,7 @@
 #import "IPFileManager.h"
 #import "MainControllerGalleryDelegate.h"
 #import "MainControllerExamplesDelegate.h"
+#import "Constants.h"
 
 @interface MainController ()
 
@@ -27,19 +28,19 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [[NSNotificationCenter defaultCenter] addObserverForName:@"initNavigationController" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-            self.navigationController = note.userInfo[@"controller"];
+        [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_INIT_NAVIGATION_CONTROLLER object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+            self.navigationController = note.userInfo[NOTIFICATION_USER_INFO_CONTROLLER];
         }];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startButton) name:@"action.startButton" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(galleryButton) name:@"action.galleryButton" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(examplesButton) name:@"action.examplesButton" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startButton) name:NOTIFICATION_ACTION_START_BUTTON object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(galleryButton) name:NOTIFICATION_ACTION_GALLERY_BUTTON object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(examplesButton) name:NOTIFICATION_ACTION_EXAMPLES_BUTTON object:nil];
 
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateTo:) name:@"navigate.push" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(present:) name:@"navigate.present" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCreation:) name:@"creation.saveAndExit" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateTo:) name:NOTIFICATION_NAVIGATION_PUSH object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(present:) name:NOTIFICATION_NAVIGATION_PRESENT object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCreation:) name:NOTIFICATION_CREATION_SAVE_AND_EXIT object:nil];
 
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(giveUpDelegate) name:@"action.mainControllerAppeared" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(giveUpDelegate) name:NOTIFICATION_ACTION_MAIN_CONTROLLER_APPEARED object:nil];
 
     }
     return self;
@@ -51,11 +52,11 @@
 #pragma mark - Notification actions
 
 - (void)present:(NSNotification *)notification {
-    [self.navigationController presentViewController:notification.userInfo[@"destination"] animated:YES completion:nil];
+    [self.navigationController presentViewController:notification.userInfo[NOTIFICATION_USER_INFO_DESTINATION] animated:YES completion:nil];
 }
 
 - (void)navigateTo:(NSNotification *)notification {
-    [self.navigationController pushViewController:notification.userInfo[@"destination"] animated:YES];
+    [self.navigationController pushViewController:notification.userInfo[NOTIFICATION_USER_INFO_DESTINATION] animated:YES];
 }
 
 - (void)galleryButton {
@@ -80,8 +81,8 @@
 }
 
 - (void)saveCreation:(NSNotification *)notification {
-    NSString *name = notification.userInfo[@"name"];
-    UIImage *image = notification.userInfo[@"image"];
+    NSString *name = notification.userInfo[NOTIFICATION_USER_INFO_NAME];
+    UIImage *image = notification.userInfo[NOTIFICATION_USER_INFO_IMAGE];
     NSString *imagePath = [IPFileManager saveImage:image];
     UserData *userData = [[UserData alloc] initWithName:name creationDate:[NSDate date] imagePath:imagePath];
     [self.navigationController popToViewController:self.navigationController.viewControllers.firstObject animated:YES];

@@ -12,6 +12,7 @@
 #import "ResultViewController.h"
 #import "InputProcessor.h"
 #import "Screenshotter.h"
+#import "Constants.h"
 
 @interface MainControllerStartDelegate ()
 
@@ -40,8 +41,8 @@
 }
 
 - (void)start {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stepBack) name:@"creation.back" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(save:) name:@"creation.save" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stepBack) name:NOTIFICATION_CREATION_BACK object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(save:) name:NOTIFICATION_CREATION_SAVE object:nil];
 
     InputProcessor *inputProcessor = [[InputProcessor alloc] initWithPattern:@" -"];
     [inputProcessor processInput:self.name];
@@ -62,10 +63,10 @@
 
 - (void)save:(NSNotification *)notification {
     NSDictionary *userInfo = @{
-        @"name":self.name,
-        @"image":[Screenshotter imageWithView:notification.userInfo[@"preview"]]
+        NOTIFICATION_USER_INFO_NAME:self.name,
+        NOTIFICATION_USER_INFO_IMAGE:[Screenshotter imageWithView:notification.userInfo[NOTIFICATION_USER_INFO_PREVIEW]]
     };
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"creation.saveAndExit" object:nil userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CREATION_SAVE_AND_EXIT object:nil userInfo:userInfo];
 }
 
 
@@ -84,7 +85,7 @@
     vc.configuration = [self.configurationHistory lastObject];
     vc.name = self.name;
     vc.title = @"Preview";
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":vc}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAVIGATION_PUSH object:nil userInfo:@{NOTIFICATION_USER_INFO_DESTINATION:vc}];
 }
 
 - (void)nextTableView {
@@ -95,7 +96,7 @@
     newTableViewController.tableView.delegate = self.creationTableController;
     newTableViewController.title = OPTIONS_TITLES[self.currentOptionType];
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":newTableViewController}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAVIGATION_PUSH object:nil userInfo:@{NOTIFICATION_USER_INFO_DESTINATION:newTableViewController}];
 }
 
 - (NSArray<AbstractOption *> *)getCurrentOptions {

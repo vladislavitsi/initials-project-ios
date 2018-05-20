@@ -27,9 +27,11 @@
     return initials;
 }
 
+#define WHITESPACE @" "
+
 - (void)processInput:(NSString *)text {
     NSCharacterSet *separators = [NSCharacterSet characterSetWithCharactersInString:self.pattern];
-    _words = [[text stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]] componentsSeparatedByCharactersInSet:separators];
+    _words = [[text stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:WHITESPACE]] componentsSeparatedByCharactersInSet:separators];
 }
 
 - (NSInteger)count {

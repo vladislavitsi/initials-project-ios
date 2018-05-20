@@ -7,6 +7,7 @@
 //
 
 #import "MainMenuViewController.h"
+#import "Constants.h"
 
 @interface MainMenuViewController ()
 - (IBAction)galleryAction:(UIButton *)sender;
@@ -23,17 +24,17 @@
 }
 
 - (IBAction)galleryAction:(UIButton *)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"action.galleryButton" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ACTION_GALLERY_BUTTON object:nil];
 }
 - (IBAction)examplesAction:(UIButton *)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"action.examplesButton" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ACTION_EXAMPLES_BUTTON object:nil];
 }
 
 - (IBAction)startAction:(UIButton *)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"action.startButton" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ACTION_START_BUTTON object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"action.mainControllerAppeared" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ACTION_MAIN_CONTROLLER_APPEARED object:nil];
 }
 @end

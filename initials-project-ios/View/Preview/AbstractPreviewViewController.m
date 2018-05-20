@@ -18,7 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.nameLabel.text = self.name;
-//    [self makeRoundCorners];
     [self makeShadow];
 }
 
@@ -27,10 +26,6 @@
     self.preview.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
     self.preview.layer.shadowOpacity = 0.25f;
     self.preview.layer.shadowRadius = 10.0f;
-}
-
-- (void)makeRoundCorners {
-    self.preview.layer.cornerRadius = 5;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,7 @@
 //
 
 #import "CreationTableViewController.h"
+#import "Constants.h"
 
 @interface CreationTableViewController ()
 
@@ -24,7 +25,7 @@
 
     // check if the back button was pressed
     if (self.isMovingFromParentViewController) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"creation.back" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CREATION_BACK object:nil];
     }
 }
 

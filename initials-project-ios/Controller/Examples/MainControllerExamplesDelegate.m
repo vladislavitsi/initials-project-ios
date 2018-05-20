@@ -8,6 +8,7 @@
 
 #import "MainControllerExamplesDelegate.h"
 #import "ExamplePreviewViewController.h"
+#import "Constants.h"
 
 #define EXAMPLE_NAMES @[@"Sheldon Li Cooper", @"Luke Skywalker", @"Alex Di-Mango"]
 
@@ -33,7 +34,7 @@
     [proxy setBackgroundColor:[UIColor whiteColor]];
     
     [viewController setViewControllers:@[self.pages.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":viewController}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAVIGATION_PUSH object:nil userInfo:@{NOTIFICATION_USER_INFO_DESTINATION:viewController}];
 }
 
 - (NSArray *)pages {
