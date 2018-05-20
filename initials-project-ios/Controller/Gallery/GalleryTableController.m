@@ -56,13 +56,14 @@
     detailViewController.image = image;
     detailViewController.index = indexPath.row;
     
+    __weak GalleryTableController *weakSelf = self;
     detailViewController.deleteElement = ^(NSInteger i) {
-        [self tableView:tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
+        [weakSelf tableView:tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
     };
 
     detailViewController.saveToPhotos = ^(NSInteger i) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-            UIImageWriteToSavedPhotosAlbum(image, self, @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), nil);
+            UIImageWriteToSavedPhotosAlbum(image, weakSelf, @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), nil);
         });
     };
 
