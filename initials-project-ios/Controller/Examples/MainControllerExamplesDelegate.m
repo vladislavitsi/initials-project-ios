@@ -25,6 +25,13 @@
     UIPageViewController *viewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     viewController.delegate = self;
     viewController.dataSource = self;
+    viewController.title = @"Examples";
+    
+    UIPageControl* proxy = [UIPageControl appearanceWhenContainedInInstancesOfClasses:@[viewController.class]];
+    [proxy setPageIndicatorTintColor:[UIColor lightGrayColor]];
+    [proxy setCurrentPageIndicatorTintColor:[UIColor blackColor]];
+    [proxy setBackgroundColor:[UIColor whiteColor]];
+    
     [viewController setViewControllers:@[self.pages.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"navigate.push" object:nil userInfo:@{@"destination":viewController}];
 }
@@ -52,7 +59,7 @@
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     NSInteger index = [self.pages indexOfObject:viewController];
     if (index == 0) {
-        return nil;
+        return self.pages.lastObject;
     }
     return self.pages[index - 1];
 }
@@ -60,7 +67,7 @@
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSInteger index = [self.pages indexOfObject:viewController];
     if (index == self.pages.count - 1) {
-        return nil;
+        return self.pages.firstObject;
     }
     return self.pages[index + 1];
 }

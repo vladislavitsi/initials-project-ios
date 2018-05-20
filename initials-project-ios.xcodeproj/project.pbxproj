@@ -18,7 +18,6 @@
 		218EB5A8EBEFB907B601A274 /* IPCreationConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBEEF228D6F2590E6CD55 /* IPCreationConfiguration.m */; };
 		218EB6308B2981E15D120FF2 /* Screenshotter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB9D62F97E2A9F966FE5B /* Screenshotter.m */; };
 		218EB70D76D89B17101C96E5 /* CreationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBA7164C7BE9D2AF7DA31 /* CreationTableViewController.m */; };
-		218EB71DECB42179AC2B65B3 /* MailHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB8DDA97EBDCFFC2CDD98 /* MailHandler.m */; };
 		218EB86AEB0A80F2B5BFCF9A /* OptionDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB62D7D99F024D9361096 /* OptionDAO.m */; };
 		218EB945B725289A5683AD62 /* InitialsViewConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBFD3577CBFD8F079084E /* InitialsViewConfigurator.m */; };
 		218EB9B6000051C541CF7113 /* GalleryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218EB5D0C60F18E3176EEB31 /* GalleryTableViewCell.xib */; };
@@ -38,6 +37,7 @@
 		218EBFD0551B237C0407557E /* GalleryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBFD89C1E2C40B81F6AC5 /* GalleryDetailsViewController.m */; };
 		218EBFDC3484FDE44E8C6BEB /* GalleryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB49236925873AE820586 /* GalleryTableViewController.m */; };
 		320C20B720A9BFEC006CD84D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 320C20B620A9BFEB006CD84D /* Fonts */; };
+		32C6843720B183120065622B /* MailHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6843620B183120065622B /* MailHandler.m */; };
 		32D21E252095BEB30007166D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E242095BEB30007166D /* AppDelegate.m */; };
 		32D21E2B2095BEB30007166D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E292095BEB30007166D /* Main.storyboard */; };
 		32D21E2D2095BEB40007166D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E2C2095BEB40007166D /* Assets.xcassets */; };
@@ -84,7 +84,6 @@
 		218EB8790810107495744090 /* Screenshotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screenshotter.h; sourceTree = "<group>"; };
 		218EB87BBB4A5E4FDED10AF6 /* ExamplePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamplePreviewViewController.h; sourceTree = "<group>"; };
 		218EB8C5DBD1D9C94FEB5F17 /* OptionCollectionDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionCollectionDAO.m; sourceTree = "<group>"; };
-		218EB8DDA97EBDCFFC2CDD98 /* MailHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailHandler.m; sourceTree = "<group>"; };
 		218EB92D63B8CB61CA952326 /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
 		218EB99F317E8B36CCC82EAD /* GalleryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryTableViewCell.m; sourceTree = "<group>"; };
 		218EB9D62F97E2A9F966FE5B /* Screenshotter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screenshotter.m; sourceTree = "<group>"; };
@@ -113,8 +112,9 @@
 		218EBFD89C1E2C40B81F6AC5 /* GalleryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryDetailsViewController.m; sourceTree = "<group>"; };
 		218EBFEB640B060FB660DB7A /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		218EBFF0B4848030EAB571C5 /* NameDialogAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameDialogAlertController.m; sourceTree = "<group>"; };
-		218EBFFB8222DF7524827E70 /* MailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailHandler.h; sourceTree = "<group>"; };
 		320C20B620A9BFEB006CD84D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = View/Fonts; sourceTree = "<group>"; };
+		32C6843520B183110065622B /* MailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailHandler.h; sourceTree = "<group>"; };
+		32C6843620B183120065622B /* MailHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailHandler.m; sourceTree = "<group>"; };
 		32D21E202095BEB30007166D /* initials-project-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "initials-project-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D21E232095BEB30007166D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		32D21E242095BEB30007166D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -282,6 +282,8 @@
 		218EB7A8D799C1C1E467F3D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				32C6843520B183110065622B /* MailHandler.h */,
+				32C6843620B183120065622B /* MailHandler.m */,
 				218EBFD3577CBFD8F079084E /* InitialsViewConfigurator.m */,
 				218EB09675B19E644DB5261D /* InitialsViewConfigurator.h */,
 				218EB9D62F97E2A9F966FE5B /* Screenshotter.m */,
@@ -382,8 +384,6 @@
 				218EB2795FF3C472A1ACBEDD /* NSDate+IPDateFormatters.m */,
 				218EB7A8D799C1C1E467F3D4 /* View */,
 				218EB50485C82D165D9750C7 /* Model */,
-				218EB8DDA97EBDCFFC2CDD98 /* MailHandler.m */,
-				218EBFFB8222DF7524827E70 /* MailHandler.h */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -596,6 +596,7 @@
 				218EBF9FD15EB63D6D42E74A /* ResultViewController.m in Sources */,
 				218EBA3624A861C215A1666E /* TableViewCell.m in Sources */,
 				218EB70D76D89B17101C96E5 /* CreationTableViewController.m in Sources */,
+				32C6843720B183120065622B /* MailHandler.m in Sources */,
 				218EB0B7898CAAB0FED91579 /* NavigationController.m in Sources */,
 				218EB0A332975510A11EBC1E /* MainMenuViewController.m in Sources */,
 				218EBC358003BD379A518F2B /* ExamplePreviewViewController.m in Sources */,
@@ -603,7 +604,6 @@
 				218EB076D3F6666A72454DB2 /* GalleryTableViewCell.m in Sources */,
 				218EBFD0551B237C0407557E /* GalleryDetailsViewController.m in Sources */,
 				218EBD7655495BB483B79E4D /* AbstractPreviewViewController.m in Sources */,
-				218EB71DECB42179AC2B65B3 /* MailHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

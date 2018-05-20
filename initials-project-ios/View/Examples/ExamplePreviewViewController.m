@@ -14,4 +14,13 @@
 
 @implementation ExamplePreviewViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor]; //Set to any color.
+//    UIPageControl *pageControl = [UIPageControl appearance];
+//    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+//    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+
+}
+
 @end

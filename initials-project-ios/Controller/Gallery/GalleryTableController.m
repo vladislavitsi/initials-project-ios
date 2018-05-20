@@ -46,6 +46,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GalleryDetailsViewController *detailViewController = [[GalleryDetailsViewController alloc] initWithNibName:@"Preview" bundle:nil];
+    detailViewController.title = @"Preview";
     
     UserData *userData = [self.dataSource getDataForIndex:indexPath.row];
     UIImage *image = [IPFileManager getImageForPath:userData.imagePath];
