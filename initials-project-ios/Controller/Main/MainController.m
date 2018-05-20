@@ -36,6 +36,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(examplesButton) name:@"action.examplesButton" object:nil];
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(navigateTo:) name:@"navigate.push" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(present:) name:@"navigate.present" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCreation:) name:@"creation.saveAndExit" object:nil];
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(giveUpDelegate) name:@"action.mainControllerAppeared" object:nil];
@@ -45,7 +46,13 @@
 }
 
 
+
+
 #pragma mark - Notification actions
+
+- (void)present:(NSNotification *)notification {
+    [self.navigationController presentViewController:notification.userInfo[@"destination"] animated:YES completion:nil];
+}
 
 - (void)navigateTo:(NSNotification *)notification {
     [self.navigationController pushViewController:notification.userInfo[@"destination"] animated:YES];
