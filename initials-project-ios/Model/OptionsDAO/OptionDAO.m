@@ -8,21 +8,23 @@
 
 #import "OptionDAO.h"
 #import "AbstractOption.h"
-#import "IPFileManager.h"
 
 @implementation OptionDAO
 
-- (instancetype)initWithPath:(NSString *)path class:(Class)klass{
+- (instancetype)initWithFileName:(NSString *)path class:(Class)klass{
     if (self = [self init]) {
         NSMutableArray<AbstractOption *> *options = [NSMutableArray array];
-        NSArray<NSData *> *optionsData = [IPFileManager getAllFilesDataForPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path]];
-        for (NSData *data in optionsData) {
-            NSError *error;
-            AbstractOption *option = [klass fromJSONDictionary:[NSJSONSerialization JSONObjectWithData:data options:0 error:&error]];
-            if (!error) {
-                [options addObject:option];
+        NSData *dataOfFile = [NSData dataWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path]];
+        
+        NSError *error;
+        NSArray<NSDictionary *> *optionsJSONDictionaries = [NSJSONSerialization JSONObjectWithData:dataOfFile options:0 error:&error];
+        
+        if (!error) {
+            for (NSDictionary *jsonDictionary in optionsJSONDictionaries) {
+                [options addObject:[klass fromJSONDictionary:jsonDictionary]];
             }
         }
+        
         self.options = [NSArray arrayWithArray:options];
     }
     return self;

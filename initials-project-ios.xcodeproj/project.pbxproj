@@ -36,20 +36,19 @@
 		218EBFC86D3F650DC74506E9 /* IPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBE348E80369C3AA297DA /* IPColor.m */; };
 		218EBFD0551B237C0407557E /* GalleryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBFD89C1E2C40B81F6AC5 /* GalleryDetailsViewController.m */; };
 		218EBFDC3484FDE44E8C6BEB /* GalleryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB49236925873AE820586 /* GalleryTableViewController.m */; };
-		320C20B720A9BFEC006CD84D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 320C20B620A9BFEB006CD84D /* Fonts */; };
 		32C6843720B183120065622B /* MailHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6843620B183120065622B /* MailHandler.m */; };
+		32C6843E20B30D920065622B /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = 32C6843D20B30D920065622B /* Resource */; };
 		32D21E252095BEB30007166D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E242095BEB30007166D /* AppDelegate.m */; };
 		32D21E2B2095BEB30007166D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E292095BEB30007166D /* Main.storyboard */; };
 		32D21E2D2095BEB40007166D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E2C2095BEB40007166D /* Assets.xcassets */; };
 		32D21E302095BEB40007166D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E2E2095BEB40007166D /* LaunchScreen.storyboard */; };
 		32D21E332095BEB40007166D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E322095BEB40007166D /* main.m */; };
-		32D21E3B2095C9A90007166D /* Patterns in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E3A2095C9A90007166D /* Patterns */; };
 		32D8A40020AF062500C7FCDA /* MainControllerExamplesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D8A3FF20AF062500C7FCDA /* MainControllerExamplesDelegate.m */; };
+		32E758A620B315320029CA96 /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32E758A520B315320029CA96 /* IndieFlower.ttf */; };
+		32E758A820B315CD0029CA96 /* PoiretOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32E758A720B315CD0029CA96 /* PoiretOne-Regular.ttf */; };
 		593EF1AD20AB3B9F00C77113 /* GalleryTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593EF1AC20AB3B9F00C77113 /* GalleryTableController.m */; };
 		593EF1B520AC29BC00C77113 /* MainControllerGalleryDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 593EF1B420AC29BC00C77113 /* MainControllerGalleryDelegate.m */; };
 		597CDBF420A6024B00616CDE /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597CDBF320A6024A00616CDE /* MainController.m */; };
-		599C04DC20A7373E00455FDD /* BackgroundColors in Resources */ = {isa = PBXBuildFile; fileRef = 599C04DB20A7373E00455FDD /* BackgroundColors */; };
-		599C04DE20A7374600455FDD /* FontColors in Resources */ = {isa = PBXBuildFile; fileRef = 599C04DD20A7374600455FDD /* FontColors */; };
 		59C567B520A619390017EB70 /* InputProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C567B420A619390017EB70 /* InputProcessor.m */; };
 		59C567BB20A6F5830017EB70 /* MainControllerStartDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C567BA20A6F5830017EB70 /* MainControllerStartDelegate.m */; };
 		59C88C3A20A6FCBF0060C856 /* CreationTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C88C3920A6FCBF0060C856 /* CreationTableController.m */; };
@@ -112,10 +111,10 @@
 		218EBFD89C1E2C40B81F6AC5 /* GalleryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryDetailsViewController.m; sourceTree = "<group>"; };
 		218EBFEB640B060FB660DB7A /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		218EBFF0B4848030EAB571C5 /* NameDialogAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameDialogAlertController.m; sourceTree = "<group>"; };
-		320C20B620A9BFEB006CD84D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = View/Fonts; sourceTree = "<group>"; };
 		32C6843520B183110065622B /* MailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailHandler.h; sourceTree = "<group>"; };
 		32C6843620B183120065622B /* MailHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailHandler.m; sourceTree = "<group>"; };
 		32C6843820B187AA0065622B /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		32C6843D20B30D920065622B /* Resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resource; sourceTree = "<group>"; };
 		32D21E202095BEB30007166D /* initials-project-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "initials-project-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D21E232095BEB30007166D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		32D21E242095BEB30007166D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,9 +123,10 @@
 		32D21E2F2095BEB40007166D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32D21E312095BEB40007166D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32D21E322095BEB40007166D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32D21E3A2095C9A90007166D /* Patterns */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Patterns; sourceTree = "<group>"; };
 		32D8A3FE20AF062500C7FCDA /* MainControllerExamplesDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainControllerExamplesDelegate.h; sourceTree = "<group>"; };
 		32D8A3FF20AF062500C7FCDA /* MainControllerExamplesDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainControllerExamplesDelegate.m; sourceTree = "<group>"; };
+		32E758A520B315320029CA96 /* IndieFlower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IndieFlower.ttf; sourceTree = "<group>"; };
+		32E758A720B315CD0029CA96 /* PoiretOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoiretOne-Regular.ttf"; sourceTree = "<group>"; };
 		593EF1AB20AB3B9F00C77113 /* GalleryTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryTableController.h; sourceTree = "<group>"; };
 		593EF1AC20AB3B9F00C77113 /* GalleryTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryTableController.m; sourceTree = "<group>"; };
 		593EF1B220AC27C100C77113 /* MainControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainControllerDelegate.h; sourceTree = "<group>"; };
@@ -134,8 +134,6 @@
 		593EF1B420AC29BC00C77113 /* MainControllerGalleryDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainControllerGalleryDelegate.m; sourceTree = "<group>"; };
 		597CDBF220A6024A00616CDE /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		597CDBF320A6024A00616CDE /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
-		599C04DB20A7373E00455FDD /* BackgroundColors */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BackgroundColors; sourceTree = "<group>"; };
-		599C04DD20A7374600455FDD /* FontColors */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FontColors; sourceTree = "<group>"; };
 		59C567B320A619390017EB70 /* InputProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputProcessor.h; sourceTree = "<group>"; };
 		59C567B420A619390017EB70 /* InputProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputProcessor.m; sourceTree = "<group>"; };
 		59C567B920A6F5830017EB70 /* MainControllerStartDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainControllerStartDelegate.h; sourceTree = "<group>"; };
@@ -423,10 +421,7 @@
 				32889888209C96A700E1452A /* Utility */,
 				3288987A209C915800E1452A /* Model */,
 				218EB36CE25BCCA761905BE3 /* View */,
-				32D21E3A2095C9A90007166D /* Patterns */,
-				599C04DB20A7373E00455FDD /* BackgroundColors */,
-				599C04DD20A7374600455FDD /* FontColors */,
-				320C20B620A9BFEB006CD84D /* Fonts */,
+				32C6843D20B30D920065622B /* Resource */,
 				32D21E4E2095CF130007166D /* Support */,
 			);
 			path = "initials-project-ios";
@@ -435,6 +430,8 @@
 		32D21E4E2095CF130007166D /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				32E758A720B315CD0029CA96 /* PoiretOne-Regular.ttf */,
+				32E758A520B315320029CA96 /* IndieFlower.ttf */,
 				32D21E2C2095BEB40007166D /* Assets.xcassets */,
 				32D21E2E2095BEB40007166D /* LaunchScreen.storyboard */,
 				32D21E232095BEB30007166D /* AppDelegate.h */,
@@ -551,15 +548,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D21E302095BEB40007166D /* LaunchScreen.storyboard in Resources */,
-				599C04DC20A7373E00455FDD /* BackgroundColors in Resources */,
-				320C20B720A9BFEC006CD84D /* Fonts in Resources */,
-				32D21E3B2095C9A90007166D /* Patterns in Resources */,
 				32D21E2D2095BEB40007166D /* Assets.xcassets in Resources */,
-				599C04DE20A7374600455FDD /* FontColors in Resources */,
 				32D21E2B2095BEB30007166D /* Main.storyboard in Resources */,
 				218EBE266762EDA23E077ECC /* PreviewCell.xib in Resources */,
 				218EB9B6000051C541CF7113 /* GalleryTableViewCell.xib in Resources */,
+				32E758A820B315CD0029CA96 /* PoiretOne-Regular.ttf in Resources */,
+				32C6843E20B30D920065622B /* Resource in Resources */,
 				218EB17A8C9A7584958A63F6 /* Preview.xib in Resources */,
+				32E758A620B315320029CA96 /* IndieFlower.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

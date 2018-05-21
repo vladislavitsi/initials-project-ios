@@ -43,5 +43,10 @@
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Click &quot;OK&quot; to allow app saving to Photos.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>IndieFlower.ttf</string>
+		<string>PoiretOne-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

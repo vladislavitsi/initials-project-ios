@@ -25,6 +25,9 @@
 
 - (void)stepBack;
 - (void)save:(NSNotification *)notification;
+
+- (void)updateCurrentOptions;
+
 - (void)nextTableView;
 - (void)goToResult;
 
@@ -43,29 +46,29 @@
 - (void)start {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stepBack) name:NOTIFICATION_CREATION_BACK object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(save:) name:NOTIFICATION_CREATION_SAVE object:nil];
-
+    
     InputProcessor *inputProcessor = [[InputProcessor alloc] initWithPattern:@" -"];
     [inputProcessor processInput:self.name];
     if (inputProcessor.count >= 2 && inputProcessor.count <= 3) {
         self.initials = inputProcessor.initials;
         self.optionsDAO = [[OptionCollectionDAO alloc] init];
-
+        
         self.configurationHistory = [NSMutableArray array];
         [self.configurationHistory addObject:[IPConfigurationConfigurator defaultConfigurationForCreationOptionsManager:self.optionsDAO]];
-
+        
         CreationTableController *tableController = [[CreationTableController alloc] init];
         self.creationTableController = tableController;
         tableController.mainControllerStartDelegate = self;
-
+        
         [self nextTableView];
     }
 }
 
 - (void)save:(NSNotification *)notification {
     NSDictionary *userInfo = @{
-        NOTIFICATION_USER_INFO_NAME:self.name,
-        NOTIFICATION_USER_INFO_IMAGE:[Screenshotter imageWithView:notification.userInfo[NOTIFICATION_USER_INFO_PREVIEW]]
-    };
+                               NOTIFICATION_USER_INFO_NAME:self.name,
+                               NOTIFICATION_USER_INFO_IMAGE:[Screenshotter imageWithView:notification.userInfo[NOTIFICATION_USER_INFO_PREVIEW]]
+                               };
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CREATION_SAVE_AND_EXIT object:nil userInfo:userInfo];
 }
 
@@ -75,7 +78,7 @@
         [self.configurationHistory removeLastObject];
     }
     self.currentOptionType--;
-    self.creationTableController.currentOptions = [self getCurrentOptions];
+    [self updateCurrentOptions];
 }
 
 
@@ -88,14 +91,21 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAVIGATION_PUSH object:nil userInfo:@{NOTIFICATION_USER_INFO_DESTINATION:vc}];
 }
 
-- (void)nextTableView {
-    self.creationTableController.currentOptions = [self getCurrentOptions];
+- (void)updateCurrentOptions {
+    if (self.currentOptionType >= 0) {
+        self.creationTableController.currentOptions = [self getCurrentOptions];
+    }
+}
 
+
+- (void)nextTableView {
+    [self updateCurrentOptions];
+    
     CreationTableViewController *newTableViewController = [[CreationTableViewController alloc] init];
     newTableViewController.tableView.dataSource = self.creationTableController;
     newTableViewController.tableView.delegate = self.creationTableController;
     newTableViewController.title = OPTIONS_TITLES[self.currentOptionType];
-
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAVIGATION_PUSH object:nil userInfo:@{NOTIFICATION_USER_INFO_DESTINATION:newTableViewController}];
 }
 
@@ -117,12 +127,12 @@
 }
 
 - (void)didSelectOption:(AbstractOption *)option {
-
+    
     [self.configurationHistory addObject: [IPConfigurationConfigurator newConfigurationWith:[self.configurationHistory lastObject]
                                                                             changedWithType:self.currentOptionType
                                                                                      option:option]];
     self.currentOptionType++;
-
+    
     if (self.currentOptionType >= OPTIONS_TITLES.count) {
         [self goToResult];
     } else {
@@ -131,3 +141,4 @@
 }
 
 @end
+

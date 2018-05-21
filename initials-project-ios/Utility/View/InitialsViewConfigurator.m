@@ -18,6 +18,7 @@
 
     CGFloat segment = width/SEGMENT_COUNT;
     
+    
     for (NSUInteger i = 0; i < initials.count; i++) {
         UILabel *letterLabel = [[UILabel alloc] init];
         

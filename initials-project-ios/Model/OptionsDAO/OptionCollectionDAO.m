@@ -21,10 +21,10 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.optionDAOs = @[
-                            [[OptionDAO alloc] initWithPath:@"Patterns" class:[Pattern class]],
-                            [[OptionDAO alloc] initWithPath:@"BackgroundColors" class:[IPColor class]],
-                            [[OptionDAO alloc] initWithPath:@"FontColors" class:[IPColor class]],
-                            [[OptionDAO alloc] initWithPath:@"Fonts" class:[IPFont class]]
+                            [[OptionDAO alloc] initWithFileName:@"Resource/patterns.json" class:[Pattern class]],
+                            [[OptionDAO alloc] initWithFileName:@"Resource/backgroundColors.json" class:[IPColor class]],
+                            [[OptionDAO alloc] initWithFileName:@"Resource/fontColors.json" class:[IPColor class]],
+                            [[OptionDAO alloc] initWithFileName:@"Resource/fonts.json" class:[IPFont class]]
                             ];
     }
     return self;
@@ -35,3 +35,4 @@
 }
 
 @end
+

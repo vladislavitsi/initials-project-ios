@@ -14,6 +14,6 @@
 
 @property (nonatomic, copy) NSArray<AbstractOption *> *options;
 
-- (instancetype)initWithPath:(NSString *)path class:(Class)klass;
+- (instancetype)initWithFileName:(NSString *)path class:(Class)klass;
 
 @end

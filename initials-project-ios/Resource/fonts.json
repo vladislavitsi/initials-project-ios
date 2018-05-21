@@ -1,0 +1,23 @@
+[
+  {
+    "name":"Helvetica light",
+    "fontName":"HelveticaNeue-Light"
+  },
+  {
+    "name":"Copperplate Light",
+    "fontName":"Copperplate-Light"
+  },
+  {
+    "name":"Georgia Bold",
+    "fontName":"Georgia-Bold"
+  },
+  {
+    "name":"Indie Flower",
+    "fontName":"IndieFlower"
+  },
+  {
+    "name":"PoiretOne Regular",
+    "fontName":"PoiretOne-Regular"
+  }
+
+]
