@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MainController.h"
+#import "UserDefaultsUserData.h"
+#import "CoreDataUserDataDAO.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +21,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     self.mainController = [[MainController alloc] init];
+    
+    // For core data using
+    [self setDataController:[[IPCoreDataController alloc] init]];
+    CoreDataUserDataDAO *coreDataDAO = [[CoreDataUserDataDAO alloc] initWithContext:self.dataController.persistentContainer.viewContext];
+    self.mainController.userDataDAO = coreDataDAO;
+    
+    // For NSUserDefaults using
+//     self.mainController.userDataDAO = [[UserDefaultsUserData alloc] init];
     return YES;
 }
 

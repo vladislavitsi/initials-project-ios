@@ -12,22 +12,28 @@
 
 @implementation UserData
 
+@synthesize creationDate = _creationDate;
+
+@synthesize name = _name;
+
+@synthesize imagePath = _imagePath;
+
 - (instancetype)initWithName:(NSString *)name creationDate:(NSDate *)creationDate imagePath:(NSString *)path {
     if (self = [super init]) {
-        self.name = name;
-        self.creationDate = creationDate;
-        self.imagePath = path;
+        _name = name;
+        _creationDate = creationDate;
+        _imagePath = path;
     }
     return self;
 }
 
-- (UIImage *)getImage {
-    return [IPFileManager getImageForPath:self.imagePath];
-}
+//- (UIImage *)getImage {
+//    return [IPFileManager getImageForPath:self.imagePath];
+//}
 
-- (void)removeImage {
-    [IPFileManager removeImageAtPath:self.imagePath];
-}
+//- (void)removeImage {
+//    [IPFileManager removeImageAtPath:self.imagePath];
+//}
 
 - (NSData *)toJSON {
     NSMutableDictionary *jsonDict = [NSMutableDictionary dictionary];
@@ -42,4 +48,6 @@
     UserData *userData = [[UserData alloc] initWithName:jsonDict[@"name"] creationDate:[NSDate getDateFromFormattedString:jsonDict[@"creationDate"]] imagePath:jsonDict[@"imagePath"]];
     return userData;
 }
+
+
 @end

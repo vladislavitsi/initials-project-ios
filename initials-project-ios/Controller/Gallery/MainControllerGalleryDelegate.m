@@ -13,14 +13,14 @@
 
 @interface MainControllerGalleryDelegate ()
 
-@property (nonatomic, strong) id<UserDataProtocol> userDataDAO;
+@property (nonatomic, strong) id<UserDataDAOProtocol> userDataDAO;
 @property (nonatomic, strong) GalleryTableController *gtc;
 
 @end
 
 @implementation MainControllerGalleryDelegate
 
-- (instancetype)initWithDataSource:(id<UserDataProtocol>)dataSource {
+- (instancetype)initWithDataSource:(id<UserDataDAOProtocol>)dataSource {
     if (self = [super init]) {
         // Using concrete implementation of 'UserDataProtocol'
         self.userDataDAO = dataSource;

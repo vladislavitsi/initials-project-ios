@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IPCoreDataController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) IPCoreDataController *dataController;
 
 @end
 

@@ -36,6 +36,11 @@
 		218EBFC86D3F650DC74506E9 /* IPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBE348E80369C3AA297DA /* IPColor.m */; };
 		218EBFD0551B237C0407557E /* GalleryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBFD89C1E2C40B81F6AC5 /* GalleryDetailsViewController.m */; };
 		218EBFDC3484FDE44E8C6BEB /* GalleryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB49236925873AE820586 /* GalleryTableViewController.m */; };
+		32160DAE20C67C3200E38F48 /* CoreDataUserDataDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32160DAD20C67C3200E38F48 /* CoreDataUserDataDAO.m */; };
+		32728D7420C57C0D0026B744 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32728D7220C57C0D0026B744 /* Model.xcdatamodeld */; };
+		32728D7720C57EA20026B744 /* IPCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32728D7620C57EA20026B744 /* IPCoreDataController.m */; };
+		32728D8B20C586FB0026B744 /* ModelUserData+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 32728D8820C586FB0026B744 /* ModelUserData+CoreDataClass.m */; };
+		32728D8C20C586FB0026B744 /* ModelUserData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 32728D8A20C586FB0026B744 /* ModelUserData+CoreDataProperties.m */; };
 		32C6843720B183120065622B /* MailHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6843620B183120065622B /* MailHandler.m */; };
 		32C6843E20B30D920065622B /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = 32C6843D20B30D920065622B /* Resource */; };
 		32D21E252095BEB30007166D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E242095BEB30007166D /* AppDelegate.m */; };
@@ -67,7 +72,7 @@
 		218EB2AF6F565E814C575373 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		218EB2B59ECF4AFFE8F4AAA5 /* GalleryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryTableViewController.h; sourceTree = "<group>"; };
 		218EB2E3096BCCF1A2A70397 /* AbstractPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractPreviewViewController.m; sourceTree = "<group>"; };
-		218EB306761D929C14EE5D93 /* UserDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataProtocol.h; sourceTree = "<group>"; };
+		218EB306761D929C14EE5D93 /* UserDataDAOProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataDAOProtocol.h; sourceTree = "<group>"; };
 		218EB3BF97860533F7F55280 /* IPColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPColor.h; sourceTree = "<group>"; };
 		218EB3E7F8F75C83AAC6EC0E /* IPConfigurationConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPConfigurationConfigurator.h; sourceTree = "<group>"; };
 		218EB49236925873AE820586 /* GalleryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryTableViewController.m; sourceTree = "<group>"; };
@@ -111,6 +116,16 @@
 		218EBFD89C1E2C40B81F6AC5 /* GalleryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryDetailsViewController.m; sourceTree = "<group>"; };
 		218EBFEB640B060FB660DB7A /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		218EBFF0B4848030EAB571C5 /* NameDialogAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameDialogAlertController.m; sourceTree = "<group>"; };
+		32160DA720C66A2400E38F48 /* UserDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDataProtocol.h; sourceTree = "<group>"; };
+		32160DAC20C67C3200E38F48 /* CoreDataUserDataDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataUserDataDAO.h; sourceTree = "<group>"; };
+		32160DAD20C67C3200E38F48 /* CoreDataUserDataDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataUserDataDAO.m; sourceTree = "<group>"; };
+		32728D7320C57C0D0026B744 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		32728D7520C57EA20026B744 /* IPCoreDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPCoreDataController.h; sourceTree = "<group>"; };
+		32728D7620C57EA20026B744 /* IPCoreDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPCoreDataController.m; sourceTree = "<group>"; };
+		32728D8720C586FB0026B744 /* ModelUserData+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ModelUserData+CoreDataClass.h"; sourceTree = "<group>"; };
+		32728D8820C586FB0026B744 /* ModelUserData+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ModelUserData+CoreDataClass.m"; sourceTree = "<group>"; };
+		32728D8920C586FB0026B744 /* ModelUserData+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ModelUserData+CoreDataProperties.h"; sourceTree = "<group>"; };
+		32728D8A20C586FB0026B744 /* ModelUserData+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ModelUserData+CoreDataProperties.m"; sourceTree = "<group>"; };
 		32C6843520B183110065622B /* MailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailHandler.h; sourceTree = "<group>"; };
 		32C6843620B183120065622B /* MailHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailHandler.m; sourceTree = "<group>"; };
 		32C6843820B187AA0065622B /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -159,7 +174,6 @@
 				218EB2100D570BB6A9B86057 /* FontFamily */,
 				218EBC84022C510FAA17FD0A /* Color */,
 				218EB4AFEA4BDE49C65E0E1B /* Pattern */,
-				218EBEEB87031C6C494DBF99 /* User Data */,
 				218EBB4AD4266983FDF1F46E /* AbstractOption.h */,
 				218EB67C0269D55D8321DC99 /* AbstractOption.m */,
 			);
@@ -283,10 +297,10 @@
 			children = (
 				32C6843520B183110065622B /* MailHandler.h */,
 				32C6843620B183120065622B /* MailHandler.m */,
-				218EBFD3577CBFD8F079084E /* InitialsViewConfigurator.m */,
 				218EB09675B19E644DB5261D /* InitialsViewConfigurator.h */,
-				218EB9D62F97E2A9F966FE5B /* Screenshotter.m */,
+				218EBFD3577CBFD8F079084E /* InitialsViewConfigurator.m */,
 				218EB8790810107495744090 /* Screenshotter.h */,
+				218EB9D62F97E2A9F966FE5B /* Screenshotter.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,11 +359,10 @@
 		218EBEEB87031C6C494DBF99 /* User Data */ = {
 			isa = PBXGroup;
 			children = (
-				218EB2AF6F565E814C575373 /* UserData.h */,
-				218EBD9D27F467410E03BD7D /* UserData.m */,
-				218EB306761D929C14EE5D93 /* UserDataProtocol.h */,
-				218EB0AC45F92BE4636F3A64 /* UserDefaultsUserData.h */,
-				218EBEA4B2A6BD5C483AB4A1 /* UserDefaultsUserData.m */,
+				32160DA920C67BD100E38F48 /* CoreData */,
+				32160DA820C67BBB00E38F48 /* UserDefaults */,
+				218EB306761D929C14EE5D93 /* UserDataDAOProtocol.h */,
+				32160DA720C66A2400E38F48 /* UserDataProtocol.h */,
 			);
 			path = "User Data";
 			sourceTree = "<group>";
@@ -364,9 +377,42 @@
 			path = Preview;
 			sourceTree = "<group>";
 		};
+		32160DA820C67BBB00E38F48 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				218EB2AF6F565E814C575373 /* UserData.h */,
+				218EBD9D27F467410E03BD7D /* UserData.m */,
+				218EB0AC45F92BE4636F3A64 /* UserDefaultsUserData.h */,
+				218EBEA4B2A6BD5C483AB4A1 /* UserDefaultsUserData.m */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		32160DA920C67BD100E38F48 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				32160DAA20C67BE500E38F48 /* Generated */,
+				32728D8720C586FB0026B744 /* ModelUserData+CoreDataClass.h */,
+				32728D8820C586FB0026B744 /* ModelUserData+CoreDataClass.m */,
+				32160DAC20C67C3200E38F48 /* CoreDataUserDataDAO.h */,
+				32160DAD20C67C3200E38F48 /* CoreDataUserDataDAO.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		32160DAA20C67BE500E38F48 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				32728D8920C586FB0026B744 /* ModelUserData+CoreDataProperties.h */,
+				32728D8A20C586FB0026B744 /* ModelUserData+CoreDataProperties.m */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		3288987A209C915800E1452A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				218EBEEB87031C6C494DBF99 /* User Data */,
 				218EB4C906602501B959FA10 /* OptionsDAO */,
 				218EB2DD2EC618A8107FB8CD /* Configuration */,
 				218EB091A34A336A71A79B45 /* Options */,
@@ -423,6 +469,7 @@
 				218EB36CE25BCCA761905BE3 /* View */,
 				32C6843D20B30D920065622B /* Resource */,
 				32D21E4E2095CF130007166D /* Support */,
+				32728D7220C57C0D0026B744 /* Model.xcdatamodeld */,
 			);
 			path = "initials-project-ios";
 			sourceTree = "<group>";
@@ -479,6 +526,8 @@
 				597CDBF220A6024A00616CDE /* MainController.h */,
 				597CDBF320A6024A00616CDE /* MainController.m */,
 				593EF1B220AC27C100C77113 /* MainControllerDelegate.h */,
+				32728D7520C57EA20026B744 /* IPCoreDataController.h */,
+				32728D7620C57EA20026B744 /* IPCoreDataController.m */,
 				32C6843820B187AA0065622B /* Constants.h */,
 			);
 			path = Main;
@@ -518,7 +567,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -583,10 +632,14 @@
 				218EBBC58170C4ABC65F4809 /* IPConfigurationConfigurator.m in Sources */,
 				218EBDB780EA41DE9B86AD6A /* IPFileManager.m in Sources */,
 				218EB224A5770A83424B91F3 /* OptionCollectionDAO.m in Sources */,
+				32728D8B20C586FB0026B744 /* ModelUserData+CoreDataClass.m in Sources */,
+				32728D8C20C586FB0026B744 /* ModelUserData+CoreDataProperties.m in Sources */,
 				218EB4B2580F31C1613FC786 /* IPFont.m in Sources */,
 				218EBFC86D3F650DC74506E9 /* IPColor.m in Sources */,
+				32728D7420C57C0D0026B744 /* Model.xcdatamodeld in Sources */,
 				218EBDBA8BBA8D7DBC8EE52A /* LetterPattern.m in Sources */,
 				218EBD3A2606F65C69C2F2F7 /* Pattern.m in Sources */,
+				32160DAE20C67C3200E38F48 /* CoreDataUserDataDAO.m in Sources */,
 				218EB51E2853544A8D638758 /* UserData.m in Sources */,
 				218EBE8A845543C8303AC6EF /* UserDefaultsUserData.m in Sources */,
 				218EB4FBFE0EC51FA27ABC93 /* AbstractOption.m in Sources */,
@@ -596,6 +649,7 @@
 				218EB70D76D89B17101C96E5 /* CreationTableViewController.m in Sources */,
 				32C6843720B183120065622B /* MailHandler.m in Sources */,
 				218EB0B7898CAAB0FED91579 /* NavigationController.m in Sources */,
+				32728D7720C57EA20026B744 /* IPCoreDataController.m in Sources */,
 				218EB0A332975510A11EBC1E /* MainMenuViewController.m in Sources */,
 				218EBC358003BD379A518F2B /* ExamplePreviewViewController.m in Sources */,
 				218EBFDC3484FDE44E8C6BEB /* GalleryTableViewController.m in Sources */,
@@ -739,7 +793,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "initials-project-ios/initials-project-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7VR5AMBYN;
@@ -756,7 +809,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "initials-project-ios/initials-project-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7VR5AMBYN;
@@ -791,6 +843,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		32728D7220C57C0D0026B744 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				32728D7320C57C0D0026B744 /* Model.xcdatamodel */,
+			);
+			currentVersion = 32728D7320C57C0D0026B744 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 32D21E182095BEB30007166D /* Project object */;
 }

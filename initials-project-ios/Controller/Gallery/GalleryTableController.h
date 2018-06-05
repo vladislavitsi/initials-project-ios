@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "UserDataProtocol.h"
+#import "UserDataDAOProtocol.h"
 
 @interface GalleryTableController : NSObject <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) id<UserDataProtocol> dataSource;
+@property (nonatomic, strong) id<UserDataDAOProtocol> dataSource;
 
 @end

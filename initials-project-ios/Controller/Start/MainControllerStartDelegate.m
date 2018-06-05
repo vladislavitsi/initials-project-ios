@@ -72,7 +72,6 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CREATION_SAVE_AND_EXIT object:nil userInfo:userInfo];
 }
 
-
 - (void)stepBack {
     if (self.configurationHistory.count > 0) {
         [self.configurationHistory removeLastObject];

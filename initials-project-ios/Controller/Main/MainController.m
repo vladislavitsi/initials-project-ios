@@ -20,7 +20,6 @@
 
 @property (nonatomic, weak) NavigationController *navigationController;
 @property (nonatomic, strong) id<MainControllerDelegate> delegate;
-@property (nonatomic, strong) id<UserDataProtocol> userDataDAO;
 
 @end
 
@@ -84,11 +83,8 @@
     NSString *name = notification.userInfo[NOTIFICATION_USER_INFO_NAME];
     UIImage *image = notification.userInfo[NOTIFICATION_USER_INFO_IMAGE];
     NSString *imagePath = [IPFileManager saveImage:image];
-    UserData *userData = [[UserData alloc] initWithName:name creationDate:[NSDate date] imagePath:imagePath];
+    [self.userDataDAO addUserDataWithName:name date:[NSDate date] imagePath:imagePath];
     [self.navigationController popToViewController:self.navigationController.viewControllers.firstObject animated:YES];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self.userDataDAO addUserData:userData];
-    });
 }
 
 - (void)giveUpDelegate {
@@ -97,13 +93,13 @@
 
 #pragma mark - Accessors
 
-- (id<UserDataProtocol>)userDataDAO {
-    __weak MainController *weakSelf = self;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        weakSelf.userDataDAO = [[UserDefaultsUserData alloc] init];
-    });
-    return _userDataDAO;
-}
+//- (id<UserDataDAOProtocol>)userDataDAO {
+//    __weak MainController *weakSelf = self;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        weakSelf.userDataDAO = [[UserDefaultsUserData alloc] init];
+//    });
+//    return _userDataDAO;
+//}
 
 @end

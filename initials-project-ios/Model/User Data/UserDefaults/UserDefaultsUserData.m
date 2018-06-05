@@ -7,6 +7,8 @@
 //
 
 #import "UserDefaultsUserData.h"
+#import "UserData.h"
+#import "IPFileManager.h"
 
 #define ARRAY_KEY @"userDataArray"
 
@@ -22,12 +24,14 @@
 
 #pragma mark - Public interface
 
-- (void)addUserData:(UserData *)userData {
+- (id<UserDataProtocol>)addUserDataWithName:(NSString *)name date:(NSDate *)date imagePath:(NSString *)imagePath {
+    UserData *userData = [[UserData alloc] initWithName:name creationDate:date imagePath:imagePath];
     [self.array addObject:[userData toJSON]];
+    return userData;
 }
 
 - (void)removeUserDataForIndex:(NSInteger)index {
-    [[self getDataForIndex:index] removeImage];
+    [IPFileManager removeImageAtPath:[self getDataForIndex:index].imagePath];
     [self.array removeObjectAtIndex:index];
 }
 
@@ -35,7 +39,7 @@
     return self.array.count;
 }
 
-- (UserData *)getDataForIndex:(NSInteger)index {
+- (id<UserDataProtocol>)getDataForIndex:(NSInteger)index {
     return [UserData fromJSON:self.array[index]];
 }
 

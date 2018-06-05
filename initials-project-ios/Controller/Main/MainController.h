@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "NavigationController.h"
+#import "UserDataDAOProtocol.h"
 
 @interface MainController : NSObject
+
+@property (nonatomic, strong) id<UserDataDAOProtocol> userDataDAO;
 
 @end

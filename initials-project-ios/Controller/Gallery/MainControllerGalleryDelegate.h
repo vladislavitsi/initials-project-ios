@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "MainControllerDelegate.h"
-#import "UserDataProtocol.h"
+#import "UserDataDAOProtocol.h"
 
 @interface MainControllerGalleryDelegate : NSObject <MainControllerDelegate>
 
-- (instancetype)initWithDataSource:(id<UserDataProtocol>)dataSource;
+- (instancetype)initWithDataSource:(id<UserDataDAOProtocol>)dataSource;
 
 - (void)start;
 

@@ -22,8 +22,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GalleryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GalleryTableViewCell" forIndexPath:indexPath];
-    UserData* userData = [self.dataSource getDataForIndex:indexPath.row];
-    cell.imagePreview.image = userData.getImage;
+    id<UserDataProtocol> userData = [self.dataSource getDataForIndex:indexPath.row];
+    cell.imagePreview.image = [IPFileManager getImageForPath:userData.imagePath];
     cell.dataLabel.text = [userData.creationDate getFormattedDate];
     cell.nameLabel.text = userData.name;
     return cell;
@@ -49,7 +49,7 @@
     GalleryDetailsViewController *detailViewController = [[GalleryDetailsViewController alloc] initWithNibName:@"Preview" bundle:nil];
     detailViewController.title = @"Preview";
     
-    UserData *userData = [self.dataSource getDataForIndex:indexPath.row];
+    id<UserDataProtocol> userData = [self.dataSource getDataForIndex:indexPath.row];
     UIImage *image = [IPFileManager getImageForPath:userData.imagePath];
     // Pass the selected object to the new view controller.
     detailViewController.name = userData.name;

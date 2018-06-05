@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserDataProtocol.h"
+#import "UserDataDAOProtocol.h"
 
-@interface UserDefaultsUserData : NSObject <UserDataProtocol>
+@interface UserDefaultsUserData : NSObject <UserDataDAOProtocol>
 
 @end

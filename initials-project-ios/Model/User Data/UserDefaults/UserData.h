@@ -8,20 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "UserDataProtocol.h"
 
-@interface UserData : NSObject
-
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) NSDate *creationDate;
-@property (nonatomic, copy) NSString *imagePath;
+@interface UserData : NSObject <UserDataProtocol>
 
 - (instancetype)initWithName:(NSString *)name creationDate:(NSDate *)creationDate imagePath:(NSString *)path;
-
-- (UIImage *)getImage;
-
-- (void)removeImage;
 
 - (NSData *)toJSON;
 
 + (instancetype)fromJSON:(NSData *)jsonData;
+
 @end
