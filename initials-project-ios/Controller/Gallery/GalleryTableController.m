@@ -11,7 +11,6 @@
 #import "GalleryDetailsViewController.h"
 #import "IPFileManager.h"
 #import "initials_project_ios-Swift.h"
-#import "MailHandler.h"
 #import "Constants.h"
 
 @implementation GalleryTableController

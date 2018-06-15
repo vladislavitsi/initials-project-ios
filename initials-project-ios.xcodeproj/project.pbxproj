@@ -37,12 +37,12 @@
 		218EBFDC3484FDE44E8C6BEB /* GalleryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB49236925873AE820586 /* GalleryTableViewController.m */; };
 		321228E420D3C420004BD323 /* InputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321228E320D3C420004BD323 /* InputProcessor.swift */; };
 		321228E820D3E0FF004BD323 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321228E720D3E0FF004BD323 /* DateExtension.swift */; };
+		321228EB20D3E915004BD323 /* MailHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321228EA20D3E915004BD323 /* MailHandler.swift */; };
 		32160DAE20C67C3200E38F48 /* CoreDataUserDataDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32160DAD20C67C3200E38F48 /* CoreDataUserDataDAO.m */; };
 		32728D7420C57C0D0026B744 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32728D7220C57C0D0026B744 /* Model.xcdatamodeld */; };
 		32728D7720C57EA20026B744 /* IPCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32728D7620C57EA20026B744 /* IPCoreDataController.m */; };
 		32728D8B20C586FB0026B744 /* ModelUserData+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 32728D8820C586FB0026B744 /* ModelUserData+CoreDataClass.m */; };
 		32728D8C20C586FB0026B744 /* ModelUserData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 32728D8A20C586FB0026B744 /* ModelUserData+CoreDataProperties.m */; };
-		32C6843720B183120065622B /* MailHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6843620B183120065622B /* MailHandler.m */; };
 		32C6843E20B30D920065622B /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = 32C6843D20B30D920065622B /* Resource */; };
 		32D21E252095BEB30007166D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D21E242095BEB30007166D /* AppDelegate.m */; };
 		32D21E2B2095BEB30007166D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D21E292095BEB30007166D /* Main.storyboard */; };
@@ -119,6 +119,7 @@
 		321228E220D3C41F004BD323 /* initials-project-ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "initials-project-ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		321228E320D3C420004BD323 /* InputProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputProcessor.swift; sourceTree = "<group>"; };
 		321228E720D3E0FF004BD323 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		321228EA20D3E915004BD323 /* MailHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailHandler.swift; sourceTree = "<group>"; };
 		32160DA720C66A2400E38F48 /* UserDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDataProtocol.h; sourceTree = "<group>"; };
 		32160DAC20C67C3200E38F48 /* CoreDataUserDataDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataUserDataDAO.h; sourceTree = "<group>"; };
 		32160DAD20C67C3200E38F48 /* CoreDataUserDataDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataUserDataDAO.m; sourceTree = "<group>"; };
@@ -276,8 +277,8 @@
 		218EB50485C82D165D9750C7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				218EB058EDA19D8314A2365B /* IPConfigurationConfigurator.m */,
 				218EB3E7F8F75C83AAC6EC0E /* IPConfigurationConfigurator.h */,
+				218EB058EDA19D8314A2365B /* IPConfigurationConfigurator.m */,
 				218EB21DC1A42E7E5AC8FC16 /* IPFileManager.h */,
 				218EBB473A71F6C55E80E601 /* IPFileManager.m */,
 			);
@@ -296,8 +297,7 @@
 		218EB7A8D799C1C1E467F3D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				32C6843520B183110065622B /* MailHandler.h */,
-				32C6843620B183120065622B /* MailHandler.m */,
+				321228EA20D3E915004BD323 /* MailHandler.swift */,
 				218EB09675B19E644DB5261D /* InitialsViewConfigurator.h */,
 				218EBFD3577CBFD8F079084E /* InitialsViewConfigurator.m */,
 				218EB8790810107495744090 /* Screenshotter.h */,
@@ -378,6 +378,17 @@
 			path = Preview;
 			sourceTree = "<group>";
 		};
+		321228E920D3E8C6004BD323 /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				32C6843520B183110065622B /* MailHandler.h */,
+				32C6843620B183120065622B /* MailHandler.m */,
+				218EBD03BCD0239F1227276D /* NSDate+IPDateFormatters.h */,
+				218EB2795FF3C472A1ACBEDD /* NSDate+IPDateFormatters.m */,
+			);
+			name = objc;
+			sourceTree = "<group>";
+		};
 		32160DA820C67BBB00E38F48 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,10 +435,9 @@
 		32889888209C96A700E1452A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				321228E920D3E8C6004BD323 /* objc */,
 				321228E320D3C420004BD323 /* InputProcessor.swift */,
 				321228E720D3E0FF004BD323 /* DateExtension.swift */,
-				218EBD03BCD0239F1227276D /* NSDate+IPDateFormatters.h */,
-				218EB2795FF3C472A1ACBEDD /* NSDate+IPDateFormatters.m */,
 				218EB7A8D799C1C1E467F3D4 /* View */,
 				218EB50485C82D165D9750C7 /* Model */,
 			);
@@ -649,7 +659,6 @@
 				218EBF9FD15EB63D6D42E74A /* ResultViewController.m in Sources */,
 				218EBA3624A861C215A1666E /* TableViewCell.m in Sources */,
 				218EB70D76D89B17101C96E5 /* CreationTableViewController.m in Sources */,
-				32C6843720B183120065622B /* MailHandler.m in Sources */,
 				218EB0B7898CAAB0FED91579 /* NavigationController.m in Sources */,
 				32728D7720C57EA20026B744 /* IPCoreDataController.m in Sources */,
 				218EB0A332975510A11EBC1E /* MainMenuViewController.m in Sources */,
@@ -659,6 +668,7 @@
 				218EB076D3F6666A72454DB2 /* GalleryTableViewCell.m in Sources */,
 				218EBFD0551B237C0407557E /* GalleryDetailsViewController.m in Sources */,
 				218EBD7655495BB483B79E4D /* AbstractPreviewViewController.m in Sources */,
+				321228EB20D3E915004BD323 /* MailHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
