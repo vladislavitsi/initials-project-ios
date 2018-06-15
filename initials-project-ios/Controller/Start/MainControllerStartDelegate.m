@@ -10,7 +10,7 @@
 #import "IPConfigurationConfigurator.h"
 #import "CreationTableViewController.h"
 #import "ResultViewController.h"
-#import "InputProcessor.h"
+#import "initials_project_ios-Swift.h"
 #import "Screenshotter.h"
 #import "Constants.h"
 
@@ -46,10 +46,9 @@
 - (void)start {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stepBack) name:NOTIFICATION_CREATION_BACK object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(save:) name:NOTIFICATION_CREATION_SAVE object:nil];
-    
     InputProcessor *inputProcessor = [[InputProcessor alloc] initWithPattern:@" -"];
     [inputProcessor processInput:self.name];
-    if (inputProcessor.count >= 2 && inputProcessor.count <= 3) {
+    if (inputProcessor.initials.count >= 2 && inputProcessor.initials.count <= 3) {
         self.initials = inputProcessor.initials;
         self.optionsDAO = [[OptionCollectionDAO alloc] init];
         
