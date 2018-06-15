@@ -16,10 +16,8 @@
 		218EB4FBFE0EC51FA27ABC93 /* AbstractOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB67C0269D55D8321DC99 /* AbstractOption.m */; };
 		218EB51E2853544A8D638758 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBD9D27F467410E03BD7D /* UserData.m */; };
 		218EB5A8EBEFB907B601A274 /* IPCreationConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBEEF228D6F2590E6CD55 /* IPCreationConfiguration.m */; };
-		218EB6308B2981E15D120FF2 /* Screenshotter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB9D62F97E2A9F966FE5B /* Screenshotter.m */; };
 		218EB70D76D89B17101C96E5 /* CreationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBA7164C7BE9D2AF7DA31 /* CreationTableViewController.m */; };
 		218EB86AEB0A80F2B5BFCF9A /* OptionDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB62D7D99F024D9361096 /* OptionDAO.m */; };
-		218EB945B725289A5683AD62 /* InitialsViewConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBFD3577CBFD8F079084E /* InitialsViewConfigurator.m */; };
 		218EB9B6000051C541CF7113 /* GalleryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218EB5D0C60F18E3176EEB31 /* GalleryTableViewCell.xib */; };
 		218EBA3624A861C215A1666E /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB7F94479A2F2714D92D2 /* TableViewCell.m */; };
 		218EBA84D84858476EE0F084 /* NameDialogAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBFF0B4848030EAB571C5 /* NameDialogAlertController.m */; };
@@ -38,6 +36,8 @@
 		321228E420D3C420004BD323 /* InputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321228E320D3C420004BD323 /* InputProcessor.swift */; };
 		321228E820D3E0FF004BD323 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321228E720D3E0FF004BD323 /* DateExtension.swift */; };
 		321228EB20D3E915004BD323 /* MailHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321228EA20D3E915004BD323 /* MailHandler.swift */; };
+		321228ED20D3EE58004BD323 /* InitialsViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321228EC20D3EE58004BD323 /* InitialsViewConfigurator.swift */; };
+		321228F120D3F6DE004BD323 /* Screenshotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321228F020D3F6DE004BD323 /* Screenshotter.swift */; };
 		32160DAE20C67C3200E38F48 /* CoreDataUserDataDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32160DAD20C67C3200E38F48 /* CoreDataUserDataDAO.m */; };
 		32728D7420C57C0D0026B744 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32728D7220C57C0D0026B744 /* Model.xcdatamodeld */; };
 		32728D7720C57EA20026B744 /* IPCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32728D7620C57EA20026B744 /* IPCoreDataController.m */; };
@@ -120,6 +120,8 @@
 		321228E320D3C420004BD323 /* InputProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputProcessor.swift; sourceTree = "<group>"; };
 		321228E720D3E0FF004BD323 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		321228EA20D3E915004BD323 /* MailHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailHandler.swift; sourceTree = "<group>"; };
+		321228EC20D3EE58004BD323 /* InitialsViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsViewConfigurator.swift; sourceTree = "<group>"; };
+		321228F020D3F6DE004BD323 /* Screenshotter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshotter.swift; sourceTree = "<group>"; };
 		32160DA720C66A2400E38F48 /* UserDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDataProtocol.h; sourceTree = "<group>"; };
 		32160DAC20C67C3200E38F48 /* CoreDataUserDataDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataUserDataDAO.h; sourceTree = "<group>"; };
 		32160DAD20C67C3200E38F48 /* CoreDataUserDataDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataUserDataDAO.m; sourceTree = "<group>"; };
@@ -298,10 +300,8 @@
 			isa = PBXGroup;
 			children = (
 				321228EA20D3E915004BD323 /* MailHandler.swift */,
-				218EB09675B19E644DB5261D /* InitialsViewConfigurator.h */,
-				218EBFD3577CBFD8F079084E /* InitialsViewConfigurator.m */,
-				218EB8790810107495744090 /* Screenshotter.h */,
-				218EB9D62F97E2A9F966FE5B /* Screenshotter.m */,
+				321228EC20D3EE58004BD323 /* InitialsViewConfigurator.swift */,
+				321228F020D3F6DE004BD323 /* Screenshotter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -381,10 +381,14 @@
 		321228E920D3E8C6004BD323 /* objc */ = {
 			isa = PBXGroup;
 			children = (
+				218EB09675B19E644DB5261D /* InitialsViewConfigurator.h */,
+				218EBFD3577CBFD8F079084E /* InitialsViewConfigurator.m */,
 				32C6843520B183110065622B /* MailHandler.h */,
 				32C6843620B183120065622B /* MailHandler.m */,
 				218EBD03BCD0239F1227276D /* NSDate+IPDateFormatters.h */,
 				218EB2795FF3C472A1ACBEDD /* NSDate+IPDateFormatters.m */,
+				218EB8790810107495744090 /* Screenshotter.h */,
+				218EB9D62F97E2A9F966FE5B /* Screenshotter.m */,
 			);
 			name = objc;
 			sourceTree = "<group>";
@@ -636,11 +640,11 @@
 				597CDBF420A6024B00616CDE /* MainController.m in Sources */,
 				593EF1AD20AB3B9F00C77113 /* GalleryTableController.m in Sources */,
 				32D8A40020AF062500C7FCDA /* MainControllerExamplesDelegate.m in Sources */,
+				321228ED20D3EE58004BD323 /* InitialsViewConfigurator.swift in Sources */,
+				321228F120D3F6DE004BD323 /* Screenshotter.swift in Sources */,
 				32D21E252095BEB30007166D /* AppDelegate.m in Sources */,
 				218EB86AEB0A80F2B5BFCF9A /* OptionDAO.m in Sources */,
 				218EB5A8EBEFB907B601A274 /* IPCreationConfiguration.m in Sources */,
-				218EB945B725289A5683AD62 /* InitialsViewConfigurator.m in Sources */,
-				218EB6308B2981E15D120FF2 /* Screenshotter.m in Sources */,
 				218EBBC58170C4ABC65F4809 /* IPConfigurationConfigurator.m in Sources */,
 				218EBDB780EA41DE9B86AD6A /* IPFileManager.m in Sources */,
 				218EB224A5770A83424B91F3 /* OptionCollectionDAO.m in Sources */,

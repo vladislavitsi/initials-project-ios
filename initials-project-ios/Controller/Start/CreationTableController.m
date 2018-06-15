@@ -10,7 +10,7 @@
 #import "TableViewCell.h"
 #import "IPCreationConfiguration.h"
 #import "MainControllerStartDelegate.h"
-#import "InitialsViewConfigurator.h"
+#import "initials_project_ios-Swift.h"
 
 @implementation CreationTableController
 

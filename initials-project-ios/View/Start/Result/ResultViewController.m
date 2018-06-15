@@ -7,7 +7,7 @@
 //
 
 #import "ResultViewController.h"
-#import "InitialsViewConfigurator.h"
+#import "initials_project_ios-Swift.h"
 #import "Constants.h"
 
 #define MARGINS 2 * 35

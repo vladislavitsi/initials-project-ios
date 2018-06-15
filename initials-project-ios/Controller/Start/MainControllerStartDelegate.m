@@ -11,7 +11,6 @@
 #import "CreationTableViewController.h"
 #import "ResultViewController.h"
 #import "initials_project_ios-Swift.h"
-#import "Screenshotter.h"
 #import "Constants.h"
 
 @interface MainControllerStartDelegate ()
