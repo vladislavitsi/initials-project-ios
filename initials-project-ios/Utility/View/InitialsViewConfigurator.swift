@@ -20,17 +20,20 @@ import UIKit
         for i in 0..<initials.count {
             let letterLabel = UILabel()
             
-            let pattern = configuration.options[0] as! Pattern
-            let backgroundColor = configuration.options[1] as! IPColor
-            let fontColor = configuration.options[2] as! IPColor
-            let fontFamily = configuration.options[3] as! IPFont
+            guard let pattern = configuration.options[0] as? Pattern,
+                  let backgroundColor = configuration.options[1] as? IPColor,
+                  let fontColor = configuration.options[2] as? IPColor,
+                  let fontFamily = configuration.options[3] as? IPFont else {
+                    assertionFailure("Invalid view configuration")
+                    continue
+            }
             let letterSize = pattern.letterPatterns[i].size
             
             letterLabel.text = initials[i]
-            letterLabel.font = UIFont.init(name: fontFamily.fontName, size: CGFloat(letterSize))
+            letterLabel.font = UIFont(name: fontFamily.fontName, size: CGFloat(letterSize))
             letterLabel.textColor = fontColor.color
             letterLabel.translatesAutoresizingMaskIntoConstraints = false
-            
+
             view.addSubview(letterLabel)
             view.backgroundColor = backgroundColor.color
             

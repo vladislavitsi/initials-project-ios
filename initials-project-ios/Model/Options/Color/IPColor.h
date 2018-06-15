@@ -12,10 +12,10 @@
 
 @interface IPColor : AbstractOption
 
-@property (nonatomic, readonly) UIColor *color;
+@property (nonatomic, readonly, nonnull) UIColor *color;
 
-- (instancetype)initWithName:(NSString *)name color:(UIColor *)color;
+- (instancetype _Nonnull)initWithName:(NSString * _Nonnull)name color:( UIColor * _Nonnull )color;
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)jsonDictionary;
++ (instancetype _Nullable)fromJSONDictionary:(NSDictionary * _Nonnull)jsonDictionary;
 
 @end

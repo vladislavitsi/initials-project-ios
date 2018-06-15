@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSInteger x;
 @property (nonatomic, readonly) NSInteger y;
 
-- (instancetype)initWithX:(NSInteger)x y:(NSInteger)y size:(NSInteger)size;
+- (instancetype _Nonnull)initWithX:(NSInteger)x y:(NSInteger)y size:(NSInteger)size;
 
-+ (instancetype)fromDictionary:(NSDictionary *)dictionary;
++ (instancetype _Nullable)fromDictionary:(NSDictionary *_Nonnull)dictionary;
 @end

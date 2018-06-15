@@ -21,6 +21,6 @@ typedef NS_ENUM(NSInteger, CreationsOptionsType) {
 
 @interface OptionCollectionDAO : NSObject
 
-- (NSArray *)getOptionsOfType:(CreationsOptionsType)creationOptionsType;
+- (NSArray * _Nonnull)getOptionsOfType:(CreationsOptionsType)creationOptionsType;
 
 @end

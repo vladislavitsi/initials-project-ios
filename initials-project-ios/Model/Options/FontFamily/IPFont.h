@@ -10,8 +10,8 @@
 
 @interface IPFont : AbstractOption
 
-@property (nonatomic, copy) NSString *fontName;
+@property (nonatomic, copy, nonnull) NSString *fontName;
 
-- (instancetype)initWithName:(NSString *)name fontName:(NSString *)fontName;
+- (instancetype  _Nonnull )initWithName:(NSString *_Nonnull)name fontName:(NSString *_Nonnull)fontName;
 
 @end

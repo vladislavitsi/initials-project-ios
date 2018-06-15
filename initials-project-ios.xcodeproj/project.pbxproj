@@ -206,8 +206,8 @@
 		218EB2DD2EC618A8107FB8CD /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				218EBEEF228D6F2590E6CD55 /* IPCreationConfiguration.m */,
 				218EBC49213B072863937DDE /* IPCreationConfiguration.h */,
+				218EBEEF228D6F2590E6CD55 /* IPCreationConfiguration.m */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";

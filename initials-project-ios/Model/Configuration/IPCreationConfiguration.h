@@ -13,10 +13,10 @@
 
 @interface IPCreationConfiguration : NSObject
 
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy, nullable) NSString *name;
 
-@property (nonatomic, copy) NSMutableArray<AbstractOption *> *options;
+@property (nonatomic, copy, nonnull) NSMutableArray<AbstractOption *> *options;
 
 
-- (instancetype)copy;
+- (instancetype _Nonnull )copy;
 @end

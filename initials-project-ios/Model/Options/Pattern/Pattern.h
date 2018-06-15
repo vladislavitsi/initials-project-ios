@@ -14,8 +14,8 @@
 
 @interface Pattern : AbstractOption
 
-@property (nonatomic, readonly) NSArray<LetterPattern *> *letterPatterns;
+@property (nonatomic, readonly, nonnull) NSArray<LetterPattern *> *letterPatterns;
 
-- (instancetype)initWithName:(NSString *)name letterPatterns:(NSArray<LetterPattern *>*)letterPatterns;
+- (instancetype _Nonnull)initWithName:(NSString * _Nonnull)name letterPatterns:(NSArray<LetterPattern *>* _Nonnull)letterPatterns;
 
 @end
