@@ -8,7 +8,7 @@
 
 #import "UserData.h"
 #import "IPFileManager.h"
-#import "NSDate+IPDateFormatters.h"
+#import "initials_project_ios-Swift.h"
 
 @implementation UserData
 

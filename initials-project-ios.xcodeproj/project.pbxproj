@@ -21,7 +21,6 @@
 		218EB86AEB0A80F2B5BFCF9A /* OptionDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB62D7D99F024D9361096 /* OptionDAO.m */; };
 		218EB945B725289A5683AD62 /* InitialsViewConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBFD3577CBFD8F079084E /* InitialsViewConfigurator.m */; };
 		218EB9B6000051C541CF7113 /* GalleryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218EB5D0C60F18E3176EEB31 /* GalleryTableViewCell.xib */; };
-		218EB9ED4D6E45A9962766E9 /* NSDate+IPDateFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB2795FF3C472A1ACBEDD /* NSDate+IPDateFormatters.m */; };
 		218EBA3624A861C215A1666E /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB7F94479A2F2714D92D2 /* TableViewCell.m */; };
 		218EBA84D84858476EE0F084 /* NameDialogAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBFF0B4848030EAB571C5 /* NameDialogAlertController.m */; };
 		218EBBC58170C4ABC65F4809 /* IPConfigurationConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB058EDA19D8314A2365B /* IPConfigurationConfigurator.m */; };
@@ -37,6 +36,7 @@
 		218EBFD0551B237C0407557E /* GalleryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EBFD89C1E2C40B81F6AC5 /* GalleryDetailsViewController.m */; };
 		218EBFDC3484FDE44E8C6BEB /* GalleryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218EB49236925873AE820586 /* GalleryTableViewController.m */; };
 		321228E420D3C420004BD323 /* InputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321228E320D3C420004BD323 /* InputProcessor.swift */; };
+		321228E820D3E0FF004BD323 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321228E720D3E0FF004BD323 /* DateExtension.swift */; };
 		32160DAE20C67C3200E38F48 /* CoreDataUserDataDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32160DAD20C67C3200E38F48 /* CoreDataUserDataDAO.m */; };
 		32728D7420C57C0D0026B744 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32728D7220C57C0D0026B744 /* Model.xcdatamodeld */; };
 		32728D7720C57EA20026B744 /* IPCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32728D7620C57EA20026B744 /* IPCoreDataController.m */; };
@@ -118,6 +118,7 @@
 		218EBFF0B4848030EAB571C5 /* NameDialogAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameDialogAlertController.m; sourceTree = "<group>"; };
 		321228E220D3C41F004BD323 /* initials-project-ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "initials-project-ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		321228E320D3C420004BD323 /* InputProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputProcessor.swift; sourceTree = "<group>"; };
+		321228E720D3E0FF004BD323 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		32160DA720C66A2400E38F48 /* UserDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDataProtocol.h; sourceTree = "<group>"; };
 		32160DAC20C67C3200E38F48 /* CoreDataUserDataDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataUserDataDAO.h; sourceTree = "<group>"; };
 		32160DAD20C67C3200E38F48 /* CoreDataUserDataDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataUserDataDAO.m; sourceTree = "<group>"; };
@@ -151,8 +152,6 @@
 		593EF1B420AC29BC00C77113 /* MainControllerGalleryDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainControllerGalleryDelegate.m; sourceTree = "<group>"; };
 		597CDBF220A6024A00616CDE /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		597CDBF320A6024A00616CDE /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
-		59C567B320A619390017EB70 /* InputProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputProcessor.h; sourceTree = "<group>"; };
-		59C567B420A619390017EB70 /* InputProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputProcessor.m; sourceTree = "<group>"; };
 		59C567B920A6F5830017EB70 /* MainControllerStartDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainControllerStartDelegate.h; sourceTree = "<group>"; };
 		59C567BA20A6F5830017EB70 /* MainControllerStartDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainControllerStartDelegate.m; sourceTree = "<group>"; };
 		59C88C3820A6FCBF0060C856 /* CreationTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreationTableController.h; sourceTree = "<group>"; };
@@ -425,13 +424,12 @@
 		32889888209C96A700E1452A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				59C567B320A619390017EB70 /* InputProcessor.h */,
-				59C567B420A619390017EB70 /* InputProcessor.m */,
+				321228E320D3C420004BD323 /* InputProcessor.swift */,
+				321228E720D3E0FF004BD323 /* DateExtension.swift */,
 				218EBD03BCD0239F1227276D /* NSDate+IPDateFormatters.h */,
 				218EB2795FF3C472A1ACBEDD /* NSDate+IPDateFormatters.m */,
 				218EB7A8D799C1C1E467F3D4 /* View */,
 				218EB50485C82D165D9750C7 /* Model */,
-				321228E320D3C420004BD323 /* InputProcessor.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -621,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59C567BB20A6F5830017EB70 /* MainControllerStartDelegate.m in Sources */,
+				321228E820D3E0FF004BD323 /* DateExtension.swift in Sources */,
 				593EF1B520AC29BC00C77113 /* MainControllerGalleryDelegate.m in Sources */,
 				32D21E332095BEB40007166D /* main.m in Sources */,
 				59C88C3A20A6FCBF0060C856 /* CreationTableController.m in Sources */,
@@ -628,7 +627,6 @@
 				593EF1AD20AB3B9F00C77113 /* GalleryTableController.m in Sources */,
 				32D8A40020AF062500C7FCDA /* MainControllerExamplesDelegate.m in Sources */,
 				32D21E252095BEB30007166D /* AppDelegate.m in Sources */,
-				218EB9ED4D6E45A9962766E9 /* NSDate+IPDateFormatters.m in Sources */,
 				218EB86AEB0A80F2B5BFCF9A /* OptionDAO.m in Sources */,
 				218EB5A8EBEFB907B601A274 /* IPCreationConfiguration.m in Sources */,
 				218EB945B725289A5683AD62 /* InitialsViewConfigurator.m in Sources */,

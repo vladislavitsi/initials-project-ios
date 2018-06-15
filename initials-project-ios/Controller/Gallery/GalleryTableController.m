@@ -10,7 +10,7 @@
 #import "GalleryTableViewCell.h"
 #import "GalleryDetailsViewController.h"
 #import "IPFileManager.h"
-#import "NSDate+IPDateFormatters.h"
+#import "initials_project_ios-Swift.h"
 #import "MailHandler.h"
 #import "Constants.h"
 
